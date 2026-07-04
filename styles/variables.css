@@ -1,0 +1,9 @@
+:root {
+  --color-primary: rgba(181, 233, 59, 1);
+  --color-text-primary: white;
+  --color-text-secondary: rgba(74, 74, 74, 1);
+}
+
+:root {
+  --sidebar-width: 175px;
+}

@@ -4,6 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body>
+    <aside class="sidebar">
+      <div class="sidebar-logo-container">
+        <img
+          class="sidebar-logo"
+          src="./assets/img/sidebar-logo.png"
+          alt="Logo"
+        />
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="/">Why me</a></li>
+          <li><a href="/">Skills</a></li>
+          <li><a href="/">My Work</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="hero-section">
+        <header class="hero-header">
+          <nav class="hero-socials-nav">
+            <ul>
+              <li>
+                <button>
+                  <a href="mailto:annikaegger83@gmail.com">
+                    <img src="./assets/icons/emai-button.svg" alt="email logo"
+                  /></a>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <a
+                    href="https://www.linkedin.com/in/annika-egger-705230406/"
+                    target="_blank"
+                  >
+                    <img
+                      src="./assets/icons/linkedin-button.svg"
+                      alt="linkedIn logo"
+                  /></a>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <a href="https://github.com/AnnikaEgger" target="_blank">
+                    <img
+                      src="./assets/icons/github-button.svg"
+                      alt="Github logo"
+                    />
+                  </a>
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="select-language-container">
+            <button>DE</button>
+            <div class="language-divider"></div>
+            <button>EN</button>
+          </div>
+        </header>
+
+        <div class="hero-profile">
+          <img src="./assets/img/hero-dummy.png" alt="" />
+          <div class="hero-profile-text-wrapper">
+            <h1 class="hero-profile-name">Annika Egger</h1>
+            <p>Fullstack Developer</p>
+          </div>
+        </div>
+      </section>
+      <section class="why-me-section"><h2></h2></section>
+      <section class="skills-section"><h2></h2></section>
+      <section class="my-work-section"><h2></h2></section>
+      <section class="contact-section"><h2></h2></section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
