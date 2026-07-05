@@ -12,81 +12,175 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <aside class="sidebar">
-      <div class="sidebar-logo-container">
-        <img
-          class="sidebar-logo"
-          src="./assets/img/sidebar-logo.png"
-          alt="Logo"
-        />
-      </div>
+    <header class="site-header">
+      <p class="header-name">
+        <span class="letter">A</span><span class="letter">n</span
+        ><span class="letter">n</span
+        ><span class="letter letter-colored1">i</span
+        ><span class="letter">k</span
+        ><span class="letter letter-colored2">a</span>
+      </p>
+      <div class="header-controls">
+        <nav class="header-nav">
+          <ul>
+            <li>
+              <a class="header-active" href="">About me</a>
+            </li>
+            <li>
+              <a href="">Skills</a>
+            </li>
+            <li>
+              <a href="">Portfolio</a>
+            </li>
+          </ul>
+        </nav>
 
-      <nav class="sidebar-nav">
-        <ul>
-          <li><a href="/">Why me</a></li>
-          <li><a href="/">Skills</a></li>
-          <li><a href="/">My Work</a></li>
-          <li><a href="/">Contact</a></li>
-        </ul>
-      </nav>
-    </aside>
+        <div class="language-switch">
+          <button
+            class="btn btn-header btn-primary1--outline btn-primary1--outline--header"
+          >
+            DE
+          </button>
+          <button
+            class="btn btn-header btn-primary1--filled btn-primary1--filled--header"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    </header>
 
     <main>
       <section class="hero-section">
-        <header class="hero-header">
-          <nav class="hero-socials-nav">
-            <ul>
-              <li>
-                <button>
-                  <a href="mailto:annikaegger83@gmail.com">
-                    <img src="./assets/icons/emai-button.svg" alt="email logo"
-                  /></a>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <a
-                    href="https://www.linkedin.com/in/annika-egger-705230406/"
-                    target="_blank"
+        <div class="hero-content-wrapper">
+          <div class="hero-portrait-wrapper">
+            <div class="hero-portrait-shadows">
+              <svg
+                class="portrait-shadow-left"
+                width="541"
+                height="794"
+                viewBox="0 0 541 794"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_f_230_443)">
+                  <path
+                    d="M80 330.454C140.327 199.398 178.506 154.004 190.055 147.689C190.055 147.689 227.25 17.8586 258.33 158.276C289.41 298.693 411.694 100.883 411.694 100.883L447.36 330.454L308.241 413.887L447.36 464.742L383.161 701L163.051 500.961L308.241 413.887L80 330.454Z"
+                    fill="rgba(0, 190, 232, 1)"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_f_230_443"
+                    x="-13"
+                    y="0"
+                    width="553.36"
+                    height="794"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
                   >
-                    <img
-                      src="./assets/icons/linkedin-button.svg"
-                      alt="linkedIn logo"
-                  /></a>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <a href="https://github.com/AnnikaEgger" target="_blank">
-                    <img
-                      src="./assets/icons/github-button.svg"
-                      alt="Github logo"
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape"
                     />
-                  </a>
-                </button>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="select-language-container">
-            <button>DE</button>
-            <div class="language-divider"></div>
-            <button>EN</button>
+                    <feGaussianBlur
+                      stdDeviation="46.5"
+                      result="effect1_foregroundBlur_230_443"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+              <svg
+                class="portrait-shadow-right"
+                width="597"
+                height="689"
+                viewBox="0 0 597 689"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_f_230_444)">
+                  <path
+                    d="M154.609 380.543C-18.5534 332.689 228.297 92.9999 228.297 92.9999C228.297 92.9999 287.102 296.742 368.159 202.17C449.216 107.599 392.541 296.743 466.341 383.067C540.141 469.391 481.271 494.453 481.271 494.453C481.271 494.453 404.529 636.961 341.979 584.247C279.428 531.534 206.793 498.2 179.289 451.8C154.489 409.96 171.019 394.986 197.013 391.875C184.626 388.699 170.547 384.948 154.609 380.543Z"
+                    fill="rgba(75, 71, 255, 1)"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_f_230_444"
+                    x="0"
+                    y="0"
+                    width="596.516"
+                    height="688.947"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape"
+                    />
+                    <feGaussianBlur
+                      stdDeviation="46.5"
+                      result="effect1_foregroundBlur_230_444"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            <img
+              src="./assets/img/hero-portrait.png"
+              alt="Portrait of Annika Egger"
+              class="hero-portrait"
+            />
           </div>
-        </header>
 
-        <div class="hero-profile">
-          <img src="./assets/img/hero-dummy.png" alt="" />
-          <div class="hero-profile-text-wrapper">
-            <h1 class="hero-profile-name">Annika Egger</h1>
-            <p>Fullstack Developer</p>
+          <div class="hero-content">
+            <div class="hero-introduction">
+              <div class="hero-introduction-i-am">
+                <span>I</span><span>am</span>
+              </div>
+              <div class="hero-introduction-right">
+                <h1>Annika Egger</h1>
+                <p class="hero-introduction-title">Fullstack Developer</p>
+              </div>
+            </div>
+            <button class="btn btn-main btn-primary1--filled">
+              Let’s talk!
+            </button>
           </div>
         </div>
+
+        <svg
+          class="hero-wave-bg"
+          viewBox="0 0 1442 1079"
+          preserveAspectRatio="none"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
+            fill="url(#paint0_radial_535_3084)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_535_3084"
+              gradientUnits="objectBoundingBox"
+              cx="0.5"
+              cy="0.5"
+              r="0.8"
+            >
+              <stop offset="0.00372417" stop-color="#1A2743" />
+              <stop offset="0.135417" stop-color="#27334B" />
+              <stop offset="0.719125" stop-color="#141D2F" />
+            </radialGradient>
+          </defs>
+        </svg>
       </section>
-      <section class="why-me-section"><h2></h2></section>
-      <section class="skills-section"><h2></h2></section>
-      <section class="my-work-section"><h2></h2></section>
-      <section class="contact-section"><h2></h2></section>
     </main>
     <footer></footer>
   </body>

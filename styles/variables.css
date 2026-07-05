@@ -1,9 +1,17 @@
 :root {
-  --color-primary: rgba(181, 233, 59, 1);
+  --color-primary1: rgb(75, 71, 255);
+  --color-primary2: rgba(0, 190, 232, 1);
+
+  --color-bg-dark: rgba(20, 29, 47, 1);
+  /* --color-bg-dark: rgb(38, 38, 38); */
+
+  --color-bg-medium: rgba(26, 39, 67, 1);
+  --color-bg-soft: rgba(39, 51, 75, 1);
+
   --color-text-primary: white;
-  --color-text-secondary: rgba(74, 74, 74, 1);
 }
 
 :root {
-  --sidebar-width: 175px;
+  --transition-press-default: 100ms ease-in;
+  --transition-hover-default: 100ms ease-in-out;
 }
