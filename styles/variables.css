@@ -15,3 +15,7 @@
   --transition-press-default: 100ms ease-in;
   --transition-hover-default: 100ms ease-in-out;
 }
+
+:root {
+  --content-limitation-lr: max(calc(50% - 720px), 64px);
+}

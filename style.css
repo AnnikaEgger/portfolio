@@ -1,8 +1,14 @@
 /* #region general */
 
 body {
+  background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+}
+
+main section {
+  /* padding: 0 var(--content-limitation-lr); */
 }
 
 button {
@@ -22,6 +28,16 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+h1,
+h2 {
+  font-size: 90px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 40px;
+}
+
 /* #endregion */
 
 /* #region header */
@@ -33,9 +49,10 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   padding: 38px 100px;
+
   width: 100dvw;
-  background-color: var(--color-bg-dark);
   z-index: 999;
+  background-color: var(--color-bg-dark);
 }
 
 .letter {
@@ -114,14 +131,15 @@ button:focus-visible {
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0 var(--content-limitation-lr);
 }
 
 .hero-content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* text-align: center; */
   gap: 24px;
-  background-color: var(--color-bg-dark);
 }
 
 .hero-portrait-wrapper {
@@ -185,11 +203,6 @@ button:focus-visible {
   gap: 16px;
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 90px;
-}
-
 .hero-introduction-title {
   text-transform: uppercase;
   color: var(--color-primary2);
@@ -206,10 +219,132 @@ h1 {
 }
 
 /* #endregion */
-/* #region */
+
+/* #region about me section*/
+.about-me-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 150px;
+  padding-left: var(--content-limitation-lr);
+}
+
+.about-me-text {
+  max-width: 475px;
+}
+
+.about-me-top-text {
+  margin-bottom: 32px;
+}
+
+.about-me-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+}
+
+.about-me-list li {
+  display: flex;
+  gap: 16px;
+}
+
+.about-me-list li p {
+  flex: 1;
+}
+
+.about-me-list-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  width: 48px;
+  height: 48px;
+}
+
+.about-me-svg-container {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.about-me-svg circle,
+.about-me-svg line {
+  stroke: var(--color-primary1);
+  stroke-width: 4px;
+}
 
 /* #endregion */
-/* #region */
+
+/* #region my skills section*/
+
+.my-skills-section {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-areas:
+    "skills-list top-right skills-line"
+    "skills-list bottom-right .";
+  padding-left: 0 var(--content-limitation-lr);
+  text-align: right;
+}
+
+.my-skills-content-wrapper {
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-area: skills-list;
+  list-style: none;
+  text-align: center;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-wrapper p {
+  font-weight: 700;
+}
+
+.my-skills--tr {
+  grid-area: top-right;
+  margin-bottom: 24px;
+}
+
+.my-skills-headline-wrapper {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.my-skills-line line {
+  stroke: var(--color-primary2);
+  stroke-width: 4px;
+}
+
+.my-skills--br {
+  grid-area: bottom-right;
+}
+
+.looking-for-skill {
+  margin-bottom: 16px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.looking-for-skill span {
+  color: var(--color-primary2);
+}
+
+.my-skills--br--text {
+  margin-bottom: 40px;
+}
+
+.my-skills-line {
+  grid-area: skills-line;
+}
 
 /* #endregion */
 /* #region */
