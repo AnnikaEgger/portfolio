@@ -36,14 +36,8 @@
         </nav>
 
         <div class="language-switch">
-          <button
-            class="btn btn-header btn-primary1--outline btn-primary1--outline--header"
-          >
-            DE
-          </button>
-          <button
-            class="btn btn-header btn-primary1--filled btn-primary1--filled--header"
-          >
+          <button class="btn btn-header btn-primary1--outline">DE</button>
+          <button class="btn btn-header btn-primary1--filled active-language">
             EN
           </button>
         </div>
@@ -135,7 +129,12 @@
             <img
               src="./assets/img/hero-portrait.png"
               alt="Portrait of Annika Egger"
-              class="hero-portrait"
+              class="hero-portrait hero-portrait--full"
+            />
+            <img
+              src="./assets/img/hero-portrait.png"
+              alt="Portrait of Annika Egger"
+              class="hero-portrait hero-portrait--ellbow"
             />
           </div>
 
@@ -155,12 +154,43 @@
           </div>
         </div>
 
-        <!-- <svg
+        <footer class="hero-footer">
+          <div class="hero-footer-svg-wrapper line-wrapper">
+            <svg
+              class="hero-line"
+              width="10000"
+              height="4"
+              viewBox="0 0 10000 4"
+            >
+              <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <button class="social-btn">
+            <a href="https://github.com/AnnikaEgger"
+              ><img src="./assets/icons/github.svg" alt="Github Logo"
+            /></a>
+          </button>
+          <button class="social-btn">
+            <a href="mailto:annikaegger83@gmail.com"
+              ><img src="./assets/icons/mail.svg" alt="Email Logo"
+            /></a>
+          </button>
+          <button class="social-btn">
+            <a href="https://www.linkedin.com/in/annika-egger-705230406/"
+              ><img src="./assets/icons/linkedin.svg" alt="LinkedIn Logo"
+            /></a>
+          </button>
+
+          <a href="mailto:annikaegger83@gmail.com">annikaegger83@gmail.com</a>
+        </footer>
+
+        <svg
           class="hero-wave-bg"
           viewBox="0 0 1442 1079"
-          preserveAspectRatio="none"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
         >
           <path
             d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
@@ -169,17 +199,18 @@
           <defs>
             <radialGradient
               id="paint0_radial_535_3084"
-              gradientUnits="objectBoundingBox"
-              cx="0.5"
-              cy="0.5"
-              r="0.8"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(674 42.5) rotate(82.2154) scale(887.756 1492.19)"
             >
               <stop offset="0.00372417" stop-color="#1A2743" />
               <stop offset="0.135417" stop-color="#27334B" />
               <stop offset="0.719125" stop-color="#141D2F" />
             </radialGradient>
           </defs>
-        </svg> -->
+        </svg>
       </section>
 
       <section class="about-me-section">
@@ -192,7 +223,7 @@
           </p>
           <ul class="about-me-list">
             <li>
-              <div class="about-me-list-icon-wrapper">
+              <div class="about-me-list-icon-wrapper location-icon">
                 <img
                   src="./assets/icons/location-icon.svg"
                   alt="Location icon"
@@ -205,7 +236,7 @@
             </li>
 
             <li>
-              <div class="about-me-list-icon-wrapper">
+              <div class="about-me-list-icon-wrapper learning-icon">
                 <img
                   src="./assets/icons/light-bulb-icon.svg"
                   alt="Light bulb icon"
@@ -218,7 +249,7 @@
             </li>
 
             <li>
-              <div class="about-me-list-icon-wrapper">
+              <div class="about-me-list-icon-wrapper puzzle-icon">
                 <img src="./assets/icons/puzzle-icon.svg" alt="Puzzle icon" />
               </div>
               <p>
@@ -255,13 +286,12 @@
             </defs>
             <circle cx="225" cy="225" r="225" fill="url(#about-me-img)" />
 
-            <line x1="450" y1="225" x2="10000" y2="225" stroke-width="10" />
+            <line x1="450" y1="225" x2="10000" y2="225" />
           </svg>
         </div>
       </section>
 
       <section class="my-skills-section">
-        <!-- <div class="my-skills-content-wrapper"> -->
         <ul class="skills-list">
           <li class="skill-wrapper">
             <img src="./assets/icons/html.svg" alt="HTML" />
@@ -307,7 +337,7 @@
             />
             <p>Material Design</p>
           </li>
-          <li class="skill-wrapper">
+          <li class="skill-wrapper skill-wrapper--learning">
             <img src="./assets/icons/learning-icon.svg" alt="Material Design" />
             <p>Continually learning</p>
           </li>
@@ -332,11 +362,17 @@
             Get in touch
           </button>
         </div>
-        <!-- </div> -->
 
-        <svg class="my-skills-line" width="70" height="4" viewBox="0 0 70 4">
-          <line x1="0" y1="0" x2="70" y2="0" stroke-linecap="round" />
-        </svg>
+        <div class="my-skills-svg-wrapper line-wrapper">
+          <svg
+            class="my-skills-line"
+            width="10000"
+            height="4"
+            viewBox="0 0 10000 4"
+          >
+            <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
+          </svg>
+        </div>
       </section>
     </main>
     <footer></footer>
