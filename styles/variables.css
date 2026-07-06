@@ -18,4 +18,5 @@
 
 :root {
   --content-limitation-lr: max(calc(50% - 720px), 64px);
+  --margin-bottom-h2: 40px;
 }
