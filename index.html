@@ -13,7 +13,7 @@
   </head>
   <body>
     <header class="site-header">
-      <p class="header-name">
+      <p class="logo-name">
         <span class="letter">A</span><span class="letter">n</span
         ><span class="letter">n</span
         ><span class="letter letter-colored1">i</span
@@ -155,32 +155,31 @@
         </div>
 
         <footer class="hero-footer">
-          <div class="hero-footer-svg-wrapper line-wrapper">
-            <svg
-              class="hero-line"
-              width="10000"
-              height="4"
-              viewBox="0 0 10000 4"
-            >
-              <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
-            </svg>
-          </div>
+          <svg class="hero-line" viewBox="0 0 100 4" preserveAspectRatio="none">
+            <line
+              x1="0"
+              y1="2"
+              x2="100"
+              y2="2"
+              vector-effect="non-scaling-stroke"
+              stroke-linecap="round"
+            />
+          </svg>
 
-          <button class="social-btn">
-            <a href="https://github.com/AnnikaEgger"
-              ><img src="./assets/icons/github.svg" alt="Github Logo"
-            /></a>
-          </button>
-          <button class="social-btn">
-            <a href="mailto:annikaegger83@gmail.com"
-              ><img src="./assets/icons/mail.svg" alt="Email Logo"
-            /></a>
-          </button>
-          <button class="social-btn">
-            <a href="https://www.linkedin.com/in/annika-egger-705230406/"
-              ><img src="./assets/icons/linkedin.svg" alt="LinkedIn Logo"
-            /></a>
-          </button>
+          <a href="https://github.com/AnnikaEgger" class="social-btn">
+            <img src="./assets/icons/github.svg" alt="Github Logo" />
+          </a>
+
+          <a href="mailto:annikaegger83@gmail.com" class="social-btn">
+            <img src="./assets/icons/mail.svg" alt="Email Logo" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/annika-egger-705230406/"
+            class="social-btn"
+          >
+            <img src="./assets/icons/linkedin.svg" alt="LinkedIn Logo" />
+          </a>
 
           <a href="mailto:annikaegger83@gmail.com">annikaegger83@gmail.com</a>
         </footer>
@@ -262,11 +261,11 @@
           </ul>
         </article>
 
-        <div class="about-me-svg-container">
+        <div class="svg-wrapper svg-wrapper--about-me">
           <svg
             class="about-me-svg"
-            height="450"
-            viewBox="0 0 10000 450"
+            height="453"
+            viewBox="0 0 10000 453"
             preserveAspectRatio="xMinYMin meet"
           >
             <defs>
@@ -278,15 +277,21 @@
               >
                 <image
                   href="./assets/img/about-me-portrait.png"
-                  width="450"
-                  height="450"
+                  width="453"
+                  height="453"
                   preserveAspectRatio="xMidYMid slice"
                 />
               </pattern>
             </defs>
-            <circle cx="225" cy="225" r="225" fill="url(#about-me-img)" />
+            <circle cx="226.5" cy="226.5" r="226.5" fill="url(#about-me-img)" />
 
-            <line x1="450" y1="225" x2="10000" y2="225" />
+            <line
+              x1="453"
+              y1="226.5"
+              x2="10000"
+              y2="226.5"
+              vector-effect="non-scaling-stroke"
+            />
           </svg>
         </div>
       </section>
@@ -363,16 +368,21 @@
           </button>
         </div>
 
-        <div class="my-skills-svg-wrapper line-wrapper">
-          <svg
-            class="my-skills-line"
-            width="10000"
-            height="4"
-            viewBox="0 0 10000 4"
-          >
-            <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
-          </svg>
-        </div>
+        <svg
+          class="my-skills-line"
+          height="4"
+          viewBox="0 0 100 4"
+          preserveAspectRatio="none"
+        >
+          <line
+            x1="0"
+            y1="2"
+            x2="100"
+            y2="2"
+            stroke-linecap="round"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
       </section>
 
       <section class="portfolio-section">
@@ -382,15 +392,34 @@
             width="100"
             height="4"
             viewBox="0 0 100 4"
+            preserveAspectRatio="none"
           >
-            <line x1="0" y1="2" x2="100" y2="2" stroke-linecap="round" />
+            <line
+              x1="0"
+              y1="2"
+              x2="100"
+              y2="2"
+              stroke-linecap="round"
+              vector-effect="non-scaling-stroke"
+            />
           </svg>
+
           <h2>Portfolio</h2>
-          <div class="line-wrapper">
-            <svg width="10000" height="4" viewBox="0 0 10000 4">
-              <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
-            </svg>
-          </div>
+          <svg
+            class="portfolio-line-right"
+            height="4"
+            viewBox="0 0 100 4"
+            preserveAspectRatio="none"
+          >
+            <line
+              x1="0"
+              y1="2"
+              x2="100"
+              y2="2"
+              stroke-linecap="round"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
         </div>
         <p class="portfolio-subtitle">
           Explore a selection of my work here - Interact with projects to see my
@@ -413,11 +442,12 @@
                 categories.
               </p>
               <div class="project-btns">
-                <button class="btn btn-main btn-primary2--filled">
-                  <a href="">Live test</a></button
-                ><button class="btn btn-main btn-primary1--outline">
-                  <a href="">Github</a>
-                </button>
+                <a href="#" class="btn btn-main btn-primary2--filled"
+                  >Live test</a
+                >
+                <a href="#" class="btn btn-main btn-primary1--outline"
+                  >Github</a
+                >
               </div>
             </div>
           </article>
@@ -435,11 +465,12 @@
                 the killer whale.
               </p>
               <div class="project-btns">
-                <button class="btn btn-main btn-primary2--filled">
-                  <a href="">Live test</a></button
-                ><button class="btn btn-main btn-primary1--outline">
-                  <a href="">Github</a>
-                </button>
+                <a href="#" class="btn btn-main btn-primary2--filled"
+                  >Live test</a
+                >
+                <a href="#" class="btn btn-main btn-primary1--outline"
+                  >Github</a
+                >
               </div>
             </div>
           </article>
@@ -456,26 +487,143 @@
                 catalogues pokemon information.
               </p>
               <div class="project-btns">
-                <button class="btn btn-main btn-primary2--filled">
-                  <a href="">Live test</a></button
-                ><button class="btn btn-main btn-primary1--outline">
-                  <a href="">Github</a>
-                </button>
+                <a href="#" class="btn btn-main btn-primary2--filled"
+                  >Live test</a
+                >
+                <a href="#" class="btn btn-main btn-primary1--outline"
+                  >Github</a
+                >
               </div>
             </div>
           </article>
         </section>
 
-        <section class="colleague-feedback"></section>
+        <section class="feedback-section">
+          <div class="feedback-content">
+            <article class="feedback-box">
+              <p>
+                Michael really kept the team together with his great
+                organization and clear communication. We wouldn't have got this
+                far without his commitment.
+              </p>
+              <div class="author-wrapper">
+                <div class="line-wrapper line-wrapper--feedback-box">
+                  <svg width="1000" height="4" viewBox="0 0 1000 4">
+                    <line
+                      x1="0"
+                      y1="2"
+                      x2="1000"
+                      y2="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+                <p>V. Schuster - Team Partner</p>
+              </div>
+
+              <img
+                on
+                class="feedback-quotes"
+                src="./assets/icons/feedback-quote.svg"
+                alt=""
+              />
+            </article>
+            <div class="feedback-slider">
+              <button class="slider-arrow-btn">
+                <img
+                  src="./assets/icons/arrow-left.svg"
+                  alt="Arrow Left Icon"
+                />
+              </button>
+              <div class="feedback-dots-wrapper">
+                <svg
+                  class="active-dot"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4" cy="4" r="4" fill="rgb(75, 71, 255)" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4" cy="4" r="4" fill="rgb(75, 71, 255)" />
+                </svg>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="4" cy="4" r="4" fill="rgb(75, 71, 255)" />
+                </svg>
+              </div>
+              <button class="slider-arrow-btn">
+                <img
+                  src="./assets/icons/arrow-right.svg"
+                  alt="Arrow Right Icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="svg-wrapper svg-wrapper--feedback">
+            <svg
+              height="272"
+              viewBox="0 0 10000 272"
+              preserveAspectRatio="xMinYMin meet"
+            >
+              <defs>
+                <pattern
+                  id="feedback-img"
+                  patternUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <image
+                    href="./assets/img/about-me-portrait.png"
+                    width="272"
+                    height="272"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </pattern>
+              </defs>
+              <circle cx="136" cy="136" r="136" fill="url(#feedback-img)" />
+              <line
+                x1="272"
+                y1="136"
+                x2="10000"
+                y2="136"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </section>
       </section>
 
       <section class="contact-section">
         <div class="headline-wrapper headline-wrapper--contact">
-          <div class="line-wrapper">
-            <svg width="10000" height="4" viewBox="0 0 10000 4">
-              <line x1="0" y1="2" x2="10000" y2="2" stroke-linecap="round" />
-            </svg>
-          </div>
+          <svg
+            class="contact-line"
+            height="4"
+            viewBox="0 0 100 4"
+            preserveAspectRatio="none"
+          >
+            <line
+              x1="0"
+              y1="2"
+              x2="100"
+              y2="2"
+              stroke-linecap="round"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
           <h2>Contact</h2>
         </div>
 
@@ -489,10 +637,17 @@
             </p>
             <p>Need a Frontend developer? <b>Contact me!</b></p>
           </div>
+
           <div class="contact-content-second">
             <form class="contact-form" action="">
               <div class="contact-form-inputs">
-                <input placeholder="Your name" type="text" name="" id="" />
+                <input
+                  patter
+                  placeholder="Your name"
+                  type="text"
+                  name=""
+                  id=""
+                />
                 <input placeholder="Your email" type="email" name="" id="" />
                 <textarea placeholder="Your message" name="" id=""></textarea>
               </div>
@@ -506,10 +661,64 @@
               </div>
               <button class="btn btn-main send-msg-btn">Send message</button>
             </form>
+
+            <a class="go-up-btn" href="#">
+              <svg
+                width="39"
+                height="39"
+                viewBox="0 0 39 39"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="37"
+                  height="37"
+                  rx="18.5"
+                  stroke="white"
+                  stroke-width="2"
+                />
+                <path
+                  d="M18 15.828L13.343 20.485C12.9525 20.8755 12.3194 20.8755 11.929 20.485C11.5385 20.0945 11.5385 19.4615 11.929 19.071L18.2928 12.7071C18.6834 12.3166 19.3165 12.3166 19.7071 12.7071L26.071 19.071C26.4614 19.4615 26.4614 20.0945 26.071 20.485C25.6805 20.8755 25.0474 20.8755 24.657 20.485L20 15.828L20 27C20 27.5523 19.5522 28 19 28C18.4477 28 18 27.5523 18 27L18 15.828Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+
+    <footer class="site-footer">
+      <p class="logo-name">
+        <span class="letter">A</span><span class="letter">n</span
+        ><span class="letter">n</span
+        ><span class="letter letter-colored1">i</span
+        ><span class="letter">k</span
+        ><span class="letter letter-colored2">a</span>
+      </p>
+
+      <p class="footer-copyright">© Annika Egger 2026</p>
+
+      <div class="footer-social-btns">
+        <a href="https://github.com/AnnikaEgger" class="social-btn">
+          <img src="./assets/icons/github.svg" alt="Github Logo" />
+        </a>
+
+        <a href="mailto:annikaegger83@gmail.com" class="social-btn">
+          <img src="./assets/icons/mail.svg" alt="Email Logo" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/annika-egger-705230406/"
+          class="social-btn"
+        >
+          <img src="./assets/icons/linkedin.svg" alt="LinkedIn Logo" />
+        </a>
+      </div>
+
+      <a href="./legal-notice.html">Legal Notice</a>
+    </footer>
   </body>
 </html>
