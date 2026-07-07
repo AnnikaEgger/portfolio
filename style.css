@@ -4,6 +4,7 @@ body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 body p {
@@ -13,6 +14,10 @@ body p {
 main svg line {
   stroke: var(--color-primary2);
   stroke-width: 4px;
+}
+
+section {
+  scroll-margin-top: 150px;
 }
 
 button {
@@ -72,6 +77,20 @@ h2 {
   overflow-x: hidden;
 }
 
+.bg-shadow {
+  position: absolute;
+  z-index: -1;
+  overflow-x: visible;
+}
+
+a {
+  transition: var(--transition-hover-default);
+}
+
+a:hover {
+  transition: var(--transition-hover-default);
+}
+
 /* #endregion */
 
 /* #region header */
@@ -128,7 +147,7 @@ h2 {
   left: 0;
   bottom: -5px;
   width: 56px;
-  height: 2.5px;
+  height: 3px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   background-color: var(--color-primary2);
@@ -248,8 +267,16 @@ h2 {
 
 .hero-wave-bg {
   position: absolute;
+  /* bottom: 80%; */
+  /* top: 0; */
+  /* bottom: -500px; */
   bottom: 0;
   transform: translateY(44%);
+  /* transform: translateY(100%); */
+  /* transform: translateY(200px); */
+  /* margin-bottom: -15%; */
+  /* transform: translateY(clamp(20%, 44%, 40%)); */
+
   width: 100%;
   z-index: -1;
   overflow-x: hidden;
@@ -279,10 +306,27 @@ h2 {
   height: 4px;
 }
 
+.scroll-down-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: var(--content-limitation-lr);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  writing-mode: sideways-rl;
+  font-size: 24px;
+}
+
+.scroll-down-wrapper img {
+  width: 16px;
+  /* height: auto; */
+}
+
 /* #endregion */
 
 /* #region about me section*/
 .about-me-section {
+  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 150px;
@@ -353,6 +397,13 @@ h2 {
   stroke-width: 4px;
 }
 
+.bg-shadow--about-me {
+  left: calc(100dvw - var(--content-limitation-lr));
+  transform: translateX(-50%);
+  top: -400px;
+  overflow-x: hidden;
+}
+
 /* #endregion */
 
 /* #region my skills section*/
@@ -401,8 +452,21 @@ h2 {
   color: var(--color-primary2);
 }
 
-.skill-wrapper--learning img:hover {
-  transform: unset;
+.skill-wrapper--learning:hover svg path {
+  fill: white;
+}
+
+.skill-wrapper--learning:hover p {
+  color: white;
+}
+
+.text-bubble-learning {
+  position: relative;
+}
+
+.text-bubble-content-wrapper {
+  position: absolute;
+  top: 0;
 }
 
 .my-skills--tr {
@@ -689,6 +753,7 @@ h2 {
 .send-msg-btn {
   background-color: rgba(182, 182, 182, 1);
   color: var(--color-text-primary);
+  box-shadow: var(--box-shadow-btn);
 }
 
 .go-up-btn {

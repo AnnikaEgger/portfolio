@@ -12,6 +12,32 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- <svg
+      class="hero-wave-bg"
+      viewBox="0 0 1442 1079"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
+        fill="url(#paint0_radial_535_3084)"
+      />
+      <defs>
+        <radialGradient
+          id="paint0_radial_535_3084"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(674 42.5) rotate(82.2154) scale(887.756 1492.19)"
+        >
+          <stop offset="0.00372417" stop-color="#1A2743" />
+          <stop offset="0.135417" stop-color="#27334B" />
+          <stop offset="0.719125" stop-color="#141D2F" />
+        </radialGradient>
+      </defs>
+    </svg> -->
     <header class="site-header">
       <p class="logo-name">
         <span class="letter">A</span><span class="letter">n</span
@@ -24,13 +50,13 @@
         <nav class="header-nav">
           <ul>
             <li>
-              <a class="header-active" href="">About me</a>
+              <a class="header-active" href="#about-me-section">About me</a>
             </li>
             <li>
-              <a href="">Skills</a>
+              <a href="#my-skills-section">Skills</a>
             </li>
             <li>
-              <a href="">Portfolio</a>
+              <a href="#portfolio-section">Portfolio</a>
             </li>
           </ul>
         </nav>
@@ -45,7 +71,7 @@
     </header>
 
     <main>
-      <section class="hero-section">
+      <section id="hero-section" class="hero-section">
         <div class="hero-content-wrapper">
           <div class="hero-portrait-wrapper">
             <div class="hero-portrait-shadows">
@@ -148,9 +174,12 @@
                 <p class="hero-introduction-title">Fullstack Developer</p>
               </div>
             </div>
-            <button class="btn btn-main btn-primary1--filled">
+            <a
+              href="#contact-section"
+              class="btn btn-main btn-primary1--filled"
+            >
               Let’s talk!
-            </button>
+            </a>
           </div>
         </div>
 
@@ -184,6 +213,11 @@
           <a href="mailto:annikaegger83@gmail.com">annikaegger83@gmail.com</a>
         </footer>
 
+        <div class="scroll-down-wrapper">
+          <p>Scroll down</p>
+          <img src="./assets/icons/arrow-down.svg" alt="Arrow Down Icon" />
+        </div>
+
         <svg
           class="hero-wave-bg"
           viewBox="0 0 1442 1079"
@@ -212,7 +246,7 @@
         </svg>
       </section>
 
-      <section class="about-me-section">
+      <section id="about-me-section" class="about-me-section">
         <article class="about-me-text">
           <h2>About me</h2>
           <p class="about-me-top-text">
@@ -283,7 +317,7 @@
                 />
               </pattern>
             </defs>
-            <circle cx="226.5" cy="226.5" r="226.5" fill="url(#about-me-img)" />
+            <circle cx="226.5" cy="226.5" r="224.5" fill="url(#about-me-img)" />
 
             <line
               x1="453"
@@ -294,9 +328,15 @@
             />
           </svg>
         </div>
+
+        <img
+          class="bg-shadow bg-shadow--about-me"
+          src="./assets/img/shadow-about-me.svg"
+          alt="Background Shadow Form"
+        />
       </section>
 
-      <section class="my-skills-section">
+      <section id="my-skills-section" class="my-skills-section">
         <ul class="skills-list">
           <li class="skill-wrapper">
             <img src="./assets/icons/html.svg" alt="HTML" />
@@ -343,7 +383,54 @@
             <p>Material Design</p>
           </li>
           <li class="skill-wrapper skill-wrapper--learning">
-            <img src="./assets/icons/learning-icon.svg" alt="Material Design" />
+            <div class="text-bubble-learning">
+              <img src="./assets/icons/text-bubble.svg" alt="Text bubble" />
+              <div class="text-bubble-content-wrapper">
+                <p>I have a special interest in learning</p>
+                <div class="learning-skills-wrapper">
+                  <div class="learning-skill">
+                    <img src="./assets/icons/react.svg" alt="React Icon" />
+                    <p>React</p>
+                  </div>
+                  <div class="learning-skill">
+                    <img src="./assets/icons/vue-js.svg" alt="Vue.js Icon" />
+                    <p>Vue.js</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <img src="./assets/icons/learning-icon.svg" alt="Material Design" /> -->
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_199195_1607)">
+                <path
+                  d="M49.8289 25.2144L30.6154 36.1587C30.2696 36.3621 29.8424 36.3621 29.4864 36.1587L10.273 25.2144C9.52033 24.7873 9.52033 23.6989 10.273 23.2616L29.4864 12.3173C29.8322 12.1139 30.2594 12.1139 30.6154 12.3173L49.8289 23.2616C50.5815 23.6888 50.5815 24.7771 49.8289 25.2144Z"
+                  fill="rgba(0, 190, 232, 1)"
+                />
+                <path
+                  d="M46.5028 28.8964V37.9183C46.5028 38.3251 46.2892 38.6913 45.9332 38.8947L30.6153 47.6216C30.2695 47.8251 29.8423 47.8251 29.4863 47.6216L14.1685 38.8947C13.8125 38.6913 13.5989 38.3251 13.5989 37.9183V28.8964L22.0918 33.7278L29.4863 37.9488C29.8321 38.1522 30.2593 38.1522 30.6153 37.9488L38.0098 33.7278L46.5028 28.8964Z"
+                  fill="rgba(0, 190, 232, 1)"
+                />
+                <path
+                  d="M55.4534 14.0058L55.9823 13.6396C56.623 13.1921 56.5417 12.2258 55.8399 11.8901L51.629 9.88642C50.917 9.55077 50.1135 10.1102 50.1745 10.8934L50.5813 15.5416C50.6525 16.3146 51.5374 16.7316 52.1782 16.2841L52.9309 15.7654C59.6236 26.5469 57.8233 40.9086 48.4657 49.6559C39.2608 58.2607 25.0719 59.3084 14.7278 52.1478C14.0362 51.6698 13.0801 51.8427 12.602 52.5343C12.124 53.226 12.2969 54.1821 12.9885 54.6601C18.1047 58.1997 24.0548 59.939 29.9948 59.939C37.43 59.939 44.8448 57.2131 50.5508 51.8834C60.9967 42.1088 63.0106 26.0281 55.4534 14.0058Z"
+                  fill="rgba(0, 190, 232, 1)"
+                />
+                <path
+                  d="M47.1132 5.27885C35.5994 -2.69539 19.8035 -1.5257 9.55087 8.05559C-1.15942 18.0742 -3.08178 34.0837 4.90263 46.3095L4.16013 46.8181C3.51934 47.2656 3.60071 48.2319 4.30252 48.5675L8.51341 50.5713C9.22539 50.9069 10.0289 50.3475 9.96789 49.5643L9.56104 44.9161C9.48984 44.1431 8.60495 43.726 7.96416 44.1736L7.41492 44.5601C0.315407 33.5853 2.03434 19.2541 11.636 10.2831C20.8409 1.67823 35.0298 0.620428 45.3739 7.79114C46.0655 8.26918 47.0216 8.09627 47.4997 7.40463C47.9777 6.71299 47.8048 5.75689 47.1132 5.27885Z"
+                  fill="rgba(0, 190, 232, 1)"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_199195_1607">
+                  <rect width="60" height="59.939" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
             <p>Continually learning</p>
           </li>
         </ul>
@@ -363,9 +450,9 @@
           <p class="my-skills--br--text">
             Reveal enthusiasm for learning new technologies and frameworks.
           </p>
-          <button class="btn btn-main btn-primary1--filled">
+          <a href="#contact-section" class="btn btn-main btn-primary1--filled">
             Get in touch
-          </button>
+          </a>
         </div>
 
         <svg
@@ -385,7 +472,7 @@
         </svg>
       </section>
 
-      <section class="portfolio-section">
+      <section id="portfolio-section" class="portfolio-section">
         <div class="headline-wrapper headline-wrapper--portfolio">
           <svg
             class="portfolio-line-left"
@@ -594,7 +681,7 @@
                   />
                 </pattern>
               </defs>
-              <circle cx="136" cy="136" r="136" fill="url(#feedback-img)" />
+              <circle cx="136" cy="136" r="134" fill="url(#feedback-img)" />
               <line
                 x1="272"
                 y1="136"
@@ -607,7 +694,7 @@
         </section>
       </section>
 
-      <section class="contact-section">
+      <section id="contact-section" class="contact-section">
         <div class="headline-wrapper headline-wrapper--contact">
           <svg
             class="contact-line"

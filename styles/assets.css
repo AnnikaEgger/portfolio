@@ -22,9 +22,16 @@ button:hover {
   background-color: var(--color-primary1);
 }
 
+.btn-main.btn-primary1--filled {
+  box-shadow: var(--box-shadow-btn);
+  margin: 5px 10px;
+}
+
 .btn-main.btn-primary1--filled:hover {
   background-color: var(--color-primary2);
-  padding: 20px 40px;
+
+  padding: 20px 40px 20px 40px;
+  margin: 0;
 }
 
 .btn-main.btn-primary1--filled:active {
@@ -59,6 +66,7 @@ button:hover {
 .btn-header {
   padding: 5px 8px;
   font-size: 18px;
+  line-height: 1;
 }
 
 .btn-header.btn-primary1--filled {
