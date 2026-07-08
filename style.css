@@ -106,15 +106,20 @@ input[type="checkbox"] {
 
 /* #region header */
 
+:root {
+  --header-height: 110px;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 38px 100px;
+  padding: 0 100px;
 
   width: 100%;
+  height: var(--header-height);
   z-index: 999;
   background-color: var(--color-bg-dark);
 }
@@ -180,12 +185,168 @@ input[type="checkbox"] {
   cursor: default;
 }
 
+.burger-menu-header {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  /* gap: 12px; */
+  height: 25px;
+  width: 30px;
+}
+
+.burger-menu-line {
+  position: absolute;
+
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 2px;
+  background-color: white;
+
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.mobile-menu-wrapper {
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(20, 29, 47, 0.8);
+  z-index: 998;
+  text-align: center;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 24px;
+}
+
+.language-btn-mobile {
+  color: white;
+}
+
+.language-btn-mobile-active {
+  color: var(--color-primary1);
+  font-weight: 600;
+}
+
+.link-mobile-menu-active {
+  position: relative;
+  color: var(--color-primary1);
+}
+
+.link-mobile-menu-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 56px;
+  height: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: var(--color-primary2);
+}
+
+.burger-menu-line1 {
+  top: 0px;
+  animation: animateLine1 1000ms ease-in-out 1 forwards;
+  transform-origin: center;
+}
+
+.burger-menu-line2 {
+  top: 12px;
+  animation: animateLine2 1000ms ease-in-out 1 forwards;
+  transform-origin: center;
+}
+
+.burger-menu-line3 {
+  top: 24px;
+  animation: animateLine3 1000ms ease-in-out 1 forwards;
+  transform-origin: center;
+}
+
+@keyframes animateLine1 {
+  0% {
+    top: 0;
+    rotate: 0deg;
+  }
+
+  25% {
+    top: 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    top: 12px;
+    rotate: -51deg;
+  }
+
+  100% {
+    top: 12px;
+    rotate: -46.5deg;
+  }
+}
+
+@keyframes animateLine2 {
+  0% {
+    width: 30px;
+  }
+
+  25% {
+    width: 10px;
+  }
+
+  50% {
+    width: 5px;
+  }
+
+  100% {
+    width: 0px;
+  }
+}
+
+@keyframes animateLine3 {
+  0% {
+    top: 24px;
+    rotate: 0;
+  }
+
+  25% {
+    top: 24px;
+    rotate: 0;
+  }
+
+  50% {
+    top: 12px;
+    rotate: 51deg;
+  }
+
+  100% {
+    top: 12px;
+    rotate: 46.5deg;
+  }
+}
+
 /* #endregion */
 
 /* #region header responsive */
 @media screen and (max-width: 1280px) {
   .header-controls {
     display: none;
+  }
+
+  .burger-menu-header {
+    display: flex;
   }
 }
 
