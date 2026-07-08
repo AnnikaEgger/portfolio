@@ -1,0 +1,173 @@
+.my-skills-section {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content;
+  grid-template-areas:
+    "skills-list top-right skills-line"
+    "skills-list bottom-right . ";
+  padding-left: var(--content-limitation-lr);
+  text-align: right;
+  /* align-items: start; */
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-area: skills-list;
+  list-style: none;
+  text-align: center;
+  column-gap: 88px;
+  row-gap: 40px;
+}
+
+.skill-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  justify-self: center;
+  width: 88px;
+  height: 100px;
+}
+
+.skill-wrapper img {
+  transition: 300ms ease-in 200ms;
+}
+
+.skill-wrapper:hover img {
+  transform: translateY(-20%);
+  transition: var(--transition-hover-default);
+}
+
+.skill-wrapper p {
+  font-weight: 700;
+}
+
+.skill-wrapper-learning {
+  position: relative;
+  color: var(--color-primary2);
+  width: 88px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  justify-self: center;
+}
+
+.skill-wrapper-learning > p {
+  font-weight: 700;
+}
+
+.skill-wrapper-learning:hover .text-bubble-learning,
+.skill-wrapper-learning:hover .text-bubble-learning {
+  visibility: visible;
+  opacity: 1;
+  transition: var(--transition-hover-long);
+}
+
+.skill-wrapper-learning:hover > svg path {
+  fill: white;
+}
+
+.skill-wrapper-learning:hover > p {
+  color: white;
+}
+
+.text-bubble-learning {
+  position: absolute;
+  right: -105px;
+  top: -120px;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-hover-long);
+}
+
+.text-bubble-content-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: black;
+}
+
+.learning-skills-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  list-style: none;
+}
+
+.learning-skill img {
+  width: 32px;
+  height: 28px;
+}
+
+.my-skills--tr {
+  grid-area: top-right;
+  margin-bottom: var(--space-m);
+  width: 450px;
+  justify-self: end;
+  /* align-self: start; */
+}
+
+.my-skills-line {
+  justify-self: flex-end;
+  margin-top: 45px;
+  margin-left: var(--space-l);
+  stroke-linecap: round;
+  width: max(calc(50dvw - 720px + 68px), 68px);
+}
+
+.my-skills--br {
+  grid-area: bottom-right;
+  width: 450px;
+  justify-self: end;
+  /* align-self: start; */
+}
+
+.looking-for-skill {
+  margin-bottom: var(--space-s);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.looking-for-skill span {
+  color: var(--color-primary2);
+}
+
+.my-skills--br--text {
+  margin-bottom: 40px;
+}
+
+/* #region responsive */
+@media screen and (max-width: 1280px) {
+  .placeholder-div {
+    display: none;
+  }
+
+  .my-skills-section {
+    grid-template-columns: max-content max-content;
+    /* grid-template-areas:
+    "skills-list top-right skills-line"
+    "skills-list bottom-right . "; */
+    grid-template-areas:
+      " top-right skills-line"
+      "skills-list  . "
+      "bottom-right .";
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+/* #endregion */

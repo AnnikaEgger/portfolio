@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
+
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/about-me.css" />
+    <link rel="stylesheet" href="./styles/my-skills.css" />
+    <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/contact.css" />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -39,7 +46,7 @@
       </defs>
     </svg> -->
     <header class="site-header">
-      <p class="logo-name">
+      <p class="logo-name logo-name--header">
         <span class="letter">A</span><span class="letter">n</span
         ><span class="letter">n</span
         ><span class="letter letter-colored1">i</span
@@ -184,7 +191,7 @@
         </div>
 
         <footer class="hero-footer">
-          <svg class="hero-line" viewBox="0 0 100 4" preserveAspectRatio="none">
+          <svg class="hero-line" viewBox="0 0 104 4" preserveAspectRatio="none">
             <line
               x1="0"
               y1="2"
@@ -210,7 +217,9 @@
             <img src="./assets/icons/linkedin.svg" alt="LinkedIn Logo" />
           </a>
 
-          <a href="mailto:annikaegger83@gmail.com">annikaegger83@gmail.com</a>
+          <a class="hero-footer-mail" href="mailto:annikaegger83@gmail.com"
+            >annikaegger83@gmail.com</a
+          >
         </footer>
 
         <div class="scroll-down-wrapper">
@@ -435,7 +444,7 @@
           </li>
         </ul>
 
-        <div></div>
+        <div class="placeholder-div"></div>
 
         <div class="my-skills--tr">
           <h2>My skills</h2>
@@ -464,7 +473,7 @@
           preserveAspectRatio="none"
         >
           <line
-            x1="0"
+            x1="2"
             y1="2"
             x2="100"
             y2="2"
@@ -484,7 +493,7 @@
             preserveAspectRatio="none"
           >
             <line
-              x1="0"
+              x1="2"
               y1="2"
               x2="100"
               y2="2"
@@ -701,7 +710,7 @@
           <svg
             class="contact-line"
             height="4"
-            viewBox="0 0 100 4"
+            viewBox="0 0 104 4"
             preserveAspectRatio="none"
           >
             <line
@@ -779,11 +788,19 @@
             </a>
           </div>
         </div>
+
+        <div class="bg-shadow-wrapper bg-shadow-wrapper--contact">
+          <img
+            class="bg-shadow bg-shadow--contact"
+            src="./assets/img/shadow-contact.svg"
+            alt="Blue Shadow"
+          />
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p class="logo-name">
+      <p class="logo-name logo-name--footer">
         <span class="letter">A</span><span class="letter">n</span
         ><span class="letter">n</span
         ><span class="letter letter-colored1">i</span
@@ -810,7 +827,7 @@
         </a>
       </div>
 
-      <a href="./legal-notice.html">Legal Notice</a>
+      <a class="legal-notice-footer" href="./legal-notice.html">Legal Notice</a>
     </footer>
   </body>
 </html>
