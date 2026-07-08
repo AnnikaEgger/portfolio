@@ -97,3 +97,49 @@ a {
 a:hover {
   transition: var(--transition-hover-default);
 }
+
+/* #region custom checkbox */
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/check_box_outline_blank.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.checkbox-container:hover {
+  background-color: rgba(24, 55, 113, 1);
+}
+/* .checkbox-container input[type="checkbox"]:focus-visible {
+  outline: 2px solid black;
+} */
+
+.checkbox-container:has(input[type="checkbox"]:checked) {
+  background: url(../assets/icons/check_box.svg) no-repeat center;
+}
+
+.checkbox-container:hover:has(input[type="checkbox"]:checked) {
+  background: rgba(24, 55, 113, 1) url(../assets/icons/check_box.svg) no-repeat
+    center;
+}
+
+.checkbox {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+}
+
+/* input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  outline: none;
+  border: none;
+} */
+
+/* #endregion */
