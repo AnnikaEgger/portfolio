@@ -365,6 +365,7 @@ input[type="checkbox"] {
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   padding: 120px 100px 80px 100px;
+  height: 290px;
 
   border-top: 4px solid var(--color-primary1);
 }
@@ -402,7 +403,19 @@ input[type="checkbox"] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 64px 0;
+    padding: 0 0;
+  }
+
+  .logo-name--footer {
+    margin-bottom: 32px;
+  }
+
+  .footer-copyright {
+    margin-bottom: 24px;
+  }
+
+  .footer-social-btns {
+    margin-bottom: 24px;
   }
 }
 

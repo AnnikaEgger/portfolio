@@ -149,6 +149,9 @@ a:hover {
 /* #endregion */
 
 @media screen and (max-width: 1280px) {
+  .btn-main.btn-primary1--filled {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
