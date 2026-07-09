@@ -524,7 +524,7 @@
       <section id="portfolio-section" class="portfolio-section">
         <div class="headline-wrapper headline-wrapper--portfolio">
           <svg
-            class=""
+            class="portfolio-line-left"
             width="100"
             height="4"
             viewBox="0 0 100 4"
@@ -710,7 +710,7 @@
             </div>
           </div>
           <div class="svg-wrapper svg-wrapper--feedback">
-            <svg
+            <!-- <svg
               height="272"
               viewBox="0 0 10000 272"
               preserveAspectRatio="xMinYMin meet"
@@ -737,6 +737,54 @@
                 x2="10000"
                 y2="136"
                 vector-effect="non-scaling-stroke"
+              />
+            </svg> -->
+
+            <svg
+              class="svg-wrapper--feedback--circle-svg"
+              height="272"
+              width="272"
+              viewBox="0 0 272 272"
+            >
+              <defs>
+                <pattern
+                  id="feedback-img"
+                  patternUnits="userSpaceOnUse"
+                  width="272"
+                  height="272"
+                >
+                  <image
+                    href="./assets/img/about-me-portrait.png"
+                    width="272"
+                    height="272"
+                    preserveAspectRatio="xMidYMid slice"
+                  />
+                </pattern>
+              </defs>
+              <circle
+                cx="136"
+                cy="136"
+                r="131"
+                fill="url(#feedback-img)"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+
+            <svg
+              class="svg-wrapper--feedback--line-svg"
+              height="4"
+              width="100"
+              viewBox="0 0 10000 4"
+              preserveAspectRatio="none"
+            >
+              <line
+                x1="0"
+                y1="2"
+                x2="10000"
+                y2="2"
+                vector-effect="non-scaling-stroke"
+                stroke="black"
+                stroke-width="2"
               />
             </svg>
           </div>

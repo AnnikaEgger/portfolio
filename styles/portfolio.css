@@ -25,6 +25,7 @@
 
 .portfolio-subtitle {
   align-self: center;
+  text-align: center;
   margin-bottom: 100px;
 }
 
@@ -84,6 +85,7 @@
   gap: 48px;
   /* padding-left: var(--content-limitation-lr); */
   justify-content: center;
+  align-items: start;
 }
 
 .feedback-content {
@@ -166,12 +168,19 @@
 .svg-wrapper--feedback {
   flex: 1;
   width: max(calc(50dvw - 720px + 376px), 376px);
+  display: flex;
+  align-items: center;
 }
 
 .svg-wrapper--feedback circle,
 .svg-wrapper--feedback line {
   stroke: var(--color-primary2);
   stroke-width: 4px;
+}
+
+.svg-wrapper--feedback--line-svg {
+  flex: 1;
+  margin-left: -4px;
 }
 
 /* #endregion */
@@ -187,7 +196,8 @@
   }
 
   .portfolio-line-right {
-    width: calc(64px + var(--content-limitation-lr));
+    width: 100%;
+    /* width: calc(64px + var(--content-limitation-lr)); */
     /* width: max(calc(var(--content-limitation-lr) + 80px), 80px); */
   }
 
@@ -205,7 +215,7 @@
   }
 
   .project-section {
-    gap: 64px;
+    gap: 100px;
     padding: 0 var(--content-limitation-lr);
   }
 
@@ -227,16 +237,19 @@
   .feedback-section {
     flex-direction: column-reverse;
     align-items: center;
+    gap: 24px;
   }
 
   .feedback-content {
     width: 100%;
-    padding-right: var(--content-limitation-lr);
+    padding: 0 var(--content-limitation-lr);
+    /* padding-left: unset; */
+    /* padding-right: var(--content-limitation-lr); */
   }
 
   .feedback-quotes {
     top: -40px;
-    left: -20px;
+    left: -15px;
     width: 68px;
   }
 
@@ -267,6 +280,35 @@
 
   .line-wrapper--feedback-box {
     width: 100px;
+  }
+
+  .svg-wrapper--feedback {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-areas: ". circle-svg line-svg";
+  }
+
+  .svg-wrapper--feedback--line-svg {
+    grid-area: line-svg;
+    width: 100%;
+    margin-left: -2px;
+  }
+
+  .svg-wrapper--feedback--circle-svg {
+    grid-area: circle-svg;
+    width: 144px;
+    height: 144px;
+  }
+
+  .svg-wrapper--feedback circle {
+    /* r: 72px; */
+  }
+
+  .svg-wrapper--feedback circle,
+  .svg-wrapper--feedback line {
+    stroke: var(--color-primary2);
+    stroke-width: 4px;
   }
 }
 
