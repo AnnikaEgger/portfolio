@@ -156,6 +156,10 @@
   border-color: var(--color-primary1);
 }
 
+.slider-arrow-btn:active {
+  border-color: transparent;
+}
+
 .feedback-dots-wrapper {
   display: flex;
   gap: 20px;

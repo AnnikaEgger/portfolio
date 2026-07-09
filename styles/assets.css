@@ -38,6 +38,7 @@ button:hover {
   background-color: white;
   color: black;
   padding: 15px 30px;
+  margin: 5px 10px;
 }
 
 .btn-primary1--outline {
@@ -64,9 +65,13 @@ button:hover {
 }
 
 .btn-header {
-  padding: 5px 8px;
+  height: 32px;
+  width: 38px;
+  text-align: center;
+  /* padding: 5px 8px; */
   font-size: 18px;
   line-height: 1;
+  transition: background-color var(--transition-hover-default);
 }
 
 .btn-header.btn-primary1--filled {
