@@ -301,10 +301,6 @@
     height: 144px;
   }
 
-  .svg-wrapper--feedback circle {
-    /* r: 72px; */
-  }
-
   .svg-wrapper--feedback circle,
   .svg-wrapper--feedback line {
     stroke: var(--color-primary2);

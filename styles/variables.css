@@ -77,3 +77,9 @@
     --space-xxl: 48px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  :root {
+    --padding-lr: 8px;
+  }
+}

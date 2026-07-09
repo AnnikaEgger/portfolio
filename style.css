@@ -3,8 +3,11 @@
 body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
-  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+}
+
+.body--index {
+  font-family: "Poppins", sans-serif;
 }
 
 body p {
@@ -47,13 +50,17 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-h1,
-h2 {
+.social-btn img {
+  width: 30px;
+}
+
+.index-h1,
+.index-h2 {
   font-size: 90px;
   font-weight: 700;
 }
 
-h2 {
+.index-h2 {
   line-height: 1;
 }
 
@@ -375,8 +382,13 @@ input[type="checkbox"] {
   gap: 42px;
 }
 
+.footer-social-btns img {
+  width: 30px;
+}
+
 .footer-copyright {
   justify-self: center;
+  align-self: center;
   font-size: 24px;
 }
 
@@ -428,7 +440,7 @@ input[type="checkbox"] {
 
 /* #region general responsive */
 @media screen and (max-width: 1280px) {
-  h1,
+  .index-h1,
   h2 {
     font-size: 46px;
   }
