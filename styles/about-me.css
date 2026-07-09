@@ -1,5 +1,4 @@
 .about-me-section {
-  position: relative;
   display: flex;
   justify-content: space-between;
   gap: 150px;
@@ -71,11 +70,8 @@
 }
 
 .bg-shadow--about-me {
-  left: calc(100dvw - var(--content-limitation-lr));
-  transform: translateX(-50%);
-  top: -400px;
-  display: none;
-  /* overflow-x: hidden; */
+  right: -400px;
+  top: -350px;
 }
 
 /* #region responsive */

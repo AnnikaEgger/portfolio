@@ -183,6 +183,17 @@
   margin-left: -4px;
 }
 
+.bg-shadow--portfolio-middle {
+  top: 750px;
+  left: -250px;
+}
+
+.bg-shadow--portfolio-bottom {
+  bottom: -50px;
+  right: -550px;
+  rotate: 180deg;
+}
+
 /* #endregion */
 
 /* #region responsive */

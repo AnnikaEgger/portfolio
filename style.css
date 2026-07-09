@@ -3,7 +3,6 @@
 body {
   background-color: var(--color-bg-dark);
   color: var(--color-text-primary);
-  overflow-x: hidden;
 }
 
 .body--index {
@@ -17,6 +16,7 @@ body p {
 main {
   display: flex;
   flex-direction: column;
+  overflow: clip;
 }
 
 main svg line {
@@ -25,7 +25,9 @@ main svg line {
 }
 
 section {
+  position: relative;
   scroll-margin-top: 150px;
+  /* overflow-x: hidden; */
 }
 
 button {
@@ -89,19 +91,9 @@ button:focus-visible {
   overflow-x: hidden;
 }
 
-.bg-shadow-wrapper {
-  position: absolute;
-  /* overflow-x: hidden; */
-  overflow-y: hidden;
-  overflow-x: visible;
-  z-index: -1;
-}
-
 .bg-shadow {
-  /* position: absolute; */
-  /* z-index: -1; */
-  /* overflow: visible; */
-  /* background-color: transparent; */
+  position: absolute;
+  z-index: -1;
 }
 
 input[type="checkbox"] {
@@ -382,10 +374,6 @@ input[type="checkbox"] {
   gap: 42px;
 }
 
-.footer-social-btns img {
-  width: 30px;
-}
-
 .footer-copyright {
   justify-self: center;
   align-self: center;
@@ -397,9 +385,27 @@ input[type="checkbox"] {
 }
 
 .legal-notice-footer {
-  /* position: absolute; */
-  /* bottom: 0; */
+  position: relative;
   top: 0;
+}
+
+.legal-notice-footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.5px;
+  width: 56px;
+  height: 2px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: var(--color-primary2);
+  opacity: 0;
+  transition: opacity var(--transition-hover-default);
+}
+
+.legal-notice-footer:hover::after {
+  opacity: 1;
+  transition: opacity var(--transition-hover-default);
 }
 
 .logo-name--footer .letter {

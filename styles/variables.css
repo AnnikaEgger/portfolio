@@ -21,7 +21,7 @@
 
 :root {
   --padding-lr: 100px;
-  --content-limitation-lr: max(calc(50% - 720px), var(--padding-lr));
+  --content-limitation-lr: max(calc(50dvw - 720px), var(--padding-lr));
   --margin-bottom-h2: 40px;
   --margin-bottom-section: 180px;
 

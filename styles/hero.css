@@ -1,5 +1,4 @@
 .hero-section {
-  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 124px;
@@ -8,6 +7,7 @@
 
 .hero-content-wrapper {
   /* position: relative; */
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -20,7 +20,6 @@
   justify-content: center;
   width: 500px;
   overflow-x: visible;
-  padding: 0 var(--content-limitation-lr);
 }
 
 .hero-portrait {
@@ -66,7 +65,6 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-xl);
-  padding: 0 var(--content-limitation-lr);
 }
 
 .hero-introduction {
@@ -189,8 +187,13 @@
     margin-bottom: 40px;
   }
 
+  .hero-content {
+    padding: 0 var(--content-limitation-lr);
+  }
+
   .hero-portrait-wrapper {
     height: 450px;
+    padding: 0 var(--content-limitation-lr);
   }
 
   .hero-portrait {

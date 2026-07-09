@@ -146,6 +146,11 @@
   margin-bottom: 40px;
 }
 
+.bg-shadow--my-skills {
+  top: 100px;
+  left: -550px;
+}
+
 /* #region responsive */
 @media screen and (max-width: 1280px) {
   .placeholder-div {
