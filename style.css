@@ -64,7 +64,6 @@ h2 {
 
 .headline-wrapper {
   margin-bottom: var(--margin-bottom-h2);
-  gap: 32px;
 }
 
 .about-me-section,
@@ -116,7 +115,7 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px;
+  padding: 0 var(--padding-lr);
 
   width: 100%;
   height: var(--header-height);
