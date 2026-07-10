@@ -27,14 +27,14 @@ button:hover {
   margin: 5px 10px;
 }
 
-.btn-main.btn-primary1--filled:hover {
+.btn-main.btn-primary1--filled:not(:disabled):hover {
   background-color: var(--color-primary2);
 
   padding: 20px 40px 20px 40px;
   margin: 0;
 }
 
-.btn-main.btn-primary1--filled:active {
+.btn-main.btn-primary1--filled:not(:disabled):active {
   background-color: white;
   color: black;
   padding: 15px 30px;

@@ -42,6 +42,7 @@
 
 .project-section article:nth-child(2) .project-information {
   align-items: end;
+  text-align: end;
 }
 
 .project-article {
@@ -76,6 +77,24 @@
 .project-btns {
   display: flex;
   gap: 86px;
+}
+
+.project-preview img {
+  width: 400px;
+  height: 250px;
+  animation: floatingLaptop 3s ease-in-out infinite;
+}
+
+@keyframes floatingLaptop {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* #region feedback section */

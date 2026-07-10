@@ -17,6 +17,7 @@
   --transition-press-default: 100ms ease-in;
   --transition-hover-default: 100ms ease-in-out;
   --transition-hover-long: 300ms ease-in-out;
+  --transition-slide-in: transform 0.3s ease;
 
   --box-shadow-btn: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

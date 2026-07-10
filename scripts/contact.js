@@ -74,3 +74,13 @@ function styleInvalidInput(input, inputWrapper, icon) {
   inputWrapper.classList.remove("input-valid");
   icon.src = "./assets/icons/invalid-input.svg";
 }
+
+function submitForm() {}
+
+// POST Befehl
+
+formJson = {
+  name: "",
+  email: "",
+  message: "",
+};

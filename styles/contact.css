@@ -197,6 +197,31 @@
   left: -350px;
 }
 
+.contact-form-toast-msg {
+  position: fixed;
+  top: 50dvh;
+  left: 50dvw;
+  transform: translate(300%, -50%);
+  font-size: 24px;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow-btn);
+  transition: var(--transition-slide-in);
+}
+
+.valid-submit {
+  background-color: var(--color-valid);
+  transform: translate(-50%, -50%);
+  transition: var(--transition-slide-in);
+}
+
+.invalid-submit {
+  background-color: var(--color-invalid);
+  transform: translate(-50%, -50%);
+  transition: var(--transition-slide-in);
+}
+
 /* #region responsive */
 @media screen and (max-width: 1280px) {
   .headline-wrapper--contact {
