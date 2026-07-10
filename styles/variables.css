@@ -9,6 +9,8 @@
   --color-bg-soft: rgba(39, 51, 75, 1);
 
   --color-text-primary: white;
+  --color-invalid: rgba(230, 28, 64, 1);
+  --color-valid: rgba(112, 230, 28, 1);
 }
 
 :root {

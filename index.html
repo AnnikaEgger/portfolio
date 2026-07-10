@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="./style.css" />
 
+    <script src="./scripts/contact.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
   <body class="body--index">
@@ -241,15 +242,24 @@
           </svg>
 
           <div class="hero-footer-socials">
-            <a href="https://github.com/AnnikaEgger" class="social-btn">
+            <a
+              target="_blank"
+              href="https://github.com/AnnikaEgger"
+              class="social-btn"
+            >
               <img src="./assets/icons/github.svg" alt="Github Logo" />
             </a>
 
-            <a href="mailto:annikaegger83@gmail.com" class="social-btn">
+            <a
+              target="_blank"
+              href="mailto:annikaegger83@gmail.com"
+              class="social-btn"
+            >
               <img src="./assets/icons/mail.svg" alt="Email Logo" />
             </a>
 
             <a
+              target="_blank"
               href="https://www.linkedin.com/in/annika-egger-705230406/"
               class="social-btn"
             >
@@ -928,29 +938,94 @@
           <div class="contact-content-second">
             <form class="contact-form" action="">
               <div class="contact-form-inputs">
-                <input
-                  patter
-                  placeholder="Your name"
-                  type="text"
-                  name=""
-                  id=""
-                />
-                <input placeholder="Your email" type="email" name="" id="" />
-                <textarea placeholder="Your message" name="" id=""></textarea>
+                <div
+                  data-message="Your name is required"
+                  class="input-wrapper input-wrapper--input"
+                >
+                  <input
+                    onblur="validateInputOnBlur(event)"
+                    placeholder="Your name"
+                    type="text"
+                    name=""
+                    id="contact-name"
+                  />
+                  <img
+                    id="input-icon-name"
+                    class="input-icon"
+                    src="./assets/icons/invalid-input.svg"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  data-message="Your email is required"
+                  class="input-wrapper input-wrapper--input"
+                >
+                  <input
+                    onblur="validateInputOnBlur(event)"
+                    placeholder="Your email"
+                    type="email"
+                    name=""
+                    id="contact-email"
+                  />
+                  <img
+                    id="input-icon-email"
+                    class="input-icon"
+                    src="./assets/icons/invalid-input.svg"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  data-message="Your message is empty"
+                  class="input-wrapper input-wrapper--textarea"
+                >
+                  <textarea
+                    onblur="validateInputOnBlur(event)"
+                    placeholder="Your message"
+                    name=""
+                    id="contact-msg"
+                  ></textarea>
+                  <img
+                    id="input-icon-message"
+                    class="input-icon"
+                    src="./assets/icons/invalid-input.svg"
+                    alt=""
+                  />
+                </div>
               </div>
 
-              <div class="accept-privacy-container">
+              <div
+                id="accept-privacy-container"
+                data-message="Please accept the privacy policy."
+                class="accept-privacy-container"
+              >
                 <div class="checkbox-container">
-                  <input class="checkbox" type="checkbox" name="" id="" />
+                  <input
+                    onclick="validateCheckbox(event)"
+                    id="contact-privacy-checkbox"
+                    class="checkbox"
+                    type="checkbox"
+                    name=""
+                  />
                 </div>
                 <p>
                   I've read the
-                  <a href="">privacy policy</a> and agree to the processing of
-                  my data as outlined.
+                  <a href="./privacy-policy.html">privacy policy</a> and agree
+                  to the processing of my data as outlined.
                 </p>
               </div>
-              <button class="btn btn-main send-msg-btn">Send message</button>
+              <button
+                type="submit"
+                id="send-msg-btn"
+                disabled
+                class="btn btn-main send-msg-btn"
+              >
+                Send message
+              </button>
             </form>
+
+            <dialog class="contact-form-toast-msg"></dialog>
 
             <a class="go-up-btn" href="#">
               <svg
@@ -1000,7 +1075,11 @@
       <p class="footer-copyright">© Annika Egger 2026</p>
 
       <div class="footer-social-btns">
-        <a href="https://github.com/AnnikaEgger" class="social-btn">
+        <a
+          target="_blank"
+          href="https://github.com/AnnikaEgger"
+          class="social-btn"
+        >
           <img src="./assets/icons/github.svg" alt="Github Logo" />
         </a>
 
@@ -1009,6 +1088,7 @@
         </a>
 
         <a
+          target="_blank"
           href="https://www.linkedin.com/in/annika-egger-705230406/"
           class="social-btn"
         >
