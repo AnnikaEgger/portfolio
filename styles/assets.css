@@ -163,4 +163,8 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
+  .btn-main {
+    font-size: 20px;
+    padding: 8px 16px;
+  }
 }

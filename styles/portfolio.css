@@ -325,7 +325,7 @@
   }
 
   .project-btns {
-    gap: 48;
+    gap: 48px;
   }
 }
 
@@ -355,6 +355,10 @@
     width: 175px;
     height: 175px;
   }
+
+  .project-section {
+    gap: 64px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -365,6 +369,14 @@
   .svg-wrapper--feedback--circle-svg {
     width: 144px;
     height: 144px;
+  }
+
+  .project-btns {
+    gap: 24px;
+  }
+
+  .portfolio-subtitle {
+    margin-bottom: 48px;
   }
 }
 
