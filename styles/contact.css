@@ -201,7 +201,7 @@
   position: fixed;
   top: 50dvh;
   left: 50dvw;
-  transform: translate(300%, -50%);
+  transform: translate(100dvw, -50%);
   font-size: 24px;
   font-weight: 600;
   padding: 16px;

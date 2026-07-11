@@ -18,10 +18,11 @@
 
     <link rel="stylesheet" href="./style.css" />
 
+    <script src="./scripts/templates.js"></script>
     <script src="./scripts/contact.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
-  <body class="body--index">
+  <body onload="init()" class="body--index">
     <header class="site-header">
       <a href="#" class="logo-name logo-name--header">
         <span class="letter">A</span><span class="letter">n</span
@@ -79,7 +80,11 @@
         </div>
       </div>
 
-      <button class="burger-menu-header">
+      <button
+        onclick="toggleMobileMenu()"
+        id="burger-menu-header"
+        class="burger-menu-header"
+      >
         <div class="burger-menu-line burger-menu-line1"></div>
         <div class="burger-menu-line burger-menu-line2"></div>
         <div class="burger-menu-line burger-menu-line3"></div>
@@ -613,90 +618,7 @@
           skills in action.
         </p>
 
-        <section class="project-section">
-          <article class="project-article">
-            <div class="project-preview">
-              <img
-                src="./assets/img/join-preview.png"
-                alt="Preview image of the project 'Join'"
-              />
-            </div>
-            <div class="project-information">
-              <h3>Join</h3>
-              <p class="project-skills">JavaScript | HTML | CSS | Firebase</p>
-              <p class="project-description">
-                Task manager inspired by the Kanban System. Create and organize
-                tasks using drag and drop functions, assign users and
-                categories.
-              </p>
-              <div class="project-btns">
-                <a href="#" class="btn btn-main btn-primary2--filled"
-                  >Live test</a
-                >
-                <a
-                  href="https://github.com/AnnikaEgger/join-personal"
-                  class="btn btn-main btn-primary1--outline"
-                  >Github</a
-                >
-              </div>
-            </div>
-          </article>
-
-          <article class="project-article">
-            <div class="project-preview">
-              <img
-                src="./assets/img/pollo-loco-preview.png"
-                alt="Preview image of the game 'el pollo loco'"
-              />
-            </div>
-            <div class="project-information">
-              <h3>El Pollo Loco</h3>
-              <p class="project-skills">JavaScript | HTML | CSS</p>
-              <p class="project-description">
-                A simple Jump-and-Run game based on an object-oriented approach.
-                Help "Pepe Peligroso" to collect coins and salsa bottles to
-                fight against the boss chicken.
-              </p>
-              <div class="project-btns">
-                <a href="#" class="btn btn-main btn-primary2--filled"
-                  >Live test</a
-                >
-                <a
-                  href="https://github.com/AnnikaEgger/el-pollo-loco"
-                  class="btn btn-main btn-primary1--outline"
-                  >Github</a
-                >
-              </div>
-            </div>
-          </article>
-
-          <article class="project-article">
-            <div class="project-preview">
-              <img
-                src="./assets/img/pokedex-preview.png"
-                alt="Preview image of the project 'Pokédex'"
-              />
-            </div>
-            <div class="project-information">
-              <h3>Pokédex</h3>
-              <p class="project-skills">JavaScript | HTML | CSS | API</p>
-              <p class="project-description">
-                Based on the PokéAPI a simple library that provides and
-                catalogues pokemon information.
-              </p>
-              <div class="project-btns">
-                <a href="#" class="btn btn-main btn-primary2--filled"
-                  >Live test</a
-                >
-                <a
-                  href="https://github.com/AnnikaEgger/pokedex"
-                  class="btn btn-main btn-primary1--outline"
-                  >Github</a
-                >
-              </div>
-            </div>
-          </article>
-        </section>
+        <section id="project-section" class="project-section"></section>
 
         <section class="feedback-section">
           <div class="feedback-content">
@@ -821,7 +743,7 @@
             <svg
               class="svg-wrapper--feedback--line-svg"
               height="4"
-              width="100"
+              width="10000"
               viewBox="0 0 10000 4"
               preserveAspectRatio="none"
             >
