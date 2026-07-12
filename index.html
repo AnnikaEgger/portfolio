@@ -24,102 +24,106 @@
   </head>
   <body onload="init()" class="body--index">
     <header class="site-header">
-      <a href="#" class="logo-name logo-name--header">
-        <span class="letter">A</span><span class="letter">n</span
-        ><span class="letter">n</span
-        ><span class="letter letter-colored1">i</span
-        ><span class="letter">k</span
-        ><span class="letter letter-colored2">a</span>
-      </a>
+      <div class="header-content">
+        <a href="#" class="logo-name logo-name--header">
+          <span class="letter">A</span><span class="letter">n</span
+          ><span class="letter">n</span
+          ><span class="letter letter-colored1">i</span
+          ><span class="letter">k</span
+          ><span class="letter letter-colored2">a</span>
+        </a>
 
-      <div class="header-controls">
-        <nav class="header-nav">
+        <div class="header-controls">
+          <nav class="header-nav">
+            <ul>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  href="#about-me-section"
+                  >About me</a
+                >
+              </li>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  href="#my-skills-section"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  href="#portfolio-section"
+                  >Portfolio</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="language-switch">
+            <button
+              onclick="selectLanguage('german')"
+              id="de-btn"
+              class="btn btn-header btn-primary1--outline"
+            >
+              DE
+            </button>
+            <button
+              onclick="selectLanguage('english')"
+              id="en-btn"
+              class="btn btn-header btn-primary1--filled active-language"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+
+        <div id="burger-menu-header" class="burger-menu-header">
+          <input
+            class="burger-menu-hidden-checkbox"
+            type="checkbox"
+            name=""
+            id=""
+          />
+          <div class="burger-menu-line burger-menu-line-1"></div>
+          <div class="burger-menu-line burger-menu-line-2"></div>
+          <div class="burger-menu-line burger-menu-line-3"></div>
+        </div>
+      </div>
+
+      <div class="mobile-menu-wrapper">
+        <nav class="mobile-menu">
           <ul>
             <li>
-              <a
-                onclick="changeActiveHeaderLink(event)"
-                class="header-link"
-                href="#about-me-section"
+              <a class="link-mobile-menu-active" href="#about-me-section"
                 >About me</a
               >
             </li>
             <li>
-              <a
-                onclick="changeActiveHeaderLink(event)"
-                class="header-link"
-                href="#my-skills-section"
-                >Skills</a
-              >
+              <a href="#my-skills-section">My skills</a>
             </li>
             <li>
-              <a
-                onclick="changeActiveHeaderLink(event)"
-                class="header-link"
-                href="#portfolio-section"
-                >Portfolio</a
-              >
+              <a href="#portfolio-section">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact-section">Contact</a>
+            </li>
+            <li>
+              <div class="language-btns-mobile">
+                <button class="language-btn-mobile language-btn-mobile-active">
+                  EN
+                </button>
+                <span> / </span>
+                <button class="language-btn-mobile">DE</button>
+              </div>
             </li>
           </ul>
         </nav>
-
-        <div class="language-switch">
-          <button
-            onclick="selectLanguage('german')"
-            id="de-btn"
-            class="btn btn-header btn-primary1--outline"
-          >
-            DE
-          </button>
-          <button
-            onclick="selectLanguage('english')"
-            id="en-btn"
-            class="btn btn-header btn-primary1--filled active-language"
-          >
-            EN
-          </button>
-        </div>
       </div>
-
-      <button
-        onclick="toggleMobileMenu()"
-        id="burger-menu-header"
-        class="burger-menu-header"
-      >
-        <div class="burger-menu-line burger-menu-line1"></div>
-        <div class="burger-menu-line burger-menu-line2"></div>
-        <div class="burger-menu-line burger-menu-line3"></div>
-      </button>
     </header>
-
-    <div class="mobile-menu-wrapper">
-      <nav class="mobile-menu">
-        <ul>
-          <li>
-            <a class="link-mobile-menu-active" href="#about-me-section"
-              >About me</a
-            >
-          </li>
-          <li>
-            <a href="#my-skills-section">My skills</a>
-          </li>
-          <li>
-            <a href="#portfolio-section">Portfolio</a>
-          </li>
-          <li>
-            <a href="#contact-section">Contact</a>
-          </li>
-          <li>
-            <div class="language-btns-mobile">
-              <button class="language-btn-mobile language-btn-mobile-active">
-                EN
-              </button>
-              <span> / </span>
-              <button class="language-btn-mobile">DE</button>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
 
     <main>
       <section id="hero-section" class="hero-section">
@@ -871,7 +875,11 @@
           </div>
 
           <div class="contact-content-second">
-            <form class="contact-form" action="">
+            <form
+              class="contact-form"
+              action="contact-form-mail.php"
+              method="post"
+            >
               <div class="contact-form-inputs">
                 <div
                   data-message="Your name is required"

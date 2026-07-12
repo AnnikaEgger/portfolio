@@ -157,14 +157,14 @@ const projectJson = {
 
 // #region burger menu
 
-function toggleMobileMenu() {
-  animateBurgerMenu();
-}
+// function toggleMobileMenu() {
+//   animateBurgerMenu();
+// }
 
-function animateBurgerMenu() {
-  document.querySelectorAll(".burger-menu-line").forEach((line) => {
-    line.classList.add("animate-line");
-  });
-}
+// function animateBurgerMenu() {
+//   document.querySelectorAll(".burger-menu-line").forEach((line) => {
+//     line.classList.add("animate-line");
+//   });
+// }
 
 // #endregion

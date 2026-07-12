@@ -27,6 +27,8 @@
 .hero-portrait {
   position: absolute;
   bottom: 0;
+  width: 500px;
+  height: auto;
 }
 
 .hero-portrait--full {

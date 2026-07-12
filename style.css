@@ -153,6 +153,15 @@ input[type="checkbox"] {
   background-color: var(--color-bg-dark);
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  z-index: 999;
+}
+
 .logo-name--header .letter {
   font-size: 36px;
 }
@@ -229,7 +238,7 @@ input[type="checkbox"] {
 .mobile-menu-wrapper {
   position: fixed;
   top: 0;
-  display: none;
+  left: 0;
   align-items: center;
   justify-content: center;
   width: 100dvw;
@@ -273,91 +282,173 @@ input[type="checkbox"] {
   background-color: var(--color-primary2);
 }
 
+.burger-menu-hidden-checkbox {
+  z-index: 10;
+  appearance: none;
+  background-color: transparent;
+  width: 30px;
+  height: 50px;
+}
+
 .burger-menu-line {
   position: absolute;
   width: 30px;
   border: 1px solid white;
   border-radius: 2px;
   background-color: white;
+  transform-origin: center;
+
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .burger-menu-line1 {
   top: 0px;
-  animation-name: animateLine1;
-  transform-origin: center;
 }
 
 .burger-menu-line2 {
   top: 12px;
-  animation-name: animateLine2;
-  transform-origin: center;
 }
 
 .burger-menu-line3 {
   top: 24px;
-  animation-name: animateLine3;
-  transform-origin: center;
 }
 
-@keyframes animateLine1 {
+.site-header:has(.burger-menu-hidden-checkbox:checked) .mobile-menu-wrapper {
+  display: flex;
+}
+
+.site-header:has(.burger-menu-hidden-checkbox:not(:checked))
+  .mobile-menu-wrapper {
+  display: none;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-1 {
+  animation-name: animateLine1-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-1 {
+  animation-name: animateLine1-close;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-2 {
+  animation-name: animateLine2-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-2 {
+  animation-name: animateLine2-close;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-3 {
+  animation-name: animateLine3-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-3 {
+  animation-name: animateLine3-close;
+}
+
+@keyframes animateLine1-open {
   0% {
     top: 0;
     rotate: 0deg;
   }
-
   25% {
     top: 0;
     rotate: 0deg;
   }
-
   50% {
     top: 12px;
     rotate: -51deg;
   }
-
   100% {
     top: 12px;
     rotate: -46.5deg;
   }
 }
 
-@keyframes animateLine2 {
+@keyframes animateLine1-close {
+  0% {
+    top: 12px;
+    rotate: -46.5deg;
+  }
+  50% {
+    top: 12px;
+    rotate: -51deg;
+  }
+  75% {
+    top: 0;
+    rotate: 0deg;
+  }
+  100% {
+    top: 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes animateLine2-open {
   0% {
     width: 30px;
   }
-
   25% {
     width: 10px;
   }
-
   50% {
     width: 5px;
   }
-
   100% {
     width: 0px;
   }
 }
 
-@keyframes animateLine3 {
+@keyframes animateLine2-close {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 5px;
+  }
+  75% {
+    width: 10px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+@keyframes animateLine3-open {
   0% {
     top: 24px;
-    rotate: 0;
+    rotate: 0deg;
   }
-
   25% {
     top: 24px;
-    rotate: 0;
+    rotate: 0deg;
   }
-
   50% {
     top: 12px;
     rotate: 51deg;
   }
-
   100% {
     top: 12px;
     rotate: 46.5deg;
+  }
+}
+
+@keyframes animateLine3-close {
+  0% {
+    top: 12px;
+    rotate: 46.5deg;
+  }
+  50% {
+    top: 12px;
+    rotate: 51deg;
+  }
+  75% {
+    top: 24px;
+    rotate: 0deg;
+  }
+  100% {
+    top: 24px;
+    rotate: 0deg;
   }
 }
 
@@ -371,13 +462,6 @@ input[type="checkbox"] {
 
   .burger-menu-header {
     display: flex;
-  }
-
-  .animate-line {
-    animation-duration: 1000ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
   }
 }
 
