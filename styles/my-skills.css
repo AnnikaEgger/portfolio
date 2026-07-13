@@ -1,6 +1,6 @@
 .my-skills-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) calc(
+  grid-template-columns: fit-content calc(
       var(--content-limitation-lr) + var(--space-l)
     );
   grid-template-areas:
@@ -8,7 +8,6 @@
     "skills-list bottom-right . ";
   padding-left: var(--content-limitation-lr);
   text-align: right;
-  /* align-items: start; */
 }
 
 .skills-list {
@@ -126,6 +125,7 @@
   margin-left: var(--space-l);
   stroke-linecap: round;
   width: max(calc(50dvw - 720px + 68px), 68px);
+  grid-area: skills-line;
 }
 
 .my-skills--br {

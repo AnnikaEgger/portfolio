@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Annika Egger</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo-initials.png"
+      type="image/x-icon"
+    />
 
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
@@ -25,12 +30,14 @@
   <body onload="init()" class="body--index">
     <header class="site-header">
       <div class="header-content">
-        <a href="#" class="logo-name logo-name--header">
-          <span class="letter">A</span><span class="letter">n</span
-          ><span class="letter">n</span
-          ><span class="letter letter-colored1">i</span
-          ><span class="letter">k</span
-          ><span class="letter letter-colored2">a</span>
+        <a href="#" class="logo logo-name--header">
+          <div class="logo-right">
+            <img
+              class="logo-initials"
+              src="./assets/img/logo-initials.png"
+              alt=""
+            />
+          </div>
         </a>
 
         <div class="header-controls">
@@ -217,6 +224,33 @@
               alt="Portrait of Annika Egger"
               class="hero-portrait hero-portrait--ellbow"
             />
+
+            <!-- <svg
+              class="hero-wave-bg"
+              viewBox="0 0 1442 1079"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
+                fill="url(#paint0_radial_535_3084)"
+              />
+              <defs>
+                <radialGradient
+                  id="paint0_radial_535_3084"
+                  cx="0"
+                  cy="0"
+                  r="1"
+                  gradientUnits="userSpaceOnUse"
+                  gradientTransform="translate(674 42.5) rotate(82.2154) scale(887.756 1492.19)"
+                >
+                  <stop offset="0.00372417" stop-color="#1A2743" />
+                  <stop offset="0.135417" stop-color="#27334B" />
+                  <stop offset="0.719125" stop-color="#141D2F" />
+                </radialGradient>
+              </defs>
+            </svg> -->
           </div>
 
           <div class="hero-content">
@@ -1010,11 +1044,13 @@
 
     <footer class="site-footer">
       <a href="#" class="logo-name logo-name--footer">
+        <span class="bracket letter-colored1">&#123;</span>
         <span class="letter">A</span><span class="letter">n</span
         ><span class="letter">n</span
-        ><span class="letter letter-colored1">i</span
+        ><span class="letter letter-colored1">;</span
         ><span class="letter">k</span
         ><span class="letter letter-colored2">a</span>
+        <span class="bracket letter-colored1">&#125;</span>
       </a>
 
       <p class="footer-copyright">© Annika Egger 2026</p>

@@ -132,4 +132,8 @@ h3 {
     padding-left: var(--content-limitation-lr);
     gap: 14px;
   }
+
+  .content-wrapper {
+    width: 100%;
+  }
 }
