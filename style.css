@@ -142,14 +142,16 @@ input[type="checkbox"] {
 .site-header {
   position: sticky;
   top: 0;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--padding-lr);
+
+  padding: 0 var(--content-limitation-lr);
 
   width: 100%;
+
   height: var(--header-height);
-  z-index: 999;
   background-color: var(--color-bg-dark);
 }
 
@@ -239,6 +241,7 @@ input[type="checkbox"] {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100dvw;
@@ -246,6 +249,9 @@ input[type="checkbox"] {
   background-color: rgba(20, 29, 47, 0.8);
   z-index: 998;
   text-align: center;
+  transform: translateX(100dvw);
+
+  transition: var(--transition-slide-in);
 }
 
 .mobile-menu ul {
@@ -300,7 +306,6 @@ input[type="checkbox"] {
 
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
@@ -317,12 +322,8 @@ input[type="checkbox"] {
 }
 
 .site-header:has(.burger-menu-hidden-checkbox:checked) .mobile-menu-wrapper {
-  display: flex;
-}
-
-.site-header:has(.burger-menu-hidden-checkbox:not(:checked))
-  .mobile-menu-wrapper {
-  display: none;
+  transform: translateX(0);
+  transition: var(--transition-slide-in);
 }
 
 .burger-menu-hidden-checkbox:checked ~ .burger-menu-line-1 {
@@ -482,7 +483,7 @@ input[type="checkbox"] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
-  padding: 120px 100px 80px 100px;
+  padding: 120px var(--content-limitation-lr) 80px var(--content-limitation-lr);
   height: 290px;
 
   border-top: 4px solid var(--color-primary1);

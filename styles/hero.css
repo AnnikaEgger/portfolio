@@ -5,15 +5,15 @@
   margin-bottom: 124px;
   width: 100%;
   height: calc(100dvh - var(--header-height));
+  box-sizing: content-box;
 }
 
 .hero-content-wrapper {
-  /* position: relative; */
   align-self: center;
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 120px;
+  margin-top: -80px;
 }
 
 .hero-portrait-wrapper {
@@ -27,8 +27,8 @@
 .hero-portrait {
   position: absolute;
   bottom: 0;
-  width: 500px;
-  height: auto;
+  /* width: 500px; */
+  height: 600px;
 }
 
 .hero-portrait--full {
@@ -124,7 +124,7 @@
   grid-template-columns: repeat(3, max-content);
   align-items: center;
   gap: 32px;
-  padding-bottom: 16px;
+  padding-bottom: 32px;
 }
 
 .hero-footer-mail {

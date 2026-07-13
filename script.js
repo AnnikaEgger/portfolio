@@ -157,14 +157,17 @@ const projectJson = {
 
 // #region burger menu
 
-// function toggleMobileMenu() {
-//   animateBurgerMenu();
-// }
+// const header = document.getElementById("site-header");
+// const checkbox = document.getElementById("burger-menu-hidden-checkbox");
 
-// function animateBurgerMenu() {
-//   document.querySelectorAll(".burger-menu-line").forEach((line) => {
-//     line.classList.add("animate-line");
-//   });
-// }
+// checkbox.addEventListener("change", (e) => {
+//   if (e.target.checked) {
+//     header.classList.remove("is-closing");
+//     header.classList.add("is-active");
+//   } else {
+//     header.classList.remove("is-active");
+//     header.classList.add("is-closing");
+//   }
+// });
 
 // #endregion
