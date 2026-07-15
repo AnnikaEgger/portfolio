@@ -117,7 +117,7 @@ const PROJECTS = [
     title: "Join",
     skills: "JavaScript | HTML | CSS | Firebase",
     description:
-      "  Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users andcategories.",
+      "  Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     live_test_url: "/",
     github_url: "https://github.com/AnnikaEgger/join-personal",
   },
@@ -157,17 +157,18 @@ const projectJson = {
 
 // #region burger menu
 
-// const header = document.getElementById("site-header");
-// const checkbox = document.getElementById("burger-menu-hidden-checkbox");
+function closeMobileMenu() {
+  document.getElementById("burger-menu-hidden-checkbox").checked = false;
+}
 
-// checkbox.addEventListener("change", (e) => {
-//   if (e.target.checked) {
-//     header.classList.remove("is-closing");
-//     header.classList.add("is-active");
-//   } else {
-//     header.classList.remove("is-active");
-//     header.classList.add("is-closing");
-//   }
-// });
+// function changeActiveHeaderLink(event) {
+//   const allLinks = document.querySelectorAll(".header-link");
+
+//   allLinks.forEach((link) => {
+//     link.classList.remove("header-active");
+//   });
+
+//   event.target.classList.add("header-active");
+// }
 
 // #endregion

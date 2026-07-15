@@ -49,6 +49,12 @@
   display: flex;
   align-items: center;
   gap: 150px;
+
+  animation: fade-in-out linear both;
+  animation-timeline: view();
+  animation-range:
+    entry cover 0% cover 20%,
+    entry cover 80% cover 100%;
 }
 
 .project-information {
@@ -83,6 +89,7 @@
 .project-preview {
   /* transform-style: preserve-3d; */
   animation: floatingLaptop 3s ease-in-out infinite;
+  transform: rotate3d (1 1 1 20deg);
 }
 
 .project-preview img {

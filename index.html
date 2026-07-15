@@ -93,7 +93,7 @@
             class="burger-menu-hidden-checkbox"
             type="checkbox"
             name=""
-            id=""
+            id="burger-menu-hidden-checkbox"
           />
           <div class="burger-menu-line burger-menu-line-1"></div>
           <div class="burger-menu-line burger-menu-line-2"></div>
@@ -105,18 +105,25 @@
         <nav class="mobile-menu">
           <ul>
             <li>
-              <a class="link-mobile-menu-active" href="#about-me-section"
+              <a
+                onclick="closeMobileMenu()"
+                class="link-mobile-menu-active"
+                href="#about-me-section"
                 >About me</a
               >
             </li>
             <li>
-              <a href="#my-skills-section">My skills</a>
+              <a onclick="closeMobileMenu()" href="#my-skills-section"
+                >My skills</a
+              >
             </li>
             <li>
-              <a href="#portfolio-section">Portfolio</a>
+              <a onclick="closeMobileMenu()" href="#portfolio-section"
+                >Portfolio</a
+              >
             </li>
             <li>
-              <a href="#contact-section">Contact</a>
+              <a onclick="closeMobileMenu()" href="#contact-section">Contact</a>
             </li>
             <li>
               <div class="language-btns-mobile">
@@ -134,6 +141,32 @@
 
     <main>
       <section id="hero-section" class="hero-section">
+        <svg
+          class="hero-wave-bg"
+          viewBox="0 0 1442 1079"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
+            fill="url(#paint0_radial_535_3084)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_535_3084"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(674 42.5) rotate(82.2154) scale(887.756 1492.19)"
+            >
+              <stop offset="0.00372417" stop-color="#1A2743" />
+              <stop offset="0.135417" stop-color="#27334B" />
+              <stop offset="0.719125" stop-color="#141D2F" />
+            </radialGradient>
+          </defs>
+        </svg>
         <div class="hero-content-wrapper">
           <div class="hero-portrait-wrapper">
             <div class="hero-portrait-shadows">
@@ -319,42 +352,15 @@
           <p>Scroll down</p>
           <img src="./assets/icons/arrow-down.svg" alt="Arrow Down Icon" />
         </div>
-
-        <svg
-          class="hero-wave-bg"
-          viewBox="0 0 1442 1079"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M1442 0V712.4C1417.8 724.3 1393 735.9 1367.7 747.3C1174.2 834.1 943.8 908.2 682.9 967.3C404.9 1030.3 152.1 1063 2 1078.6L0 421.5C236 441.5 353.4 434.372 569.5 385C984 290.3 1281.7 152.1 1442 0Z"
-            fill="url(#paint0_radial_535_3084)"
-          />
-          <defs>
-            <radialGradient
-              id="paint0_radial_535_3084"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(674 42.5) rotate(82.2154) scale(887.756 1492.19)"
-            >
-              <stop offset="0.00372417" stop-color="#1A2743" />
-              <stop offset="0.135417" stop-color="#27334B" />
-              <stop offset="0.719125" stop-color="#141D2F" />
-            </radialGradient>
-          </defs>
-        </svg>
       </section>
 
       <section id="about-me-section" class="about-me-section">
         <article class="about-me-text">
           <h2 class="index-h2">About me</h2>
           <p class="about-me-top-text">
-            Write some information about yourself that is IT related. Why are
-            you passionate about coding? What is your source of inspiration for
-            improving your programming skills?
+            Software development combines the things I enjoy most: deeply
+            analyzing complex problems, constantly expanding my knowledge, and
+            bringing clarity and structure to complexity.
           </p>
           <ul class="about-me-list">
             <li>
@@ -365,8 +371,8 @@
                 />
               </div>
               <p>
-                Where are you located? Are you open to different ways of
-                working, such as working remotely or even relocating?
+                I'm based near Augsburg, open to remote work and willing to
+                relocate.
               </p>
             </li>
 
@@ -378,8 +384,9 @@
                 />
               </div>
               <p>
-                Show that you are open-minded. Are you enthusiastic about
-                learning new technologies and continually improving your skills?
+                I'm driven by curiosity and a desire to improve. Learning new
+                technologies and expanding my skills is something I genuinely
+                enjoy.
               </p>
             </li>
 
@@ -388,10 +395,10 @@
                 <img src="./assets/icons/puzzle-icon.svg" alt="Puzzle icon" />
               </div>
               <p>
-                A brief description of your problem-solving approach. Do you
-                learn from each challenge as you search for the most efficient
-                or elegant solution? You can include some keywords like:
-                analytical thinking, creativity, persistence and collaboration.
+                I believe good solutions start with a deep understanding of the
+                problem. Through analytical thinking and a structured approach,
+                I break down complex challenges and develop sustainable
+                solutions.
               </p>
             </li>
           </ul>
@@ -501,7 +508,6 @@
                 </ul>
               </div>
             </div>
-            <!-- <img src="./assets/icons/learning-icon.svg" alt="Material Design" /> -->
             <svg
               width="60"
               height="60"
@@ -552,7 +558,8 @@
             Looking for <span>another skill</span>?
           </p>
           <p class="my-skills--br--text">
-            Reveal enthusiasm for learning new technologies and frameworks.
+            Always curious and motivated to dive into new technologies and
+            frameworks.
           </p>
           <a href="#contact-section" class="btn btn-main btn-primary1--filled">
             Get in touch
@@ -905,7 +912,7 @@
               interested in. Show that you will add value to their projects
               through your work.
             </p>
-            <p>Need a Frontend developer? <b>Contact me!</b></p>
+            <p>Need a Fullstack developer? <b>Contact me!</b></p>
           </div>
 
           <div class="contact-content-second">
