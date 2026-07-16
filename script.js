@@ -3,6 +3,7 @@ let currentFeedback = 0;
 
 function init() {
   renderPortfolioProjects();
+  renderCurrentFeedback();
 }
 
 function changeActiveHeaderLink(event) {
@@ -48,7 +49,7 @@ function setCurrentFeedback(direction) {
     else currentFeedback++;
   } else {
     if (isFirstFeedback()) currentFeedback = FEEDBACKS.length - 1;
-    else currentFeedback++;
+    else currentFeedback--;
   }
 }
 
@@ -61,13 +62,20 @@ function isFirstFeedback() {
 }
 
 function renderCurrentFeedback() {
-  const text = document.getElementById("feedback-text");
   const author = document.getElementById("feedback-author");
   const img = document.getElementById("feedback-image");
 
-  text.innerText = FEEDBACKS[currentFeedback].text;
+  renderFeedbackText();
   author.innerText = FEEDBACKS[currentFeedback].author;
   img.href = FEEDBACKS[currentFeedback].img_src;
+}
+
+function renderFeedbackText() {
+  const text = document.getElementById("feedback-text");
+
+  if (language == "english")
+    text.innerText = FEEDBACKS[currentFeedback].text_english;
+  else text.innerText = FEEDBACKS[currentFeedback].text_german;
 }
 
 function changeActiveDot() {
@@ -81,20 +89,31 @@ function changeActiveDot() {
   activeDot.classList.add("active-dot");
 }
 
+// Die Zusammenarbeit mit Annika war eine große Bereicherung für unser Team.
+
 const FEEDBACKS = [
   {
-    text: "Michael really kept the team together with his great organization and clear communication. We wouldn't have got this far without his commitment.",
-    author: "V. Schuster - Team Partner",
+    text_german:
+      "Annika erwies sich als kompetente Problemlöserin. Sie arbeitete sich intensiv in technische Herausforderungen ein, entwickelte effektive Lösungen und testete das Projekt gründlich, um Fehler frühzeitig zu erkennen und eigenständig zu beheben.",
+    text_english:
+      "Annika proved to be a skilled problem solver. She thoroughly explored technical challenges, developed effective solutions, and tested the project carefully to identify and resolve issues early on.",
+    author: "C. Nguyen-Wellmann - Team Partner",
     img_src: "./assets/img/about-me-portrait.png",
   },
   {
-    text: "Michi was a top team colleague at DA. His positive commitment and willingness to take on responsibility made a significant contribution to us achieving our goals.",
-    author: "V. Schuster - Team Partner",
+    text_german:
+      "Annika überzeugte durch ihre zielstrebige, strukturierte Arbeitsweise, ihr Organisationstalent und ihre Initiative. Durch ihre eigenständige Koordination und Problemlösungskompetenz war sie eine wichtige Stütze des Projekts.",
+    text_english:
+      "Annika impressed us with her goal-oriented, structured way of working, strong organizational skills, and initiative. Through her coordination and problem-solving abilities, she was a valuable support throughout the project.",
+    author: "K. Mathea - Team Partner",
     img_src: "./assets/img/about-me-portrait.png",
   },
   {
-    text: "It was a great pleasure to work with Michael. He knows how to push and encourage team members to present the best work possible, always adding something to brainstorm. Regarding the well-being of group members, he was always present and available to listen and help others, with a great sense of humor as well.",
-    author: "I.Nuber - Frontend Engineer",
+    text_german:
+      "Annika hat fantastische Arbeit geleistet und war für unser Team eine enorme Bereicherung. Besonders im Firebase-Backend hat sie einen extrem wichtigen Teil übernommen und super strukturierten Code geliefert. ",
+    text_english:
+      "Annika did a fantastic job and was a great asset to our team. She took on a crucial role in the Firebase backend and consistently delivered clean, well-structured code.",
+    author: "L. Weigang - Team Partner",
     img_src: "./assets/img/about-me-portrait.png",
   },
 ];
@@ -127,7 +146,7 @@ const PROJECTS = [
     title: "El Pollo Loco",
     skills: "JavaScript | HTML | CSS",
     description:
-      " A simple Jump-and-Run game based on an object-oriented approach. Help Pepe Peligroso to collect coins and salsa bottles to fight against the boss chicken.",
+      " A simple Jump-and-Run game based on an object-oriented approach. Help &quot;Pepe Peligroso&quot; collect coins and salsa bottles to fight against the boss chicken.",
     live_test_url: "/",
     github_url: "https://github.com/AnnikaEgger/el-pollo-loco",
   },
