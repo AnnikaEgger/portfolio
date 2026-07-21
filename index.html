@@ -47,6 +47,8 @@
                 <a
                   onclick="changeActiveHeaderLink(event)"
                   class="header-link"
+                  data-section="header"
+                  data-key="about"
                   href="#about-me-section"
                   >About me</a
                 >
@@ -55,6 +57,8 @@
                 <a
                   onclick="changeActiveHeaderLink(event)"
                   class="header-link"
+                  data-section="header"
+                  data-key="skills"
                   href="#my-skills-section"
                   >Skills</a
                 >
@@ -63,6 +67,8 @@
                 <a
                   onclick="changeActiveHeaderLink(event)"
                   class="header-link"
+                  data-section="header"
+                  data-key="portfolio"
                   href="#portfolio-section"
                   >Portfolio</a
                 >
@@ -109,21 +115,37 @@
                 onclick="closeMobileMenu()"
                 class="link-mobile-menu-active"
                 href="#about-me-section"
+                data-section="burger_menu"
+                data-key="about"
                 >About me</a
               >
             </li>
             <li>
-              <a onclick="closeMobileMenu()" href="#my-skills-section"
+              <a
+                onclick="closeMobileMenu()"
+                href="#my-skills-section"
+                data-section="burger_menu"
+                data-key="skills"
                 >My skills</a
               >
             </li>
             <li>
-              <a onclick="closeMobileMenu()" href="#portfolio-section"
+              <a
+                onclick="closeMobileMenu()"
+                href="#portfolio-section"
+                data-section="burger_menu"
+                data-key="portfolio"
                 >Portfolio</a
               >
             </li>
             <li>
-              <a onclick="closeMobileMenu()" href="#contact-section">Contact</a>
+              <a
+                onclick="closeMobileMenu()"
+                href="#contact-section"
+                data-section="burger_menu"
+                data-key="contact"
+                >Contact</a
+              >
             </li>
             <li>
               <div class="language-btns-mobile">
@@ -289,16 +311,25 @@
           <div class="hero-content">
             <div class="hero-introduction">
               <div class="hero-introduction-i-am">
-                <span>I</span><span>am</span>
+                <span data-section="hero" data-key="greeting_1">I</span
+                ><span data-section="hero" data-key="greeting_2">am</span>
               </div>
               <div class="hero-introduction-right">
                 <h1 class="index-h1">Annika Egger</h1>
-                <p class="hero-introduction-title">Fullstack Developer</p>
+                <p
+                  class="hero-introduction-title"
+                  data-section="hero"
+                  data-key="title"
+                >
+                  Fullstack Developer
+                </p>
               </div>
             </div>
             <a
               href="#contact-section"
               class="btn btn-main btn-primary1--filled"
+              data-section="hero"
+              data-key="cta"
             >
               Let’s talk!
             </a>
@@ -349,15 +380,21 @@
         </footer>
 
         <div class="scroll-down-wrapper">
-          <p>Scroll down</p>
+          <p data-section="hero" data-key="scroll">Scroll down</p>
           <img src="./assets/icons/arrow-down.svg" alt="Arrow Down Icon" />
         </div>
       </section>
 
       <section id="about-me-section" class="about-me-section">
         <article class="about-me-text">
-          <h2 class="index-h2">About me</h2>
-          <p class="about-me-top-text">
+          <h2 class="index-h2" data-section="about_me" data-key="h2">
+            About me
+          </h2>
+          <p
+            class="about-me-top-text"
+            data-section="about_me"
+            data-key="subtext"
+          >
             Software development combines the things I enjoy most: deeply
             analyzing complex problems, constantly expanding my knowledge, and
             bringing clarity and structure to complexity.
@@ -370,7 +407,7 @@
                   alt="Location icon"
                 />
               </div>
-              <p>
+              <p data-section="about_me" data-key="location">
                 I'm based near Augsburg, open to remote work and willing to
                 relocate.
               </p>
@@ -383,7 +420,7 @@
                   alt="Light bulb icon"
                 />
               </div>
-              <p>
+              <p data-section="about_me" data-key="learning">
                 I'm driven by curiosity and a desire to improve. Learning new
                 technologies and expanding my skills is something I genuinely
                 enjoy.
@@ -394,7 +431,7 @@
               <div class="about-me-list-icon-wrapper puzzle-icon">
                 <img src="./assets/icons/puzzle-icon.svg" alt="Puzzle icon" />
               </div>
-              <p>
+              <p data-section="about_me" data-key="problem_solving">
                 I believe good solutions start with a deep understanding of the
                 problem. Through analytical thinking and a structured approach,
                 I break down complex challenges and develop sustainable
@@ -488,7 +525,9 @@
             <div class="text-bubble-learning">
               <img src="./assets/icons/text-bubble.svg" alt="Text bubble" />
               <div class="text-bubble-content-wrapper">
-                <p>I have a special interest in learning</p>
+                <p data-section="skills" data-key="special_interest">
+                  I have a special interest in learning
+                </p>
                 <ul class="learning-skills-wrapper">
                   <li class="learning-skill">
                     <img src="./assets/icons/react.svg" alt="React Logo" />
@@ -539,8 +578,10 @@
         <div class="placeholder-div"></div>
 
         <div class="my-skills--tr">
-          <h2 class="index-h2">My skills</h2>
-          <p>
+          <h2 class="index-h2" data-section="skills" data-key="h2">
+            My skills
+          </h2>
+          <p data-section="skills" data-key="subtext">
             My frontend development training has given me hands-on experience
             with a broad range of technologies. Backend skills will be added
             soon.
@@ -549,13 +590,27 @@
 
         <div class="my-skills--br">
           <p class="looking-for-skill">
-            Looking for <span>another skill</span>?
+            <span data-section="skills" data-key="looking_for"
+              >Looking for</span
+            >
+            <span data-section="skills" data-key="another_skill"
+              >another skill</span
+            >?
           </p>
-          <p class="my-skills--br--text">
+          <p
+            class="my-skills--br--text"
+            data-section="skills"
+            data-key="missing_skills_answer"
+          >
             Always curious and motivated to dive into new technologies and
             frameworks.
           </p>
-          <a href="#contact-section" class="btn btn-main btn-primary1--filled">
+          <a
+            href="#contact-section"
+            class="btn btn-main btn-primary1--filled"
+            data-section="skills"
+            data-key="cta"
+          >
             Get in touch
           </a>
         </div>
@@ -635,7 +690,9 @@
             />
           </svg>
 
-          <h2 class="index-h2">Portfolio</h2>
+          <h2 class="index-h2" data-section="portfolio" data-key="h2">
+            Portfolio
+          </h2>
           <svg
             class="portfolio-line-right"
             height="4"
@@ -890,19 +947,26 @@
               vector-effect="non-scaling-stroke"
             />
           </svg>
-          <h2 class="index-h2">Contact</h2>
+          <h2 class="index-h2" data-section="contact" data-key="h2">Contact</h2>
         </div>
 
         <div class="contact-content-wrapper">
           <div class="contact-content-first">
-            <p class="got-a-problem">Got a problem to solve?</p>
-            <p>
+            <p class="got-a-problem" data-section="contact" data-key="problem">
+              Got a problem to solve?
+            </p>
+            <p data-section="contact" data-key="role">
               I'm looking for a backend or full-stack role with a backend focus.
               I'd love to hear from you if you're looking for a developer who
               enjoys solving complex problems and creating sustainable
               solutions.
             </p>
-            <p>Need a Fullstack developer? <b>Contact me!</b></p>
+            <p>
+              <span data-section="contact" data-key="need"
+                >Need a Fullstack developer?</span
+              >
+              <b data-section="contact" data-key="cta">Contact me!</b>
+            </p>
           </div>
 
           <div class="contact-content-second">
@@ -984,9 +1048,18 @@
                   />
                 </div>
                 <p>
-                  I've read the
-                  <a href="./privacy-policy.html">privacy policy</a> and agree
-                  to the processing of my data as outlined.
+                  <span data-section="contact" data-key="ive_read">
+                    I've read the</span
+                  >
+                  <a
+                    href="./privacy-policy.html"
+                    data-section="contact"
+                    data-key="privacy_policy"
+                    >privacy policy</a
+                  >
+                  <span data-section="contact" data-key="agree"
+                    >and agree to the processing of my data as outlined.</span
+                  >
                 </p>
               </div>
               <button
@@ -994,13 +1067,17 @@
                 id="send-msg-btn"
                 disabled
                 class="btn btn-main send-msg-btn btn-primary1--filled"
+                data-section="contact"
+                data-key="submit_form"
               >
                 Send message
               </button>
             </form>
 
             <div class="contact-form-toast-msg">
-              <p>Message sent successfully</p>
+              <p data-section="contact" data-key="form_toast">
+                Message sent successfully
+              </p>
             </div>
 
             <a class="go-up-btn" href="#">
@@ -1074,7 +1151,13 @@
         </a>
       </div>
 
-      <a class="legal-notice-footer" href="./legal-notice.html">Legal Notice</a>
+      <a
+        class="legal-notice-footer"
+        href="./legal-notice.html"
+        data-section="footer"
+        data-key="legal_notice"
+        >Legal Notice</a
+      >
     </footer>
   </body>
 </html>
