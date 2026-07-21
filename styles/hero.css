@@ -153,6 +153,7 @@
   gap: 8px;
   writing-mode: sideways-rl;
   font-size: 24px;
+  margin-bottom: 16px;
 }
 
 .scroll-down-wrapper img {

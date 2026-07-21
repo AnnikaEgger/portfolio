@@ -19,15 +19,17 @@ function changeActiveHeaderLink(event) {
 
 // #region language
 
-function selectLanguage(selectedLanguage) {
+function selectLanguage(selectedLanguage, currentSite) {
   language = selectedLanguage;
   styleLanguageButtons();
-  translatePage();
+
+  renderTexts();
+  if (currentSite == "index") translatePage();
+  else if (currentSite == "legal-notice") renderContent();
 }
 
 function translatePage() {
   renderPortfolioProjects();
-  renderTexts();
   translateContactFormPlaceholders();
   renderCurrentFeedback();
 }
@@ -77,7 +79,7 @@ const textJson = {
       subtext:
         "Software development combines the things I enjoy most: deeply analyzing complex problems, constantly expanding my knowledge, and bringing clarity and structure to complexity.",
       location:
-        "I'm based near Augsburg, open to remote work and willing to relocate.",
+        "I'm based near Augsburg, open to remote work and willing to relocate for the right opportunity.",
       learning:
         "I'm driven by curiosity and a desire to improve. Learning new technologies and expanding my skills is something I genuinely enjoy.",
       problem_solving:
@@ -86,9 +88,9 @@ const textJson = {
     skills: {
       h2: "My skills",
       subtext:
-        "My frontend development training has given me hands-on experience with a broad range of technologies. Backend skills will be added soon.",
-      looking_for: "looking for",
-      another_skill: "another skill?",
+        "My full-stack development training has given me hands-on experience with a broad range of technologies.",
+      looking_for: "Looking for",
+      another_skill: "another skill",
       missing_skills_answer:
         "Always curious and motivated to dive into new technologies and frameworks.",
       cta: "Get in touch",
@@ -131,48 +133,48 @@ const textJson = {
       greeting_1: "Ich",
       greeting_2: "bin",
       title: "Fullstack Entwicklerin",
-      cta: "Let's talk!",
+      cta: "Lass uns sprechen!",
       scroll: "Scrolle nach unten",
     },
     about_me: {
-      h2: "About me",
+      h2: "Über mich",
       subtext:
-        "Software development combines the things I enjoy most: deeply analyzing complex problems, constantly expanding my knowledge, and bringing clarity and structure to complexity.",
+        "Softwareentwicklung verbindet die Dinge, die mich am meisten begeistern: komplexe Probleme tiefgehend zu analysieren, mein Wissen stetig zu erweitern und Klarheit sowie Struktur in komplexe Sachverhalte zu bringen.",
       location:
-        "I'm based near Augsburg, open to remote work and willing to relocate.",
+        "Ich wohne in der Nähe von Augsburg, bin offen für Remote-Arbeit und bereit, für die passende Stelle umzuziehen.",
       learning:
-        "I'm driven by curiosity and a desire to improve. Learning new technologies and expanding my skills is something I genuinely enjoy.",
+        "Neugier und der Wunsch, mich konstant weiterzuentwickeln, treiben mich an. Neue Technologien zu lernen und meine Fähigkeiten zu erweitern, macht mir wirklich Freude.",
       problem_solving:
-        "I believe good solutions start with a deep understanding of the problem. Through analytical thinking and a structured approach, I break down complex challenges and develop sustainable solutions.",
+        "Ich bin davon überzeugt, dass gute Lösungen mit einem tiefgreifenden Verständnis des Problems beginnen. Durch analytisches Denken und eine strukturierte Herangehensweise zerlege ich komplexe Probleme in ihre Einzelteile und entwickle nachhaltige Lösungen.",
     },
     skills: {
-      h2: "My skills",
+      h2: "Meine Skills",
       subtext:
-        "My frontend development training has given me hands-on experience with a broad range of technologies. Backend skills will be added soon.",
-      missing_skills_question: "Looking for another skill?",
-      looking_for: "looking for",
-      another_skill: "another skill?",
+        "Durch meine Ausbildung zum Full-Stack-Entwickler habe ich praktische Erfahrungen mit einer Vielzahl von Technologien gesammelt.",
+      looking_for: "Auf der Suche nach einem",
+      another_skill: "weiteren Skill",
       missing_skills_answer:
-        "Always curious and motivated to dive into new technologies and frameworks.",
-      cta: "Get in touch",
-      special_interest: "I have a special interest in learning",
+        "Stets neugierig und motiviert, mich in neue Technologien und Frameworks einzuarbeiten.",
+      cta: "Kontaktiere mich",
+      special_interest: "Besonders interessiert mich",
     },
     portfolio: {
       h2: "Portfolio",
       subtext:
-        "Explore a selection of my work here - Interact with projects to see my skills in action.",
+        "Hier findest du eine Auswahl meiner Projekte. Schau sie dir gerne an und probiere sie direkt aus.",
     },
     contact: {
-      h2: "Contact",
-      problem: "Got a problem to solve?",
-      role: "I'm looking for a backend or full-stack role with a backend focus. I'd love to hear from you if you're looking for a developer who enjoys solving complex problems and creating sustainable solutions.",
-      need: "Need a Fullstack developer?",
-      cta: "Contact me!",
-      submit_form: "Send message",
-      form_toast: " Message sent successfully",
-      ive_read: "I've read the",
+      h2: "Kontakt",
+      problem: "Du hast ein Problem, das gelöst werden muss?",
+      role: "Ich bin auf der Suche nach einer Stelle im Bereich Backend oder Full-Stack mit Backend Schwerpunkt.  Wenn du einen Entwickler suchst, der Freude daran hat, komplexe Probleme zu lösen und nachhaltige Lösungen zu entwickeln, freue ich mich auf deine Nachricht.",
+      need: "Auf der Suche nach einem Full-Stack-Entwickler?",
+      cta: "Kontaktiere mich!",
+      submit_form: "Nachricht senden",
+      form_toast: " Nachricht erfolgreich gesendet",
+      ive_read: "Ich habe die",
       privacy_policy: "Datenschutzerklärung",
-      agree: "and agree to the processing of my data as outlined.",
+      agree:
+        "gelesen stimme der darin beschriebenen Verarbeitung meiner Daten zu.",
     },
     footer: {
       legal_notice: "Impressum",

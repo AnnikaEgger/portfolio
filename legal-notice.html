@@ -13,45 +13,141 @@
 
     <link rel="stylesheet" href="./style.css" />
 
+    <script src="./scripts/legal-notice.js"></script>
     <script src="./script.js" defer></script>
   </head>
-  <body class="body--legal">
+  <body onload="initLegalNotice()" class="body--legal">
     <header class="site-header">
-      <a href="./index.html" class="logo-name logo-name--header">
-        <span class="letter">A</span><span class="letter">n</span
-        ><span class="letter">n</span
-        ><span class="letter letter-colored1">i</span
-        ><span class="letter">k</span
-        ><span class="letter letter-colored2">a</span>
-      </a>
-      <div class="header-controls">
-        <nav class="header-nav">
-          <ul>
-            <li>
-              <a href="./index.html#about-me-section">About me</a>
-            </li>
-            <li>
-              <a href="./index.html#my-skills-section">Skills</a>
-            </li>
-            <li>
-              <a href="./index.html#portfolio-section">Portfolio</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="header-content">
+        <a href="#" class="logo logo-name--header">
+          <div class="logo-right">
+            <img
+              class="logo-initials"
+              src="./assets/img/logo-initials.png"
+              alt=""
+            />
+          </div>
+        </a>
 
-        <div class="language-switch">
-          <button class="btn btn-header btn-primary1--outline">DE</button>
-          <button class="btn btn-header btn-primary1--filled active-language">
-            EN
-          </button>
+        <div class="header-controls">
+          <nav class="header-nav">
+            <ul>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  data-section="header"
+                  data-key="about"
+                  href="#about-me-section"
+                  >About me</a
+                >
+              </li>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  data-section="header"
+                  data-key="skills"
+                  href="#my-skills-section"
+                  >Skills</a
+                >
+              </li>
+              <li>
+                <a
+                  onclick="changeActiveHeaderLink(event)"
+                  class="header-link"
+                  data-section="header"
+                  data-key="portfolio"
+                  href="#portfolio-section"
+                  >Portfolio</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="language-switch">
+            <button
+              onclick="selectLanguage('german', 'legal-notice')"
+              id="de-btn"
+              class="btn btn-header btn-primary1--outline"
+            >
+              DE
+            </button>
+            <button
+              onclick="selectLanguage('english', 'legal-notice')"
+              id="en-btn"
+              class="btn btn-header btn-primary1--filled active-language"
+            >
+              EN
+            </button>
+          </div>
+        </div>
+
+        <div id="burger-menu-header" class="burger-menu-header">
+          <input
+            class="burger-menu-hidden-checkbox"
+            type="checkbox"
+            name=""
+            id="burger-menu-hidden-checkbox"
+          />
+          <div class="burger-menu-line burger-menu-line-1"></div>
+          <div class="burger-menu-line burger-menu-line-2"></div>
+          <div class="burger-menu-line burger-menu-line-3"></div>
         </div>
       </div>
 
-      <button class="burger-menu-header">
-        <div class="burger-menu-line burger-menu-line1"></div>
-        <div class="burger-menu-line burger-menu-line2"></div>
-        <div class="burger-menu-line burger-menu-line3"></div>
-      </button>
+      <div class="mobile-menu-wrapper">
+        <nav class="mobile-menu">
+          <ul>
+            <li>
+              <a
+                onclick="closeMobileMenu()"
+                class="link-mobile-menu-active"
+                href="#about-me-section"
+                data-section="burger_menu"
+                data-key="about"
+                >About me</a
+              >
+            </li>
+            <li>
+              <a
+                onclick="closeMobileMenu()"
+                href="#my-skills-section"
+                data-section="burger_menu"
+                data-key="skills"
+                >My skills</a
+              >
+            </li>
+            <li>
+              <a
+                onclick="closeMobileMenu()"
+                href="#portfolio-section"
+                data-section="burger_menu"
+                data-key="portfolio"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                onclick="closeMobileMenu()"
+                href="#contact-section"
+                data-section="burger_menu"
+                data-key="contact"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <div class="language-btns-mobile">
+                <button class="language-btn-mobile language-btn-mobile-active">
+                  EN
+                </button>
+                <span> / </span>
+                <button class="language-btn-mobile">DE</button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <div class="mobile-menu-wrapper">
@@ -129,7 +225,7 @@
             />
           </svg>
 
-          <h1 class="legal-h1">Legal Notice</h1>
+          <h1 class="legal-h1" id="legal-notice-h1">Legal Notice</h1>
 
           <svg
             class="legal-line-right"
@@ -149,8 +245,8 @@
         </div>
       </div>
 
-      <div class="content-wrapper">
-        <article class="imprint-article">
+      <div class="content-wrapper" id="content-wrapper-legal-notice">
+        <!-- <article class="imprint-article">
           <h2 class="legal-h2">Imprint</h2>
           <ul>
             <li>Annika Egger</li>
@@ -253,17 +349,19 @@
             >. <br /><br />
             Date: July 13, 2026
           </p>
-        </article>
+        </article> -->
       </div>
     </main>
 
     <footer class="site-footer">
-      <a href="./index.html" class="logo-name logo-name--header">
+      <a href="#" class="logo-name logo-name--footer">
+        <span class="bracket letter-colored1">&#123;</span>
         <span class="letter">A</span><span class="letter">n</span
         ><span class="letter">n</span
-        ><span class="letter letter-colored1">i</span
+        ><span class="letter letter-colored1">;</span
         ><span class="letter">k</span
         ><span class="letter letter-colored2">a</span>
+        <span class="bracket letter-colored1">&#125;</span>
       </a>
 
       <p class="footer-copyright">© Annika Egger 2026</p>
@@ -290,7 +388,13 @@
         </a>
       </div>
 
-      <a class="legal-notice-footer" href="./legal-notice.html">Legal Notice</a>
+      <a
+        class="legal-notice-footer"
+        href="./legal-notice.html"
+        data-section="footer"
+        data-key="legal_notice"
+        >Legal Notice</a
+      >
     </footer>
   </body>
 </html>

@@ -78,14 +78,14 @@
 
           <div class="language-switch">
             <button
-              onclick="selectLanguage('german')"
+              onclick="selectLanguage('german', 'index')"
               id="de-btn"
               class="btn btn-header btn-primary1--outline"
             >
               DE
             </button>
             <button
-              onclick="selectLanguage('english')"
+              onclick="selectLanguage('english', 'index')"
               id="en-btn"
               class="btn btn-header btn-primary1--filled active-language"
             >
@@ -571,7 +571,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <p>Continually learning</p>
+            <p>Growth Mindset</p>
           </li>
         </ul>
 
@@ -593,7 +593,10 @@
             <span data-section="skills" data-key="looking_for"
               >Looking for</span
             >
-            <span data-section="skills" data-key="another_skill"
+            <span
+              data-section="skills"
+              data-key="another_skill"
+              class="another-skill"
               >another skill</span
             >?
           </p>
@@ -709,7 +712,11 @@
             />
           </svg>
         </div>
-        <p class="portfolio-subtitle">
+        <p
+          class="portfolio-subtitle"
+          data-section="portfolio"
+          data-key="subtext"
+        >
           Explore a selection of my work here - Interact with projects to see my
           skills in action.
         </p>

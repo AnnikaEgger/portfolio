@@ -21,3 +21,7 @@ function projectArticleHTML(project, liveTestText) {
             </div>
           </article>`;
 }
+
+function privacyPolicyGermanHTML() {}
+
+function privacyPolicyEnglishHTML() {}
