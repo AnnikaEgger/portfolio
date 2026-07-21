@@ -1,8 +1,10 @@
 function initLegalNotice() {
-  renderContent();
+  getLanguageFromLocalStorage();
+  styleLanguageButtons();
+  renderLegalNotice();
 }
 
-function renderContent() {
+function renderLegalNotice() {
   const contentWrapper = document.getElementById(
     "content-wrapper-legal-notice",
   );

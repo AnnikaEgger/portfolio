@@ -1,10 +1,16 @@
-let language = "english";
+let language;
 let currentFeedback = 0;
 
 function init() {
+  getLanguageFromLocalStorage();
+  styleLanguageButtons();
   renderTexts();
   renderPortfolioProjects();
   renderCurrentFeedback();
+}
+
+function setLocalStorageLanguage() {
+  localStorage.setItem("language", language);
 }
 
 function changeActiveHeaderLink(event) {
@@ -19,13 +25,24 @@ function changeActiveHeaderLink(event) {
 
 // #region language
 
+function getLanguageFromLocalStorage() {
+  language = localStorage.getItem("language");
+
+  if (!language) {
+    language = "english";
+    setLocalStorageLanguage();
+  }
+}
+
 function selectLanguage(selectedLanguage, currentSite) {
   language = selectedLanguage;
+  setLocalStorageLanguage();
   styleLanguageButtons();
 
   renderTexts();
   if (currentSite == "index") translatePage();
-  else if (currentSite == "legal-notice") renderContent();
+  else if (currentSite == "legal-notice") renderLegalNotice();
+  else if (currentSite == "privacy-policy") renderPrivacyPolicy();
 }
 
 function translatePage() {
