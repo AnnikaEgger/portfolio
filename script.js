@@ -55,6 +55,15 @@ function styleLanguageButtons() {
   const isGerman = language === "german";
   styleDEButton(isGerman);
   styleENButton(isGerman);
+  styleMenuLanguageButtons(isGerman);
+}
+
+function styleMenuLanguageButtons(isGerman) {
+  const deBtn = document.getElementById("de-btn--menu");
+  const enBtn = document.getElementById("en-btn--menu");
+
+  deBtn.classList.toggle("language-btn-mobile-active", isGerman);
+  enBtn.classList.toggle("language-btn-mobile-active", !isGerman);
 }
 
 function styleDEButton(isGerman) {

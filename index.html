@@ -149,11 +149,21 @@
             </li>
             <li>
               <div class="language-btns-mobile">
-                <button class="language-btn-mobile language-btn-mobile-active">
+                <button
+                  id="en-btn--menu"
+                  class="language-btn-mobile"
+                  onclick="selectLanguage('english', 'index')"
+                >
                   EN
                 </button>
                 <span> / </span>
-                <button class="language-btn-mobile">DE</button>
+                <button
+                  id="de-btn--menu"
+                  class="language-btn-mobile"
+                  onclick="selectLanguage('german', 'index')"
+                >
+                  DE
+                </button>
               </div>
             </li>
           </ul>
