@@ -959,8 +959,9 @@
 
           <div class="contact-content-second">
             <form
+              id="contact-form"
               class="contact-form"
-              action="contact-form-mail.php"
+              onsubmit="submitForm()"
               method="post"
             >
               <div class="contact-form-inputs">
@@ -1081,7 +1082,7 @@
               ></button>
             </form>
 
-            <div class="contact-form-toast-msg">
+            <div id="contact-form-toast-msg" class="contact-form-toast-msg">
               <p data-section="contact" data-key="form_toast"></p>
             </div>
 

@@ -171,6 +171,10 @@
   cursor: not-allowed;
 }
 
+.send-msg-btn:disabled.waiting-for-response {
+  cursor: wait;
+}
+
 .go-up-btn {
   align-self: flex-end;
 }
@@ -208,18 +212,20 @@
   border-radius: 16px;
   box-shadow: var(--box-shadow-btn);
   transition: var(--transition-slide-in);
+  background-color: initial;
+}
+
+.form-submit {
+  transform: translate(-50%, -50%);
+  transition: var(--transition-slide-in);
 }
 
 .valid-submit {
   background-color: var(--color-valid);
-  transform: translate(-50%, -50%);
-  transition: var(--transition-slide-in);
 }
 
 .invalid-submit {
   background-color: var(--color-invalid);
-  transform: translate(-50%, -50%);
-  transition: var(--transition-slide-in);
 }
 
 /* #region responsive */

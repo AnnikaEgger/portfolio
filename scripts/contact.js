@@ -75,14 +75,84 @@ function styleInvalidInput(input, inputWrapper, icon) {
   icon.src = "./assets/icons/invalid-input.svg";
 }
 
-function showErrorMsg() {}
+async function submitForm() {
+  event.preventDefault();
 
-function submitForm() {}
+  const name = document.getElementById("contact-name").value;
+  const email = document.getElementById("contact-email").value;
+  const message = document.getElementById("contact-msg").value;
+  const sendMsgBtn = document.getElementById("send-msg-btn");
+  const toastMsg = document.getElementById("contact-form-toast-msg");
 
-// POST Befehl
+  formJson = {
+    name: name,
+    email: email,
+    message: message,
+  };
 
-formJson = {
-  name: "",
-  email: "",
-  message: "",
-};
+  try {
+    sendMsgBtn.disabled = true;
+    sendMsgBtn.classList.add("waiting-for-response");
+    const response = await fetch("contact-form-mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formJson),
+    });
+    if (response.ok) {
+      showToastMsg(true);
+      clearForm();
+    } else {
+      showToastMsg(false);
+      sendMsgBtn.disabled = false;
+
+      console.log(response);
+    }
+  } catch (error) {
+    showToastMsg(false);
+    sendMsgBtn.disabled = false;
+  }
+  sendMsgBtn.classList.remove("waiting-for-response");
+
+  setTimeout(() => {
+    toastMsg.classList.remove("form-submit");
+  }, 3000);
+}
+
+function clearForm() {
+  const contactForm = document.getElementById("contact-form");
+  const sendMsgBtn = document.getElementById("send-msg-btn");
+
+  contactForm.reset();
+
+  contactForm.querySelectorAll(".input-valid").forEach((input) => {
+    input.classList.remove("input-valid");
+  });
+  contactForm.querySelectorAll(".input-icon").forEach((icon) => {
+    icon.style.display = "none";
+  });
+
+  sendMsgBtn.disabled = true;
+}
+
+function showToastMsg(successful) {
+  const toastMsg = document.getElementById("contact-form-toast-msg");
+
+  if (successful) {
+    toastMsg.classList.remove("invalid-submit");
+    toastMsg.classList.add("valid-submit", "form-submit");
+
+    if (language == "german")
+      toastMsg.textContent = "Nachricht erfolgreich gesendet";
+    else toastMsg.textContent = "message sent successfully";
+  } else {
+    toastMsg.classList.remove("valid-submit");
+    toastMsg.classList.add("invalid-submit", "form-submit");
+
+    if (language == "german")
+      toastMsg.textContent =
+        "Fehler beim Senden. Bitte versuche es noch einmal.";
+    else toastMsg.textContent = "Failed to send message. Please try again.";
+  }
+}
