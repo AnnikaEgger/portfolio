@@ -11,9 +11,9 @@ function projectArticleHTML(project, liveTestText) {
               <p class="project-skills">${project.skills}</p>
               <p class="project-description">${project["description_" + language]}</p>
               <div class="project-btns">
-                <a href="${project.live_test_url}" class="btn btn-main btn-primary2--filled"
-                  >${liveTestText}</a>
-                <a
+                <a target="_blank" href="${project.live_test_url}" class="btn btn-main btn-primary2--filled"
+                  >${liveTestText} </a>
+                <a target="_blank"
                   href="${project.github_url}"
                   class="btn btn-main btn-primary1--outline"
                   >Github</a>

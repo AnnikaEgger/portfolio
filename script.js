@@ -96,7 +96,7 @@ const textJson = {
     hero: {
       greeting_1: "I",
       greeting_2: "am",
-      title: "Fullstack Developer",
+      title: "Full-Stack Developer",
       cta: "Let's talk!",
       scroll: "Scroll down",
     },
@@ -123,7 +123,6 @@ const textJson = {
       special_interest: "I have a special interest in learning",
     },
     portfolio: {
-      h2: "Portfolio",
       subtext:
         "Explore a selection of my work here - Interact with projects to see my skills in action.",
     },
@@ -131,7 +130,7 @@ const textJson = {
       h2: "Contact",
       problem: "Got a problem to solve?",
       role: "I'm looking for a backend or full-stack role with a backend focus. I'd love to hear from you if you're looking for a developer who enjoys solving complex problems and creating sustainable solutions.",
-      need: "Need a Fullstack developer?",
+      need: "Need a full-stack developer?",
       cta: "Contact me!",
       submit_form: "Send message",
       form_toast: "Message sent successfully",
@@ -158,7 +157,7 @@ const textJson = {
     hero: {
       greeting_1: "Ich",
       greeting_2: "bin",
-      title: "Fullstack Entwicklerin",
+      title: "Full-Stack-Entwicklerin",
       cta: "Lass uns sprechen!",
       scroll: "Scrolle nach unten",
     },
@@ -185,7 +184,6 @@ const textJson = {
       special_interest: "Besonders interessiert mich",
     },
     portfolio: {
-      h2: "Portfolio",
       subtext:
         "Hier findest du eine Auswahl meiner Projekte. Schau sie dir gerne an und probiere sie direkt aus.",
     },
@@ -265,7 +263,7 @@ const PROJECTS = [
       "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     description_german:
       "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop und weise Nutzer sowie Kategorien zu.",
-    live_test_url: "/",
+    live_test_url: "https://join.annika-egger.de",
     github_url: "https://github.com/AnnikaEgger/join-personal",
   },
   {
@@ -278,7 +276,7 @@ const PROJECTS = [
       "A simple Jump-and-Run game based on an object-oriented approach. Help &quot;Pepe Peligroso&quot; collect coins and salsa bottles to fight against the boss chicken.",
     description_german:
       "Ein einfaches Jump-and-Run-Spiel, entwickelt mit einem objektorientierten Ansatz. Hilf &quot;Pepe Peligroso&quot; Münzen und Salsa-Flaschen zu sammeln und das Boss-Huhn zu besiegen.",
-    live_test_url: "/",
+    live_test_url: "https://el-pollo-loco.annika-egger.de",
     github_url: "https://github.com/AnnikaEgger/el-pollo-loco",
   },
   {
@@ -291,7 +289,7 @@ const PROJECTS = [
       "Based on the PokéAPI. A simple library that provides and catalogues pokemon information.",
     description_german:
       "Basierend auf der PokéAPI. Eine einfache Bibliothek, die Informationen zu Pokémon bereitstellt und katalogisiert.",
-    live_test_url: "/",
+    live_test_url: "https://pokedex.annika-egger.de",
     github_url: "https://github.com/AnnikaEgger/pokedex",
   },
 ];

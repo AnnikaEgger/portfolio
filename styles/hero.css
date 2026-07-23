@@ -23,7 +23,7 @@
   justify-content: center;
   width: 500px;
   overflow-x: visible;
-  z-index: -2;
+  /* z-index: -2; */
 }
 
 .hero-portrait {
@@ -34,13 +34,13 @@
 }
 
 .hero-portrait--full {
-  /* z-index: -1; */
+  z-index: -2;
 }
 
 .hero-portrait--ellbow {
-  /* z-index: -1; */
+  z-index: -2;
 
-  /* clip-path: inset(0px 0px 30px 0px); */
+  /* clip-path: inset(500px 0px 120px 0px); */
   pointer-events: none;
   /* outline: 5px solid red; */
 }
@@ -94,6 +94,7 @@
 .hero-introduction-right {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
@@ -103,14 +104,21 @@
   font-size: 58px;
 }
 
-.hero-wave-bg {
+.hero-wave-wrapper {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   position: absolute;
   left: 0;
   top: 0;
+  /* overflow-x: hidden; */
+}
+
+.hero-wave-bg {
   width: 100%;
-  height: 115%;
-  z-index: -1;
-  overflow-x: hidden;
+  height: 100%;
+  object-fit: cover;
+  /* height: 115%; */
 }
 
 .hero-wave-bg path {
@@ -163,10 +171,19 @@
 
 /* #region responsive */
 
+@media screen and (min-width: 2000px) {
+  .hero-wave-bg {
+    /* height: 160%; */
+    top: 0;
+    /* width: unset; */
+  }
+}
+
 @media screen and (max-width: 1500px) {
   .hero-content {
     padding: 0;
     margin-left: 0;
+    margin-bottom: 24px;
   }
 
   .hero-content-wrapper {
@@ -179,7 +196,7 @@
   }
 
   .hero-wave-bg {
-    height: 110%;
+    /* height: 110%; */
     /* width: unset; */
   }
 }
@@ -268,6 +285,14 @@
   .hero-portrait-shadows svg {
     margin-top: 24px;
   }
+
+  .hero-wave-wrapper {
+    height: 150%;
+  }
+
+  .hero-footer {
+    padding-bottom: 24px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -280,17 +305,31 @@
   }
 
   .hero-portrait-wrapper {
-    height: 375px;
+    height: 340px;
   }
 
   .hero-portrait {
-    width: 250px;
+    width: 225px;
   }
 
   .hero-portrait-shadows svg {
     margin-top: -50px;
-    width: 250px;
+    width: 225px;
     height: auto;
+  }
+
+  .hero-footer {
+    padding-bottom: 16px;
+  }
+}
+
+@media screen and (min-height: 1500px) {
+  .hero-content-wrapper {
+    margin-top: 150px;
+  }
+
+  .hero-wave-bg {
+    /* height: 160%; */
   }
 }
 
