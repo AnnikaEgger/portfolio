@@ -75,6 +75,8 @@ function styleInvalidInput(input, inputWrapper, icon) {
   icon.src = "./assets/icons/invalid-input.svg";
 }
 
+function showErrorMsg() {}
+
 function submitForm() {}
 
 // POST Befehl

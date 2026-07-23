@@ -4,9 +4,7 @@ let currentFeedback = 0;
 function init() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
-  renderTexts();
-  renderPortfolioProjects();
-  renderCurrentFeedback();
+  translatePage();
 }
 
 function setLocalStorageLanguage() {
@@ -46,6 +44,7 @@ function selectLanguage(selectedLanguage, currentSite) {
 }
 
 function translatePage() {
+  renderTexts();
   renderPortfolioProjects();
   translateContactFormPlaceholders();
   renderCurrentFeedback();
@@ -137,6 +136,10 @@ const textJson = {
       ive_read: "I've read the",
       privacy_policy: "privacy policy",
       agree: "and agree to the processing of my data as outlined.",
+      name_input: "Your name is required",
+      email_input: "Your email is required",
+      message_input: "Your message is empty",
+      accept_privacy: "Please accept the privacy policy.",
     },
     footer: {
       legal_notice: "Legal notice",
@@ -199,6 +202,10 @@ const textJson = {
       privacy_policy: "Datenschutzerklärung",
       agree:
         "gelesen stimme der darin beschriebenen Verarbeitung meiner Daten zu.",
+      name_input: "Bitte gib deinen Namen ein.",
+      email_input: "Bitte gib deine E-Mail ein.",
+      message_input: "Bitte gib eine Nachricht ein.",
+      accept_privacy: "Bitte akzeptiere die Datenschutzerklärung.",
     },
     footer: {
       legal_notice: "Impressum",

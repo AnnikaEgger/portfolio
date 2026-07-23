@@ -954,85 +954,111 @@
               method="post"
             >
               <div class="contact-form-inputs">
-                <div
-                  data-message="Your name is required"
-                  class="input-wrapper input-wrapper--input"
-                >
-                  <input
-                    onblur="validateInputOnBlur(event)"
-                    placeholder="Your name"
-                    type="text"
-                    name=""
-                    id="contact-name"
-                  />
-                  <img
-                    id="input-icon-name"
-                    class="input-icon"
-                    src="./assets/icons/invalid-input.svg"
-                    alt=""
-                  />
+                <div class="input-and-error-wrapper">
+                  <div class="input-wrapper input-wrapper--input">
+                    <input
+                      onblur="validateInputOnBlur(event)"
+                      placeholder="Your name"
+                      type="text"
+                      name=""
+                      id="contact-name"
+                    />
+                    <img
+                      id="input-icon-name"
+                      class="input-icon"
+                      src="./assets/icons/invalid-input.svg"
+                      alt=""
+                    />
+                  </div>
+                  <p
+                    data-section="contact"
+                    data-key="name_input"
+                    class="error-msg"
+                  >
+                    Your name is required
+                  </p>
                 </div>
 
-                <div
-                  data-message="Your email is required"
-                  class="input-wrapper input-wrapper--input"
-                >
-                  <input
-                    onblur="validateInputOnBlur(event)"
-                    placeholder="Your email"
-                    type="email"
-                    name=""
-                    id="contact-email"
-                  />
-                  <img
-                    id="input-icon-email"
-                    class="input-icon"
-                    src="./assets/icons/invalid-input.svg"
-                    alt=""
-                  />
+                <div class="input-and-error-wrapper">
+                  <div class="input-wrapper input-wrapper--input">
+                    <input
+                      onblur="validateInputOnBlur(event)"
+                      placeholder="Your email"
+                      type="email"
+                      name=""
+                      id="contact-email"
+                    />
+                    <img
+                      id="input-icon-email"
+                      class="input-icon"
+                      src="./assets/icons/invalid-input.svg"
+                      alt=""
+                    />
+                  </div>
+                  <p
+                    data-section="contact"
+                    data-key="email_input"
+                    class="error-msg"
+                  >
+                    Your email is required
+                  </p>
                 </div>
 
-                <div
-                  data-message="Your message is empty"
-                  class="input-wrapper input-wrapper--textarea"
-                >
-                  <textarea
-                    onblur="validateInputOnBlur(event)"
-                    placeholder="Your message"
-                    name=""
-                    id="contact-msg"
-                  ></textarea>
-                  <img
-                    id="input-icon-message"
-                    class="input-icon"
-                    src="./assets/icons/invalid-input.svg"
-                    alt=""
-                  />
+                <div class="input-and-error-wrapper">
+                  <div class="input-wrapper input-wrapper--textarea">
+                    <textarea
+                      onblur="validateInputOnBlur(event)"
+                      placeholder="Your message"
+                      name=""
+                      id="contact-msg"
+                    ></textarea>
+                    <img
+                      id="input-icon-message"
+                      class="input-icon"
+                      src="./assets/icons/invalid-input.svg"
+                      alt=""
+                    />
+                  </div>
+                  <p
+                    data-section="contact"
+                    data-key="message_input"
+                    class="error-msg"
+                  >
+                    Your message is empty
+                  </p>
                 </div>
               </div>
 
-              <div
-                id="accept-privacy-container"
-                data-message="Please accept the privacy policy."
-                class="accept-privacy-container"
-              >
-                <div class="checkbox-container">
-                  <input
-                    onclick="validateCheckbox(event)"
-                    id="contact-privacy-checkbox"
-                    class="checkbox"
-                    type="checkbox"
-                    name=""
-                  />
+              <div class="privacy-input-and-error-wrapper">
+                <div
+                  id="accept-privacy-container"
+                  class="accept-privacy-container"
+                >
+                  <div class="checkbox-container">
+                    <input
+                      onclick="validateCheckbox(event)"
+                      id="contact-privacy-checkbox"
+                      class="checkbox"
+                      type="checkbox"
+                      name=""
+                    />
+                  </div>
+                  <p>
+                    <span data-section="contact" data-key="ive_read"> </span>
+                    <a
+                      href="./privacy-policy.html"
+                      data-section="contact"
+                      data-key="privacy_policy"
+                    ></a>
+                    <span data-section="contact" data-key="agree"></span>
+                  </p>
                 </div>
-                <p>
-                  <span data-section="contact" data-key="ive_read"> </span>
-                  <a
-                    href="./privacy-policy.html"
-                    data-section="contact"
-                    data-key="privacy_policy"
-                  ></a>
-                  <span data-section="contact" data-key="agree"></span>
+                <p
+                  data-section="contact"
+                  data-key="accept_privacy"
+                  class="error-msg"
+                >
+                  Please accept the privacy policy.
                 </p>
               </div>
               <button
