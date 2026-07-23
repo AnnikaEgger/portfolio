@@ -122,38 +122,45 @@
           <ul>
             <li>
               <a
-                onclick="closeMobileMenu()"
-                class="link-mobile-menu-active"
+                onclick="selectSection()"
+                class="link-mobile-menu"
                 href="#about-me-section"
                 data-section="burger_menu"
                 data-key="about"
+                id="menu-about-me"
                 >About me</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="#my-skills-section"
                 data-section="burger_menu"
                 data-key="skills"
+                id="menu-my-skills"
                 >My skills</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="#portfolio-section"
                 data-section="burger_menu"
                 data-key="portfolio"
+                id="menu-portfolio"
                 >Portfolio</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="#contact-section"
                 data-section="burger_menu"
                 data-key="contact"
+                id="menu-contact"
                 >Contact</a
               >
             </li>
@@ -709,7 +716,7 @@
 
         <section id="project-section" class="project-section"></section>
 
-        <section class="feedback-section">
+        <section id="feedback-section" class="feedback-section">
           <div class="feedback-content">
             <article class="feedback-box">
               <p id="feedback-text" class="feedback-text"></p>

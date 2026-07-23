@@ -321,8 +321,11 @@ input[type="checkbox"] {
   font-weight: 600;
 }
 
-.link-mobile-menu-active {
+.link-mobile-menu {
   position: relative;
+}
+
+.link-mobile-menu-active {
   color: var(--color-primary1);
 }
 

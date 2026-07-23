@@ -41,6 +41,8 @@ function selectLanguage(selectedLanguage, currentSite) {
   if (currentSite == "index") translatePage();
   else if (currentSite == "legal-notice") renderLegalNotice();
   else if (currentSite == "privacy-policy") renderPrivacyPolicy();
+
+  closeMobileMenu();
 }
 
 function translatePage() {
@@ -390,8 +392,58 @@ function changeActiveDot() {
 
 // #region burger menu
 
+const burgerMenu = document.getElementById("burger-menu-hidden-checkbox");
+
+burgerMenu.addEventListener("change", styleCurrentSection);
+
+function selectSection() {
+  document.querySelectorAll(".link-mobile-menu").forEach((link) => {
+    link.classList.remove("link-mobile-menu-active");
+  });
+  event.target.classList.add("link-mobile-menu-active");
+  closeMobileMenu();
+}
+
 function closeMobileMenu() {
   document.getElementById("burger-menu-hidden-checkbox").checked = false;
+}
+
+function styleCurrentSection() {
+  document.querySelectorAll(".link-mobile-menu").forEach((link) => {
+    link.classList.remove("link-mobile-menu-active");
+  });
+  const sectionId = getCurrentSection();
+  if (sectionId === "about-me-section")
+    styleMenuLink(document.getElementById("menu-about-me"));
+  else if (sectionId === "my-skills-section")
+    styleMenuLink(document.getElementById("menu-my-skills"));
+  else if (sectionId === "portfolio-section")
+    styleMenuLink(document.getElementById("menu-portfolio"));
+  else if (sectionId === "contact-section")
+    styleMenuLink(document.getElementById("menu-contact"));
+}
+
+function styleMenuLink(element) {
+  element.classList.add("link-mobile-menu-active");
+}
+
+function getCurrentSection() {
+  const sections = document.querySelectorAll("section");
+  let currentId = "";
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (
+      rect.top <= window.innerHeight / 2 &&
+      rect.bottom >= window.innerHeight / 2
+    ) {
+      if (section.id == "project-section" || section.id == "feedback-section")
+        currentId == "portfolio-section";
+      else currentId = section.id;
+    }
+  });
+
+  return currentId;
 }
 
 // #endregion

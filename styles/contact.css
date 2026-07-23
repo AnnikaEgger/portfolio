@@ -55,6 +55,12 @@
   width: 100%;
 }
 
+.contact-form-inputs input,
+.contact-form-inputs textarea {
+  background-color: transparent;
+  color: white;
+}
+
 .input-and-error-wrapper {
   display: flex;
   flex-direction: column;
