@@ -136,6 +136,13 @@ input[type="checkbox"] {
 /* #endregion */
 
 /* #region general responsive */
+
+@media screen and (max-width: 1500px) {
+  .index-h1 {
+    font-size: 74px;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .index-h1,
   .index-h2 {

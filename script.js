@@ -321,7 +321,7 @@ const FEEDBACKS = [
       "Annika proved to be a skilled problem solver. She thoroughly explored technical challenges, developed effective solutions, and tested the project carefully to identify and resolve issues early on.",
     author_english: "C. Nguyen-Wellmann - Team Partner",
     author_german: "C. Nguyen-Wellmann - Teamkollege",
-    img_src: "./assets/img/about-me-portrait.png",
+    img_src: "./assets/img/curtis.png",
   },
   {
     text_german:
@@ -330,7 +330,7 @@ const FEEDBACKS = [
       "Annika impressed us with her goal-oriented, structured way of working, strong organizational skills, and initiative. Through her coordination and problem-solving abilities, she was a valuable support throughout the project.",
     author_english: "K. Mathea - Team Partner",
     author_german: "K. Mathea - Teamkollege",
-    img_src: "./assets/img/about-me-portrait.png",
+    img_src: "",
   },
   {
     text_german:
@@ -339,7 +339,7 @@ const FEEDBACKS = [
       "Annika did a fantastic job and was a great asset to our team. She took on a crucial role in the Firebase backend and consistently delivered clean, well-structured code.",
     author_english: "L. Weigang - Team Partner",
     author_german: "L. Weigang - Teamkollege",
-    img_src: "./assets/img/about-me-portrait.png",
+    img_src: "",
   },
 ];
 
@@ -375,6 +375,8 @@ function renderCurrentFeedback() {
   document.getElementById("feedback-image").href = feedback.img_src;
   document.getElementById("feedback-text").innerText =
     feedback["text_" + language];
+  const svgImage = document.getElementById("feedback-image");
+  svgImage.setAttribute("href", feedback.img_src);
 }
 
 function changeActiveDot() {
