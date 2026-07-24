@@ -84,6 +84,7 @@
   visibility: hidden;
   opacity: 0;
   transition: var(--transition-hover-long);
+  width: 196px;
 }
 
 .text-bubble-content-wrapper {
@@ -92,6 +93,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 8px;
   color: black;
@@ -202,6 +204,14 @@
 
   .skill-wrapper img {
     height: 48px;
+  }
+
+  .text-bubble-img {
+    transform: scaleX(-1);
+  }
+
+  .text-bubble-learning {
+    right: -10px;
   }
 }
 

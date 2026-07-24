@@ -64,6 +64,15 @@ main {
   color: var(--color-primary1);
   font-size: 60px;
   font-weight: 700;
+  /* hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word; */
+  /* word-break: break-all; */
+}
+
+#content-wrapper-privacy-policy ul {
+  padding-left: 24px;
+  margin: 0;
 }
 
 .legal-h2,
@@ -88,7 +97,7 @@ h3 {
 }
 
 .imprint-article ul {
-  list-style-position: inside;
+  padding-left: 32px;
 }
 
 .color-highlight {

@@ -11,7 +11,7 @@ function renderPrivacyPolicy() {
   const headline = document.getElementById("privacy-policy-h1");
 
   if (language === "german") {
-    headline.innerText = "Datenschutzerklärung";
+    headline.innerHTML = "Daten&shy;schutz&shy;erklärung";
     contentWrapper.innerHTML = privacyPolicyGermanHTML();
   } else {
     headline.innerText = "Privacy Policy";

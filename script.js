@@ -138,9 +138,9 @@ const textJson = {
       ive_read: "I've read the",
       privacy_policy: "privacy policy",
       agree: "and agree to the processing of my data as outlined.",
-      name_input: "Your name is required",
-      email_input: "Your email is required",
-      message_input: "Your message is empty",
+      name_input: "Please enter your name.",
+      email_input: "Please enter your email.",
+      message_input: "Please enter a message.",
       accept_privacy: "Please accept the privacy policy.",
     },
     footer: {
@@ -180,7 +180,7 @@ const textJson = {
     skills: {
       h2: "Meine Skills",
       subtext:
-        "Durch meine Ausbildung zum Full-Stack-Entwickler habe ich praktische Erfahrungen mit einer Vielzahl von Technologien gesammelt.",
+        "Durch meine Ausbildung zur Full-Stack-Entwicklerin habe ich praktische Erfahrungen mit einer Vielzahl von Technologien gesammelt.",
       looking_for: "Auf der Suche nach einem",
       another_skill: "weiteren Skill",
       missing_skills_answer:
@@ -195,15 +195,15 @@ const textJson = {
     contact: {
       h2: "Kontakt",
       problem: "Du hast ein Problem, das gelöst werden muss?",
-      role: "Ich bin auf der Suche nach einer Stelle im Bereich Backend oder Full-Stack mit Backend Schwerpunkt.  Wenn du einen Entwickler suchst, der Freude daran hat, komplexe Probleme zu lösen und nachhaltige Lösungen zu entwickeln, freue ich mich auf deine Nachricht.",
+      role: "Ich bin auf der Suche nach einer Stelle im Bereich Backend oder Full-Stack mit Backend-Schwerpunkt.  Wenn du einen Entwickler suchst, der Freude daran hat, komplexe Probleme zu lösen und nachhaltige Lösungen zu entwickeln, freue ich mich auf deine Nachricht.",
       need: "Auf der Suche nach einem Full-Stack-Entwickler?",
       cta: "Kontaktiere mich!",
       submit_form: "Nachricht senden",
-      form_toast: " Nachricht erfolgreich gesendet",
+      form_toast: "Nachricht erfolgreich gesendet",
       ive_read: "Ich habe die",
       privacy_policy: "Datenschutzerklärung",
       agree:
-        "gelesen stimme der darin beschriebenen Verarbeitung meiner Daten zu.",
+        "gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.",
       name_input: "Bitte gib deinen Namen ein.",
       email_input: "Bitte gib deine E-Mail ein.",
       message_input: "Bitte gib eine Nachricht ein.",
@@ -269,7 +269,7 @@ const PROJECTS = [
     title: "Join",
     skills: "JavaScript | HTML | CSS | Firebase",
     description_english:
-      "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "Task manager inspired by the Kanban System. Create and organize tasks using drag-and-drop functions, assign users and categories.",
     description_german:
       "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop und weise Nutzer sowie Kategorien zu.",
     live_test_url: "https://join.annika-egger.de",
@@ -282,9 +282,9 @@ const PROJECTS = [
     title: "El Pollo Loco",
     skills: "JavaScript | HTML | CSS",
     description_english:
-      "A simple Jump-and-Run game based on an object-oriented approach. Help &quot;Pepe Peligroso&quot; collect coins and salsa bottles to fight against the boss chicken.",
+      "A simple Jump-and-Run game based on an object-oriented approach. Help &quot;Pepe Peligroso&quot; collect coins and salsa bottles to fight the boss chicken.",
     description_german:
-      "Ein einfaches Jump-and-Run-Spiel, entwickelt mit einem objektorientierten Ansatz. Hilf &quot;Pepe Peligroso&quot; Münzen und Salsa-Flaschen zu sammeln und das Boss-Huhn zu besiegen.",
+      "Ein einfaches Jump-and-Run-Spiel, entwickelt mit einem objektorientierten Ansatz. Hilf &quot;Pepe Peligroso&quot;, Münzen und Salsa-Flaschen zu sammeln und das Boss-Huhn zu besiegen.",
     live_test_url: "https://el-pollo-loco.annika-egger.de",
     github_url: "https://github.com/AnnikaEgger/el-pollo-loco",
   },
@@ -295,7 +295,7 @@ const PROJECTS = [
     title: "Pokédex",
     skills: "JavaScript | HTML | CSS | API",
     description_english:
-      "Based on the PokéAPI. A simple library that provides and catalogues pokemon information.",
+      "Based on the PokéAPI. A simple library that provides and catalogues Pokémon information.",
     description_german:
       "Basierend auf der PokéAPI. Eine einfache Bibliothek, die Informationen zu Pokémon bereitstellt und katalogisiert.",
     live_test_url: "https://pokedex.annika-egger.de",
@@ -316,9 +316,9 @@ const projectJson = {
 const FEEDBACKS = [
   {
     text_german:
-      "Annika erwies sich als kompetente Problemlöserin. Sie arbeitete sich intensiv in technische Herausforderungen ein, entwickelte effektive Lösungen und testete das Projekt gründlich, um Fehler frühzeitig zu erkennen und eigenständig zu beheben.",
+      "Annika bewies sich als kompetente Problemlöserin. Sie arbeitete sich intensiv in technische Herausforderungen ein, entwickelte effektive Lösungen und testete das Projekt gründlich, um Fehler frühzeitig zu erkennen und eigenständig zu beheben.",
     text_english:
-      "Annika proved to be a skilled problem solver. She thoroughly explored technical challenges, developed effective solutions, and tested the project carefully to identify and resolve issues early on.",
+      "Annika proved to be a skilled problem solver. She deeply engaged with technical challenges, developed effective solutions, and tested the project carefully to identify and resolve issues early on.",
     author_english: "C. Nguyen-Wellmann - Team Partner",
     author_german: "C. Nguyen-Wellmann - Teamkollege",
     img_src: "./assets/img/curtis.png",
@@ -334,7 +334,7 @@ const FEEDBACKS = [
   },
   {
     text_german:
-      "Annika hat fantastische Arbeit geleistet und war für unser Team eine enorme Bereicherung. Besonders im Firebase-Backend hat sie einen extrem wichtigen Teil übernommen und super strukturierten Code geliefert. ",
+      "Annika hat fantastische Arbeit geleistet und war für unser Team eine enorme Bereicherung. Besonders im Firebase-Backend hat sie einen extrem wichtigen Teil übernommen und sehr strukturierten Code geliefert. ",
     text_english:
       "Annika did a fantastic job and was a great asset to our team. She took on a crucial role in the Firebase backend and consistently delivered clean, well-structured code.",
     author_english: "L. Weigang - Team Partner",
