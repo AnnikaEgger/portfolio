@@ -227,6 +227,10 @@
     row-gap: 16px;
     column-gap: 24px;
   }
+
+  .bg-shadow--my-skills {
+    left: -500px;
+  }
 }
 
 @media screen and (max-width: 480px) {

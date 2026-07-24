@@ -204,7 +204,7 @@
 
 .bg-shadow--contact {
   top: 350px;
-  left: -350px;
+  left: -420px;
 }
 
 .contact-form-toast-msg {
@@ -248,7 +248,6 @@
 
   .accept-privacy-container {
     align-self: center;
-    margin-bottom: 32px;
   }
 
   .send-msg-btn {
@@ -274,11 +273,20 @@
   .contact-content-second {
     margin-bottom: 48px;
   }
+
+  .bg-shadow--contact {
+    left: -600px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .contact-content-second {
     width: 100%;
+  }
+
+  .bg-shadow--contact {
+    top: 50%;
+    left: -550px;
   }
 }
 

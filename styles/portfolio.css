@@ -216,7 +216,7 @@
 }
 
 .bg-shadow--portfolio-middle {
-  top: 750px;
+  top: 600px;
   left: -250px;
 }
 
@@ -334,6 +334,15 @@
   .project-btns {
     gap: 48px;
   }
+
+  .bg-shadow--portfolio-middle {
+    top: 400px;
+    left: -300px;
+  }
+
+  .bg-shadow--portfolio-bottom {
+    right: -500px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -365,6 +374,10 @@
 
   .project-section {
     gap: 64px;
+  }
+
+  .bg-shadow--portfolio-middle {
+    left: -350px;
   }
 }
 
