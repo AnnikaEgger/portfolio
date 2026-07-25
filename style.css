@@ -1,8 +1,41 @@
 /* #region general */
 
 body {
-  background-color: var(--color-bg-dark);
+  /* background-color: rgba(255, 255, 255, 0.07); */
   color: var(--color-text-primary);
+}
+
+body {
+  background-color: #000000;
+  background-image:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 255, 255, 0.07) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      circle at 80% 95%,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      transparent 80%
+    );
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: 100% 100%;
 }
 
 .body--index {
@@ -94,7 +127,7 @@ button:focus-visible {
 .bg-shadow {
   position: absolute;
   z-index: -1;
-  animation: moveGradient 15s infinite alternate ease-in-out;
+  animation: moveGradient 10s infinite alternate ease-in-out;
 }
 
 @keyframes moveGradient {
@@ -131,6 +164,20 @@ input[type="checkbox"] {
     opacity: 0;
     transform: translateX(100px);
   }
+}
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* #endregion */
@@ -273,11 +320,21 @@ input[type="checkbox"] {
   position: absolute;
   left: 0;
   bottom: -5px;
-  width: 56px;
   height: 3px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   background-color: var(--color-primary2);
+  animation: 100ms drawLine linear both;
+}
+
+@keyframes drawLine {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 56px;
+  }
 }
 
 .header-nav a:hover {
@@ -590,18 +647,14 @@ body:has(.burger-menu-hidden-checkbox:checked) {
   position: absolute;
   left: 0;
   bottom: -2.5px;
-  width: 56px;
   height: 2px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   background-color: var(--color-primary2);
-  opacity: 0;
-  transition: opacity var(--transition-hover-default);
 }
 
 .legal-notice-footer:hover::after {
-  opacity: 1;
-  transition: opacity var(--transition-hover-default);
+  animation: 100ms drawLine linear both;
 }
 
 .logo-name--footer .letter,

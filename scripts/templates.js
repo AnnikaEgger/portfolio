@@ -1,5 +1,5 @@
 function projectArticleHTML(project, liveTestText) {
-  return `<article class="project-article">
+  return `<article class="project-article fade-in-element">
             <div class="project-preview">
               <img
                 src="${project.img_src}"

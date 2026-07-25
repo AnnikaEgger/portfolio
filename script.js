@@ -5,6 +5,7 @@ function init() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
   translatePage();
+  flyInElements();
 }
 
 function setLocalStorageLanguage() {
@@ -449,3 +450,24 @@ function getCurrentSection() {
 }
 
 // #endregion
+
+function flyInElements() {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  const elements = document.querySelectorAll(".fade-in-element");
+  elements.forEach((el) => observer.observe(el));
+}
