@@ -85,7 +85,7 @@ async function submitForm() {
     onFailedSubmit(sendMsgBtn);
   }
 
-  finalizeSubmission();
+  finalizeSubmission(sendMsgBtn);
 }
 
 function finalizeSubmission(sendMsgBtn) {

@@ -431,6 +431,12 @@
   .portfolio-subtitle {
     margin-bottom: 48px;
   }
+
+  .feedback-quotes {
+    top: -36px;
+    left: -5px;
+    width: 64px;
+  }
 }
 
 /* #endregion */

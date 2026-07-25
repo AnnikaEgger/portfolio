@@ -131,6 +131,13 @@
   border-color: var(--color-valid);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-bg-dark) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
 .contact-form-inputs input::placeholder,
 .contact-form-inputs textarea::placeholder {
   color: var(--color-text-primary);
@@ -158,8 +165,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 16px;
-  margin-bottom: 45px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .privacy-input-and-error-wrapper:has(.input-invalid) .error-msg {
@@ -219,6 +226,9 @@
   box-shadow: var(--box-shadow-btn);
   transition: var(--transition-slide-in);
   background-color: initial;
+  max-width: calc(100dvw - var(--content-limitation-lr) * 2);
+  width: max-content;
+  text-align: center;
 }
 
 .form-submit {

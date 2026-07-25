@@ -157,12 +157,12 @@ const textJson = {
   german: {
     header: {
       about: "Über mich",
-      skills: "Fähigkeiten",
+      skills: "Skills",
       portfolio: "Portfolio",
     },
     burger_menu: {
       about: "Über mich",
-      skills: "Fähigkeiten",
+      skills: "Skills",
       portfolio: "Portfolio",
       contact: "Kontakt",
     },

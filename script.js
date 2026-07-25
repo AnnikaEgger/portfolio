@@ -12,14 +12,18 @@ function setLocalStorageLanguage() {
   localStorage.setItem("language", language);
 }
 
-function changeActiveHeaderLink(event) {
-  const allLinks = document.querySelectorAll(".header-link");
+let isAutoScrolling = false;
 
-  allLinks.forEach((link) => {
-    link.classList.remove("header-active");
-  });
-
-  event.target.classList.add("header-active");
+function changeActiveHeaderLink(event, goalSection) {
+  // const allLinks = document.querySelectorAll(".header-link");
+  // allLinks.forEach((link) => {
+  //   link.classList.remove("header-active");
+  // });
+  // event.target.classList.add("header-active");
+  isAutoScrolling = true;
+  setTimeout(() => {
+    isAutoScrolling = false;
+  }, 100);
 }
 
 // #region language
@@ -44,6 +48,7 @@ function selectLanguage(selectedLanguage, currentSite) {
   else if (currentSite == "privacy-policy") renderPrivacyPolicy();
 
   closeMobileMenu();
+  flyInElements(true);
 }
 
 function translatePage() {
@@ -202,8 +207,16 @@ function projectArticleHTML(project, liveTestText) {
 
 // #region burger menu
 
+let lastSection;
+let currentSection;
+
 const burgerMenu = document.getElementById("burger-menu-hidden-checkbox");
-burgerMenu.addEventListener("change", styleCurrentSection);
+burgerMenu.addEventListener("change", () => {
+  styleCurrentSection("menu");
+});
+document.addEventListener("scroll", () => {
+  styleCurrentSection("header");
+});
 
 function selectSection() {
   document.querySelectorAll(".link-mobile-menu").forEach((link) => {
@@ -217,14 +230,36 @@ function closeMobileMenu() {
   document.getElementById("burger-menu-hidden-checkbox").checked = false;
 }
 
-function styleCurrentSection() {
-  document.querySelectorAll(".link-mobile-menu").forEach((link) => {
-    link.classList.remove("link-mobile-menu-active");
-  });
+function styleCurrentSection(trigger) {
+  let sectionMap;
+  let linkId;
 
-  const sectionMenuMap = getSectionMenuMap();
-  const menuId = sectionMenuMap[getCurrentSection()];
-  if (menuId) styleMenuLink(document.getElementById(menuId));
+  if (trigger === "header") {
+    currentSection = getCurrentSection();
+    if (currentSection == lastSection || isAutoScrolling) return;
+
+    document.querySelectorAll(".header-link").forEach((link) => {
+      link.classList.remove("header-active");
+    });
+    sectionMap = getSectionHeaderMap();
+    lastSection = getCurrentSection();
+  } else {
+    document.querySelectorAll(".link-mobile-menu").forEach((link) => {
+      link.classList.remove("link-mobile-menu-active");
+    });
+    sectionMap = getSectionMenuMap();
+  }
+
+  linkId = sectionMap[getCurrentSection()];
+  if (linkId) styleNavLink(document.getElementById(linkId), trigger);
+}
+
+function getSectionHeaderMap() {
+  return {
+    "about-me-section": "header-about-me",
+    "my-skills-section": "header-skills",
+    "portfolio-section": "header-portfolio",
+  };
 }
 
 function getSectionMenuMap() {
@@ -236,8 +271,9 @@ function getSectionMenuMap() {
   };
 }
 
-function styleMenuLink(element) {
-  element.classList.add("link-mobile-menu-active");
+function styleNavLink(element, trigger) {
+  if (trigger === "header") element.classList.add("header-active");
+  else element.classList.add("link-mobile-menu-active");
 }
 
 function getCurrentSection() {
@@ -270,7 +306,6 @@ function getScrollTop() {
 function initScrollDirectionTracker() {
   let lastScrollTop = getScrollTop();
   let scrollDirection = "down";
-
   window.addEventListener(
     "scroll",
     () => {
@@ -284,30 +319,36 @@ function initScrollDirectionTracker() {
   return () => scrollDirection;
 }
 
-function handleIntersection(entry, getDirection) {
-  if (entry.isIntersecting && getDirection() === "down") {
-    entry.target.classList.add("visible");
-  } else if (!entry.isIntersecting && getDirection() === "up") {
-    entry.target.classList.remove("visible");
-  }
+function flyInElements(languageChange) {
+  const getDirection = initScrollDirectionTracker();
+  const observer = createFlyInObserver(getDirection, languageChange);
+
+  document.querySelectorAll(".fade-in-element").forEach((el) => {
+    observer.observe(el);
+  });
 }
 
-function createFlyInObserver(getDirection) {
+function createFlyInObserver(getDirection, languageChange) {
   return new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => handleIntersection(entry, getDirection));
+      entries.forEach((entry) =>
+        handleIntersection(entry, getDirection, languageChange),
+      );
     },
     { threshold: 0.2 },
   );
 }
 
-function flyInElements() {
-  const getDirection = initScrollDirectionTracker();
-  const observer = createFlyInObserver(getDirection);
-
-  document.querySelectorAll(".fade-in-element").forEach((el) => {
-    observer.observe(el);
-  });
+function handleIntersection(entry, getDirection, languageChange) {
+  if (languageChange) {
+    entry.target.classList.add("visible");
+    return;
+  }
+  if (entry.isIntersecting && getDirection() === "down") {
+    entry.target.classList.add("visible");
+  } else if (!entry.isIntersecting && getDirection() === "up") {
+    entry.target.classList.remove("visible");
+  }
 }
 
 // #endregion

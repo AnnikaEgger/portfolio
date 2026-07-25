@@ -167,4 +167,12 @@ a:hover {
     font-size: 20px;
     padding: 8px 16px;
   }
+
+  .btn-main.btn-primary1--filled:not(:disabled):hover {
+    padding: 12px 24px;
+  }
+
+  .btn-main.btn-primary1--filled {
+    margin: 4px 8px;
+  }
 }

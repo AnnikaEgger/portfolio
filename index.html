@@ -30,24 +30,12 @@
   <body onload="init()" class="body--index">
     <header class="site-header">
       <div class="header-content">
-        <!-- <a href="#" class="logo-name logo-name--header">
-          <span class="bracket letter-colored1">&#123;</span>
-          <span class="letter">A</span><span class="letter">n</span
-          ><span class="letter">n</span
-          ><span class="letter letter-colored1">;</span
-          ><span class="letter">k</span
-          ><span class="letter letter-colored2">a</span>
-          <span class="bracket letter-colored1">&#125;</span>
-        </a> -->
-
         <a href="index.html" class="logo logo-name--header">
-          <div class="logo-right">
-            <img
-              class="logo-initials"
-              src="./assets/img/logo-initials.png"
-              alt=""
-            />
-          </div>
+          <img
+            class="logo-initials"
+            src="./assets/img/logo-initials.png"
+            alt=""
+          />
         </a>
 
         <div class="header-controls">
@@ -60,6 +48,7 @@
                   data-section="header"
                   data-key="about"
                   href="#about-me-section"
+                  id="header-about-me"
                   >About me</a
                 >
               </li>
@@ -70,6 +59,7 @@
                   data-section="header"
                   data-key="skills"
                   href="#my-skills-section"
+                  id="header-skills"
                   >Skills</a
                 >
               </li>
@@ -80,6 +70,7 @@
                   data-section="header"
                   data-key="portfolio"
                   href="#portfolio-section"
+                  id="header-portfolio"
                   >Portfolio</a
                 >
               </li>
@@ -1041,10 +1032,6 @@
               ></button>
             </form>
 
-            <div id="contact-form-toast-msg" class="contact-form-toast-msg">
-              <p data-section="contact" data-key="form_toast"></p>
-            </div>
-
             <a class="go-up-btn" href="#">
               <svg
                 width="39"
@@ -1076,6 +1063,10 @@
           src="./assets/img/shadow-contact.svg"
           alt="Blue Shadow"
         />
+
+        <div id="contact-form-toast-msg" class="contact-form-toast-msg">
+          <p data-section="contact" data-key="form_toast"></p>
+        </div>
       </section>
     </main>
 
@@ -1090,14 +1081,12 @@
         <span class="bracket letter-colored1">&#125;</span>
       </a> -->
 
-      <a href="index.html" class="logo logo-name--header">
-        <div class="logo-right">
-          <img
-            class="logo-initials"
-            src="./assets/img/logo-initials.png"
-            alt=""
-          />
-        </div>
+      <a href="index.html" class="logo logo--footer">
+        <img
+          class="logo-initials"
+          src="./assets/img/logo-initials.png"
+          alt=""
+        />
       </a>
 
       <p class="footer-copyright">© Annika Egger 2026</p>
