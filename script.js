@@ -452,18 +452,43 @@ function getCurrentSection() {
 // #endregion
 
 function flyInElements() {
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  let scrollDirection = "down";
+
+  // 1. Scroll-Richtung bei jeder Bewegung ermitteln
+  window.addEventListener(
+    "scroll",
+    function () {
+      let currentScrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScrollTop > lastScrollTop) {
+        scrollDirection = "down";
+      } else {
+        scrollDirection = "up";
+      }
+
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    },
+    { passive: true },
+  );
+
   const observerOptions = {
     root: null,
     rootMargin: "0px",
     threshold: 0.2,
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-
-        observer.unobserve(entry.target);
+        if (scrollDirection === "down") {
+          entry.target.classList.add("visible");
+        }
+      } else {
+        if (scrollDirection === "up") {
+          entry.target.classList.remove("visible");
+        }
       }
     });
   }, observerOptions);
