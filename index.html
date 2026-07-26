@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/hero-responsive.css" />
     <link rel="stylesheet" href="./styles/about-me.css" />
     <link rel="stylesheet" href="./styles/my-skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
@@ -35,7 +36,7 @@
           <img
             class="logo-initials"
             src="./assets/img/logo-initials.png"
-            alt=""
+            alt="AE Logo"
           />
         </a>
 
@@ -100,7 +101,7 @@
           <input
             class="burger-menu-hidden-checkbox"
             type="checkbox"
-            name=""
+            aria-label="Open Burger Menu"
             id="burger-menu-hidden-checkbox"
           />
           <div class="burger-menu-line burger-menu-line-1"></div>
@@ -182,7 +183,11 @@
 
     <main>
       <section id="hero-section" class="hero-section">
-        <img class="hero-wave-bg" src="./assets/img/hero-wave-bg.png" alt="" />
+        <img
+          class="hero-wave-bg"
+          src="./assets/img/hero-wave-bg.png"
+          alt="Background Wave"
+        />
 
         <div class="hero-content-wrapper">
           <div class="hero-portrait-wrapper">
@@ -447,11 +452,11 @@
             <p>JavaScript</p>
           </li>
           <li class="skill-wrapper">
-            <img src="./assets/icons/typescript.svg" alt="TypeScript" />
+            <img src="./assets/icons/typescript.svg" alt="TypeScript Logo" />
             <p>TypeScript</p>
           </li>
           <li class="skill-wrapper">
-            <img src="./assets/icons/angular.svg" alt="Angular" />
+            <img src="./assets/icons/angular.svg" alt="Angular Logo" />
             <p>Angular</p>
           </li>
           <li class="skill-wrapper">
@@ -922,14 +927,14 @@
                       onblur="validateInputOnBlur(event)"
                       placeholder="Your name"
                       type="text"
-                      name=""
+                      aria-label="Name "
                       id="contact-name"
                     />
                     <img
                       id="input-icon-name"
                       class="input-icon"
                       src="./assets/icons/invalid-input.svg"
-                      alt=""
+                      alt="Invalid Icon"
                     />
                   </div>
                   <p
@@ -947,14 +952,14 @@
                       onblur="validateInputOnBlur(event)"
                       placeholder="Your email"
                       type="email"
-                      name=""
+                      aria-label="Email"
                       id="contact-email"
                     />
                     <img
                       id="input-icon-email"
                       class="input-icon"
                       src="./assets/icons/invalid-input.svg"
-                      alt=""
+                      alt="Invalid Icon"
                     />
                   </div>
                   <p
@@ -971,14 +976,14 @@
                     <textarea
                       onblur="validateInputOnBlur(event)"
                       placeholder="Your message"
-                      name=""
+                      aria-label="Message"
                       id="contact-msg"
                     ></textarea>
                     <img
                       id="input-icon-message"
                       class="input-icon"
                       src="./assets/icons/invalid-input.svg"
-                      alt=""
+                      alt="Invalid Icon"
                     />
                   </div>
                   <p
@@ -1002,7 +1007,7 @@
                       id="contact-privacy-checkbox"
                       class="checkbox"
                       type="checkbox"
-                      name=""
+                      aria-label="Accept Privacy Policy"
                     />
                   </div>
                   <p>
@@ -1072,21 +1077,11 @@
     </main>
 
     <footer class="site-footer">
-      <!-- <a href="#" class="logo-name logo-name--footer">
-        <span class="bracket letter-colored1">&#123;</span>
-        <span class="letter">A</span><span class="letter">n</span
-        ><span class="letter">n</span
-        ><span class="letter letter-colored1">;</span
-        ><span class="letter">k</span
-        ><span class="letter letter-colored2">a</span>
-        <span class="bracket letter-colored1">&#125;</span>
-      </a> -->
-
       <a href="#" class="logo logo--footer">
         <img
           class="logo-initials"
           src="./assets/img/logo-initials.png"
-          alt=""
+          alt="AE Logo"
         />
       </a>
 

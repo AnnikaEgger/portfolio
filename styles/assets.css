@@ -101,6 +101,10 @@ button:hover {
   color: var(--color-primary2);
 }
 
+.btn-header:focus {
+  outline: 1px solid white;
+}
+
 .social-btn {
   display: flex;
 }
