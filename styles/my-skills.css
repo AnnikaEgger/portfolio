@@ -118,7 +118,6 @@
   margin-bottom: var(--space-m);
   width: 450px;
   justify-self: end;
-  /* align-self: start; */
 }
 
 .my-skills-line {
@@ -127,7 +126,6 @@
   margin-left: var(--space-l);
   stroke-linecap: round;
   width: calc(100% - var(--space-l));
-  /* width: max(calc(50dvw - 720px + 68px), 68px); */
   grid-area: skills-line;
 }
 
@@ -135,7 +133,6 @@
   grid-area: bottom-right;
   width: 450px;
   justify-self: end;
-  /* align-self: start; */
 }
 
 .looking-for-skill {

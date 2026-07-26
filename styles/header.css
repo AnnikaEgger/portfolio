@@ -1,0 +1,366 @@
+/* #region header */
+
+:root {
+  --header-height: 110px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 var(--content-limitation-lr);
+
+  width: 100%;
+
+  height: var(--header-height);
+  background-color: rgb(10, 10, 10);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo-initials {
+  height: 40px;
+}
+
+.logo {
+  display: flex;
+  gap: 8px;
+}
+
+.logo-name--header .letter,
+.logo-name--header .bracket {
+  font-size: 36px;
+}
+
+.letter {
+  font-weight: 700;
+}
+
+.bracket {
+  font-weight: 500;
+}
+
+.letter-colored1 {
+  color: var(--color-primary1);
+}
+
+.letter-colored2 {
+  color: var(--color-primary2);
+}
+
+.header-controls {
+  display: flex;
+  gap: 100px;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.header-nav {
+  font-size: 24px;
+}
+
+.header-active {
+  position: relative;
+  color: var(--color-primary1);
+}
+
+.header-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: var(--color-primary2);
+  animation: 100ms drawLine linear both;
+}
+
+@keyframes drawLine {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 56px;
+  }
+}
+
+.header-nav a:hover {
+  color: var(--color-primary1);
+}
+
+.language-switch {
+  display: flex;
+  gap: 18px;
+}
+
+.active-language {
+  cursor: default;
+}
+
+.burger-menu-header {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 25px;
+  width: 30px;
+}
+
+.mobile-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(18, 18, 18, 0.8);
+  z-index: 998;
+  text-align: center;
+  transform: translateX(100dvw);
+  transition: var(--transition-slide-in);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 24px;
+}
+
+.language-btn-mobile {
+  color: white;
+}
+
+.language-btn-mobile-active {
+  color: var(--color-primary1);
+  font-weight: 600;
+}
+
+.link-mobile-menu {
+  position: relative;
+}
+
+.link-mobile-menu-active {
+  color: var(--color-primary1);
+}
+
+.link-mobile-menu-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 56px;
+  height: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: var(--color-primary2);
+}
+
+.burger-menu-hidden-checkbox {
+  z-index: 10;
+  appearance: none;
+  background-color: transparent;
+  width: 30px;
+  height: 50px;
+}
+
+.burger-menu-line {
+  position: absolute;
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 2px;
+  background-color: white;
+  transform-origin: center;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.burger-menu-line1 {
+  top: 0px;
+}
+
+.burger-menu-line2 {
+  top: 12px;
+}
+
+.burger-menu-line3 {
+  top: 24px;
+}
+
+.site-header:has(.burger-menu-hidden-checkbox:checked) .mobile-menu-wrapper {
+  transform: translateX(0);
+  transition: var(--transition-slide-in);
+}
+
+body:has(.burger-menu-hidden-checkbox:checked) {
+  overflow: hidden;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-1 {
+  animation-name: animateLine1-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-1 {
+  animation-name: animateLine1-close;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-2 {
+  animation-name: animateLine2-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-2 {
+  animation-name: animateLine2-close;
+}
+
+.burger-menu-hidden-checkbox:checked ~ .burger-menu-line-3 {
+  animation-name: animateLine3-open;
+}
+.burger-menu-hidden-checkbox:not(:checked) ~ .burger-menu-line-3 {
+  animation-name: animateLine3-close;
+}
+
+@keyframes animateLine1-open {
+  0% {
+    top: 0;
+    rotate: 0deg;
+  }
+  25% {
+    top: 0;
+    rotate: 0deg;
+  }
+  50% {
+    top: 12px;
+    rotate: -51deg;
+  }
+  100% {
+    top: 12px;
+    rotate: -46.5deg;
+  }
+}
+
+@keyframes animateLine1-close {
+  0% {
+    top: 12px;
+    rotate: -46.5deg;
+  }
+  50% {
+    top: 12px;
+    rotate: -51deg;
+  }
+  75% {
+    top: 0;
+    rotate: 0deg;
+  }
+  100% {
+    top: 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes animateLine2-open {
+  0% {
+    width: 30px;
+  }
+  25% {
+    width: 10px;
+  }
+  50% {
+    width: 5px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+@keyframes animateLine2-close {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 5px;
+  }
+  75% {
+    width: 10px;
+  }
+  100% {
+    width: 30px;
+  }
+}
+
+@keyframes animateLine3-open {
+  0% {
+    top: 24px;
+    rotate: 0deg;
+  }
+  25% {
+    top: 24px;
+    rotate: 0deg;
+  }
+  50% {
+    top: 12px;
+    rotate: 51deg;
+  }
+  100% {
+    top: 12px;
+    rotate: 46.5deg;
+  }
+}
+
+@keyframes animateLine3-close {
+  0% {
+    top: 12px;
+    rotate: 46.5deg;
+  }
+  50% {
+    top: 12px;
+    rotate: 51deg;
+  }
+  75% {
+    top: 24px;
+    rotate: 0deg;
+  }
+  100% {
+    top: 24px;
+    rotate: 0deg;
+  }
+}
+
+/* #endregion */
+
+/* #region header responsive */
+@media screen and (max-width: 1280px) {
+  .header-controls {
+    display: none;
+  }
+
+  .burger-menu-header {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --header-height: 64px;
+  }
+}
+
+/* #endregion */

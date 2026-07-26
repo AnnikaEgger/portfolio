@@ -64,10 +64,6 @@ main {
   color: var(--color-primary1);
   font-size: 60px;
   font-weight: 700;
-  /* hyphens: auto;
-  -webkit-hyphens: auto;
-  overflow-wrap: break-word; */
-  /* word-break: break-all; */
 }
 
 #content-wrapper-privacy-policy ul {
@@ -104,6 +100,7 @@ h3 {
   color: var(--color-primary2);
 }
 
+/* #region responsive */
 @media screen and (max-width: 1280px) {
   .go-back-btn {
     display: unset;
@@ -146,3 +143,5 @@ h3 {
     width: 100%;
   }
 }
+
+/* #endregion */

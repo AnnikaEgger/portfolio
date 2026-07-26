@@ -49,47 +49,7 @@
   display: flex;
   align-items: center;
   gap: 150px;
-
-  /* animation: fade-in-out linear both;
-  animation-timeline: view();
-  animation-range:
-    entry cover 0% cover 20%,
-    entry cover 80% cover 100%; */
 }
-/* 
-.project-section .project-article:nth-child(1) {
-  animation: slide-in-left linear both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
-}
-
-.project-section .project-article:nth-child(2) {
-  animation: slide-in-right linear both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-70%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(70%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-} */
 
 .project-information {
   display: flex;

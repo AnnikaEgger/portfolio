@@ -14,7 +14,6 @@
 
 .contact-content-wrapper {
   display: flex;
-  /* justify-content: space-between; */
   gap: 150px;
   padding: 0 var(--content-limitation-lr);
 }
@@ -98,7 +97,6 @@
 .error-msg {
   font-size: 14px;
   color: var(--color-invalid);
-  /* margin: 10px 0 20px 0; */
   opacity: 0;
 }
 
@@ -298,9 +296,6 @@ input:-webkit-autofill:focus {
     top: 50%;
     left: -550px;
   }
-}
-
-@media screen and (max-width: 480px) {
 }
 
 /* #endregion */
