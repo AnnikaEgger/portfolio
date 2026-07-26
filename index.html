@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./style.css" />
 
     <script src="./scripts/data.js"></script>
+    <script src="./scripts/language.js"></script>
     <script src="./scripts/contact.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
@@ -45,7 +46,6 @@
             <ul>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="about"
@@ -56,7 +56,6 @@
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="skills"
@@ -67,7 +66,6 @@
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="portfolio"
@@ -1117,5 +1115,12 @@
         >Legal Notice</a
       >
     </footer>
+
+    <div class="rotation-warning visible">
+      <img
+        src="./assets/img/rotation-warning.png"
+        alt="Image of a Phone with the text 'Please rotate your device'"
+      />
+    </div>
   </body>
 </html>

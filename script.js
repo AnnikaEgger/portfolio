@@ -1,4 +1,3 @@
-let language;
 let currentFeedback = 0;
 
 function init() {
@@ -11,115 +10,6 @@ function init() {
 function setLocalStorageLanguage() {
   localStorage.setItem("language", language);
 }
-
-let isAutoScrolling = false;
-
-function changeActiveHeaderLink(event, goalSection) {
-  // const allLinks = document.querySelectorAll(".header-link");
-  // allLinks.forEach((link) => {
-  //   link.classList.remove("header-active");
-  // });
-  // event.target.classList.add("header-active");
-  isAutoScrolling = true;
-  setTimeout(() => {
-    isAutoScrolling = false;
-  }, 100);
-}
-
-// #region language
-
-function getLanguageFromLocalStorage() {
-  language = localStorage.getItem("language");
-
-  if (!language) {
-    language = "english";
-    setLocalStorageLanguage();
-  }
-}
-
-function selectLanguage(selectedLanguage, currentSite) {
-  language = selectedLanguage;
-  setLocalStorageLanguage();
-  styleLanguageButtons();
-
-  renderTexts();
-  if (currentSite == "index") translatePage();
-  else if (currentSite == "legal-notice") renderLegalNotice();
-  else if (currentSite == "privacy-policy") renderPrivacyPolicy();
-
-  closeMobileMenu();
-  flyInElements(true);
-}
-
-function styleIAmText() {
-  const iAmText = document.getElementById("hero-i-am");
-  if (language === "german") iAmText.classList.add("german");
-  else iAmText.classList.remove("german");
-}
-
-function translatePage() {
-  renderTexts();
-  renderPortfolioProjects();
-  translateContactFormPlaceholders();
-  renderCurrentFeedback();
-  styleIAmText();
-}
-
-function styleLanguageButtons() {
-  const isGerman = language === "german";
-  styleDEButton(isGerman);
-  styleENButton(isGerman);
-  styleMenuLanguageButtons(isGerman);
-}
-
-function styleMenuLanguageButtons(isGerman) {
-  const deBtn = document.getElementById("de-btn--menu");
-  const enBtn = document.getElementById("en-btn--menu");
-
-  deBtn.classList.toggle("language-btn-mobile-active", isGerman);
-  enBtn.classList.toggle("language-btn-mobile-active", !isGerman);
-}
-
-function styleDEButton(isGerman) {
-  const deBtn = document.getElementById("de-btn");
-  deBtn.classList.toggle("btn-primary1--filled", isGerman);
-  deBtn.classList.toggle("active-language", isGerman);
-  deBtn.classList.toggle("btn-primary1--outline", !isGerman);
-}
-
-function styleENButton(isGerman) {
-  const enBtn = document.getElementById("en-btn");
-  enBtn.classList.toggle("btn-primary1--outline", isGerman);
-  enBtn.classList.toggle("btn-primary1--filled", !isGerman);
-  enBtn.classList.toggle("active-language", !isGerman);
-}
-
-function renderTexts() {
-  const elements = document.querySelectorAll("[data-key]");
-  elements.forEach((element) => {
-    const section = element.dataset.section;
-    const key = element.dataset.key;
-    element.innerText = textJson[language][section][key];
-  });
-}
-
-function translateContactFormPlaceholders() {
-  const name = document.getElementById("contact-name");
-  const email = document.getElementById("contact-email");
-  const message = document.getElementById("contact-msg");
-
-  if (language == "german") {
-    name.placeholder = "Dein Name";
-    email.placeholder = "Deine Email";
-    message.placeholder = "Deine Nachricht";
-  } else {
-    name.placeholder = "Your name";
-    email.placeholder = "Your email";
-    message.placeholder = "Your message";
-  }
-}
-
-// #endregion
 
 // #region portfolio
 
@@ -212,7 +102,7 @@ function projectArticleHTML(project, liveTestText) {
 
 // #endregion
 
-// #region burger menu
+// #region navbars
 
 let lastSection;
 let currentSection;
@@ -221,6 +111,7 @@ const burgerMenu = document.getElementById("burger-menu-hidden-checkbox");
 burgerMenu.addEventListener("change", () => {
   styleCurrentSection("menu");
 });
+
 document.addEventListener("scroll", () => {
   styleCurrentSection("header");
 });
@@ -241,24 +132,29 @@ function styleCurrentSection(trigger) {
   let sectionMap;
   let linkId;
 
-  if (trigger === "header") {
-    currentSection = getCurrentSection();
-    if (currentSection == lastSection || isAutoScrolling) return;
-
-    document.querySelectorAll(".header-link").forEach((link) => {
-      link.classList.remove("header-active");
-    });
-    sectionMap = getSectionHeaderMap();
-    lastSection = getCurrentSection();
-  } else {
-    document.querySelectorAll(".link-mobile-menu").forEach((link) => {
-      link.classList.remove("link-mobile-menu-active");
-    });
-    sectionMap = getSectionMenuMap();
-  }
+  if (trigger === "header") sectionMap = styleHeaderNavbar();
+  else sectionMap = styleBurgerMenuNavbar();
 
   linkId = sectionMap[getCurrentSection()];
   if (linkId) styleNavLink(document.getElementById(linkId), trigger);
+}
+
+function styleHeaderNavbar() {
+  currentSection = getCurrentSection();
+  if (currentSection === lastSection) return getSectionHeaderMap();
+
+  document.querySelectorAll(".header-link").forEach((link) => {
+    link.classList.remove("header-active");
+  });
+  lastSection = getCurrentSection();
+  return getSectionHeaderMap();
+}
+
+function styleBurgerMenuNavbar() {
+  document.querySelectorAll(".link-mobile-menu").forEach((link) => {
+    link.classList.remove("link-mobile-menu-active");
+  });
+  return getSectionMenuMap();
 }
 
 function getSectionHeaderMap() {

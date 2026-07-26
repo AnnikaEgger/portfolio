@@ -136,6 +136,34 @@ input[type="checkbox"] {
   transform: translateY(0);
 }
 
+.rotation-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(18, 18, 18, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.rotation-warning img {
+  max-width: 130px;
+  animation: rotatePhone 3s ease-in-out forwards infinite;
+}
+
+@keyframes rotatePhone {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 90deg;
+  }
+}
+
 /* #endregion */
 
 /* #region general responsive */
@@ -180,6 +208,16 @@ input[type="checkbox"] {
   .index-h1,
   .index-h2 {
     font-size: 36px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+  .rotation-warning {
+    display: flex;
+  }
+
+  body {
+    overflow: hidden;
   }
 }
 
