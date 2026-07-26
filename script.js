@@ -51,11 +51,18 @@ function selectLanguage(selectedLanguage, currentSite) {
   flyInElements(true);
 }
 
+function styleIAmText() {
+  const iAmText = document.getElementById("hero-i-am");
+  if (language === "german") iAmText.classList.add("german");
+  else iAmText.classList.remove("german");
+}
+
 function translatePage() {
   renderTexts();
   renderPortfolioProjects();
   translateContactFormPlaceholders();
   renderCurrentFeedback();
+  styleIAmText();
 }
 
 function styleLanguageButtons() {

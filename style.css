@@ -69,7 +69,6 @@ button:focus-visible {
   width: 30px;
 }
 
-.index-h1,
 .index-h2 {
   font-size: 90px;
   font-weight: 700;
@@ -166,7 +165,7 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 1500px) {
   .index-h1 {
-    font-size: 74px;
+    /* font-size: 74px; */
   }
 
   .bg-shadow {
@@ -175,7 +174,6 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 1280px) {
-  .index-h1,
   .index-h2 {
     font-size: 46px;
   }
@@ -350,7 +348,7 @@ input[type="checkbox"] {
   justify-content: center;
   width: 100dvw;
   height: 100dvh;
-  background-color: rgba(20, 29, 47, 0.8);
+  background-color: rgba(18, 18, 18, 0.8);
   z-index: 998;
   text-align: center;
   transform: translateX(100dvw);
