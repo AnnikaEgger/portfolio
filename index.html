@@ -6,7 +6,7 @@
     <title>Annika Egger</title>
     <link
       rel="shortcut icon"
-      href="./assets/img/logo-initials.png"
+      href="./assets/img/logo-initials-square.png"
       type="image/x-icon"
     />
 
@@ -345,7 +345,10 @@
             </a>
           </div>
 
-          <a class="hero-footer-mail" href="mailto:kontakt@annika-egger.de"
+          <a
+            target="_blank"
+            class="hero-footer-mail"
+            href="mailto:kontakt@annika-egger.de"
             >kontakt@annika-egger.de</a
           >
         </footer>
@@ -922,7 +925,8 @@
                 <div class="input-and-error-wrapper">
                   <div class="input-wrapper input-wrapper--input">
                     <input
-                      onblur="validateInputOnBlur(event)"
+                      onblur="validateInput(event)"
+                      oninput="validateInput(event)"
                       placeholder="Your name"
                       type="text"
                       aria-label="Name "
@@ -947,7 +951,8 @@
                 <div class="input-and-error-wrapper">
                   <div class="input-wrapper input-wrapper--input">
                     <input
-                      onblur="validateInputOnBlur(event)"
+                      onblur="validateInput(event)"
+                      oninput="validateInput(event)"
                       placeholder="Your email"
                       type="email"
                       aria-label="Email"
@@ -972,7 +977,8 @@
                 <div class="input-and-error-wrapper">
                   <div class="input-wrapper input-wrapper--textarea">
                     <textarea
-                      onblur="validateInputOnBlur(event)"
+                      onblur="validateInput(event)"
+                      oninput="validateInput(event)"
                       placeholder="Your message"
                       aria-label="Message"
                       id="contact-msg"
@@ -1094,7 +1100,11 @@
           <img src="./assets/icons/github.svg" alt="Github Logo" />
         </a>
 
-        <a href="mailto:kontakt@annika-egger.de" class="social-btn">
+        <a
+          target="_blank"
+          href="mailto:kontakt@annika-egger.de"
+          class="social-btn"
+        >
           <img src="./assets/icons/mail.svg" alt="Email Logo" />
         </a>
 

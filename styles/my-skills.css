@@ -257,4 +257,10 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .skill-wrapper {
+    width: 75px;
+  }
+}
+
 /* #endregion */

@@ -24,7 +24,7 @@ const PROJECTS = [
     description_german:
       "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop und weise Nutzer sowie Kategorien zu.",
     live_test_url: "https://join.annika-egger.de",
-    github_url: "https://github.com/AnnikaEgger/join-personal",
+    github_url: "https://github.com/AnnikaEgger/join",
   },
   {
     img_src: "./assets/img/pollo-loco-preview.png",
@@ -95,7 +95,7 @@ const FEEDBACKS = [
       "Annika impressed us with her goal-oriented, structured way of working, strong organizational skills, and initiative. Through her coordination and problem-solving abilities, she was a valuable support throughout the project.",
     author_english: "K. Mathea - Team Partner",
     author_german: "K. Mathea - Teamkollege",
-    img_src: "",
+    img_src: "./assets/img/avatar.svg",
   },
   {
     text_german:
@@ -104,7 +104,7 @@ const FEEDBACKS = [
       "Annika did a fantastic job and was a great asset to our team. She took on a crucial role in the Firebase backend and consistently delivered clean, well-structured code.",
     author_english: "L. Weigang - Team Partner",
     author_german: "L. Weigang - Teamkollege",
-    img_src: "",
+    img_src: "./assets/img/avatar.svg",
   },
 ];
 

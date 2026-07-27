@@ -156,7 +156,7 @@
 }
 
 .hero-line {
-  width: max(calc(50dvw - 720px + 100px), 100px);
+  width: calc(var(--content-limitation-lr) + 10px);
   height: 4px;
 }
 

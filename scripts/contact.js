@@ -2,14 +2,15 @@
  * Regular expression used to validate email addresses.
  * @type {RegExp}
  */
-const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailPattern =
+  /^(?!.*\.\.)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 /**
  * Validate a single input when it loses focus and update styles.
  * @param {Event} event Blur event from the input element.
  * @returns {void}
  */
-function validateInputOnBlur(event) {
+function validateInput(event) {
   const input = event.target;
   let valid = false;
 
@@ -17,7 +18,7 @@ function validateInputOnBlur(event) {
   else if (input.id == "contact-email") valid = emailIsValid();
   else if (input.id == "contact-msg") valid = messageIsValid();
 
-  styleInput(input, valid);
+  styleInput(input, valid, event.type);
   validateForm();
 }
 
@@ -96,14 +97,23 @@ function checkboxIsValid() {
  * @param {boolean} valid Whether the input is valid.
  * @returns {void}
  */
-function styleInput(input, valid) {
+function styleInput(input, valid, eventType) {
   const inputWrapper = input.closest(".input-wrapper");
   const icon = inputWrapper.querySelector(".input-icon");
 
-  if (valid) styleValidInput(input, inputWrapper, icon);
-  else styleInvalidInput(input, inputWrapper, icon);
+  if (valid) {
+    styleValidInput(input, inputWrapper, icon);
+  } else if (!valid && eventType !== "input")
+    styleInvalidInput(input, inputWrapper, icon);
+  else if (!valid && eventType === "input")
+    removeInputStyle(input, inputWrapper, icon);
 
   icon.style.display = "unset";
+}
+
+function removeInputStyle(input, inputWrapper, icon) {
+  inputWrapper.classList.remove("input-invalid");
+  icon.style.display = "none";
 }
 
 /**

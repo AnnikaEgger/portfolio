@@ -33,8 +33,7 @@ function renderLegalNotice() {
  * @returns {string} HTML markup for the German legal notice.
  */
 function legalNoticeGermanHTML() {
-  return `      <div class="content-wrapper">
-        <article class="imprint-article">
+  return ` <article class="imprint-article">
           <h2 class="legal-h2">Anschrift</h2>
           <ul>
             <li>Annika Egger</li>
@@ -139,8 +138,7 @@ function legalNoticeGermanHTML() {
             >. <br /><br />
             Datum: 13. Juli 2026
           </p>
-        </article>
-      </div>`;
+        </article>`;
 }
 
 /**
@@ -148,8 +146,7 @@ function legalNoticeGermanHTML() {
  * @returns {string} HTML markup for the English legal notice.
  */
 function legalNoticeEnglishHTML() {
-  return `      <div class="content-wrapper">
-        <article class="imprint-article">
+  return `<article class="imprint-article">
           <h2 class="legal-h2">Imprint</h2>
           <ul>
             <li>Annika Egger</li>
@@ -252,6 +249,5 @@ function legalNoticeEnglishHTML() {
             >. <br /><br />
             Date: July 13, 2026
           </p>
-        </article>
-      </div>`;
+        </article>`;
 }

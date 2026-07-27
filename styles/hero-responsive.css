@@ -144,6 +144,11 @@
   .hero-introduction-right {
     gap: 8px;
   }
+
+  .hero-line {
+    max-width: 100px;
+    width: unset;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -221,6 +226,10 @@
 
   .hero-content {
     bottom: 12dvh;
+  }
+
+  .hero-line {
+    max-width: 70px;
   }
 }
 
