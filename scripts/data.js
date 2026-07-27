@@ -1,3 +1,17 @@
+/**
+ * List of portfolio projects displayed on the site.
+ * @type {Array<{
+ *   img_src: string,
+ *   alt_text_english: string,
+ *   alt_text_german: string,
+ *   title: string,
+ *   skills: string,
+ *   description_english: string,
+ *   description_german: string,
+ *   live_test_url: string,
+ *   github_url: string
+ * }>}
+ */
 const PROJECTS = [
   {
     img_src: "./assets/img/join-preview.png",
@@ -40,6 +54,10 @@ const PROJECTS = [
   },
 ];
 
+/**
+ * Template object for a single project entry.
+ * @type {{img_src:string,alt_text:string,title:string,skills:string,description:string,live_test_url:string,github_url:string}}
+ */
 const projectJson = {
   img_src: "",
   alt_text: "",
@@ -50,6 +68,16 @@ const projectJson = {
   github_url: "",
 };
 
+/**
+ * Collector of user feedback entries used in the feedback carousel.
+ * @type {Array<{
+ *   text_german: string,
+ *   text_english: string,
+ *   author_english: string,
+ *   author_german: string,
+ *   img_src: string
+ * }>}
+ */
 const FEEDBACKS = [
   {
     text_german:
@@ -80,6 +108,10 @@ const FEEDBACKS = [
   },
 ];
 
+/**
+ * Template object for a feedback entry.
+ * @type {{text_german:string,text_english:string,author_english:string,author_german:string,img_src:string}}
+ */
 const feedbackJson = {
   text_german: "",
   text_english: "",
@@ -88,6 +120,11 @@ const feedbackJson = {
   img_src: "",
 };
 
+/**
+ * Localized UI text for English and German.
+ * Structure: { english: {...}, german: {...} }
+ * @type {{english:Object,german:Object}}
+ */
 const textJson = {
   english: {
     header: {

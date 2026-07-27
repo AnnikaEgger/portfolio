@@ -1,3 +1,7 @@
+/**
+ * Return the privacy policy HTML content in English.
+ * @returns {string} HTML markup for the English privacy policy.
+ */
 function privacyPolicyEnglishHTML() {
   return `<h2 class="legal-h2">1. Data protection at a glance</h2>
 <h3>General information</h3>

@@ -1,3 +1,7 @@
+/**
+ * Initialize the legal notice page: load language settings and render content.
+ * @returns {void}
+ */
 function initLegalNotice() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
@@ -5,6 +9,10 @@ function initLegalNotice() {
   renderTexts();
 }
 
+/**
+ * Render the legal notice content according to the active language.
+ * @returns {void}
+ */
 function renderLegalNotice() {
   const contentWrapper = document.getElementById(
     "content-wrapper-legal-notice",
@@ -20,6 +28,10 @@ function renderLegalNotice() {
   }
 }
 
+/**
+ * Return the legal notice HTML content in German.
+ * @returns {string} HTML markup for the German legal notice.
+ */
 function legalNoticeGermanHTML() {
   return `      <div class="content-wrapper">
         <article class="imprint-article">
@@ -131,6 +143,10 @@ function legalNoticeGermanHTML() {
       </div>`;
 }
 
+/**
+ * Return the legal notice HTML content in English.
+ * @returns {string} HTML markup for the English legal notice.
+ */
 function legalNoticeEnglishHTML() {
   return `      <div class="content-wrapper">
         <article class="imprint-article">

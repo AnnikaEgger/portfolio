@@ -1,5 +1,3 @@
-/* #region responsive */
-
 @media screen and (max-width: 1600px) {
   .hero-introduction-title {
     font-size: 36px;
@@ -374,5 +372,3 @@
     margin-top: 100px;
   }
 }
-
-/* #endregion */

@@ -1,18 +1,26 @@
+/**
+ * Index of the currently visible feedback item.
+ * @type {number}
+ */
 let currentFeedback = 0;
 
+/**
+ * Initialize the page: load language, style UI and start animations.
+ * @returns {void}
+ */
 function init() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
   translatePage();
-  flyInElements();
-}
-
-function setLocalStorageLanguage() {
-  localStorage.setItem("language", language);
+  setTimeout(flyInElements, 100);
 }
 
 // #region portfolio
 
+/**
+ * Render the portfolio projects into the project section.
+ * @returns {void}
+ */
 function renderPortfolioProjects() {
   const projectSection = document.getElementById("project-section");
   let liveTestText;
@@ -28,12 +36,22 @@ function renderPortfolioProjects() {
   }
 }
 
+/**
+ * Move feedback carousel in the given direction and update UI.
+ * @param {"forwards"|"backwards"} direction Direction to move the feedback.
+ * @returns {void}
+ */
 function showNextFeedback(direction) {
   setCurrentFeedback(direction);
   renderCurrentFeedback();
   changeActiveDot();
 }
 
+/**
+ * Update the `currentFeedback` index based on direction.
+ * @param {"forwards"|"backwards"} direction Direction to move the feedback.
+ * @returns {void}
+ */
 function setCurrentFeedback(direction) {
   if (direction == "forwards") {
     if (isLastFeedback()) currentFeedback = 0;
@@ -44,14 +62,27 @@ function setCurrentFeedback(direction) {
   }
 }
 
+/**
+ * Check whether the current feedback is the last item.
+ * @returns {boolean} True when on the last feedback.
+ */
 function isLastFeedback() {
   return currentFeedback >= FEEDBACKS.length - 1;
 }
 
+/**
+ * Check whether the current feedback is the first item.
+ * @returns {boolean} True when on the first feedback.
+ */
 function isFirstFeedback() {
   return currentFeedback <= 0;
 }
 
+/**
+ * Render the currently selected feedback into the DOM.
+ * Expects a global `FEEDBACKS` array and `language` variable.
+ * @returns {void}
+ */
 function renderCurrentFeedback() {
   const feedback = FEEDBACKS[currentFeedback];
 
@@ -65,6 +96,10 @@ function renderCurrentFeedback() {
     .setAttribute("href", feedback.img_src);
 }
 
+/**
+ * Update the visual active dot indicator for feedback carousel.
+ * @returns {void}
+ */
 function changeActiveDot() {
   document.querySelectorAll(".feedback-dot").forEach((dot) => {
     dot.classList.remove("active-dot");
@@ -76,6 +111,12 @@ function changeActiveDot() {
   activeDot.classList.add("active-dot");
 }
 
+/**
+ * Build HTML string for a project article.
+ * @param {Object} project Project data object.
+ * @param {string} liveTestText Text to use for the live test button.
+ * @returns {string} HTML markup for the project article.
+ */
 function projectArticleHTML(project, liveTestText) {
   return `<article class="project-article fade-in-element">
             <div class="project-preview">
@@ -116,6 +157,11 @@ document.addEventListener("scroll", () => {
   styleCurrentSection("header");
 });
 
+/**
+ * Select a section from the mobile menu.
+ * Uses the global `event` from the click handler to determine target.
+ * @returns {void}
+ */
 function selectSection() {
   document.querySelectorAll(".link-mobile-menu").forEach((link) => {
     link.classList.remove("link-mobile-menu-active");
@@ -124,10 +170,19 @@ function selectSection() {
   closeMobileMenu();
 }
 
+/**
+ * Close the mobile burger menu by unchecking the hidden checkbox.
+ * @returns {void}
+ */
 function closeMobileMenu() {
   document.getElementById("burger-menu-hidden-checkbox").checked = false;
 }
 
+/**
+ * Style the current navigation link based on visible section.
+ * @param {"header"|"menu"} trigger Which UI triggered the update.
+ * @returns {void}
+ */
 function styleCurrentSection(trigger) {
   let sectionMap;
   let linkId;
@@ -139,6 +194,10 @@ function styleCurrentSection(trigger) {
   if (linkId) styleNavLink(document.getElementById(linkId), trigger);
 }
 
+/**
+ * Style header navbar links based on the current section.
+ * @returns {Object} Map of section ids to header link ids.
+ */
 function styleHeaderNavbar() {
   currentSection = getCurrentSection();
   if (currentSection === lastSection) return getSectionHeaderMap();
@@ -150,6 +209,10 @@ function styleHeaderNavbar() {
   return getSectionHeaderMap();
 }
 
+/**
+ * Style burger/menu navbar links based on the current section.
+ * @returns {Object} Map of section ids to menu link ids.
+ */
 function styleBurgerMenuNavbar() {
   document.querySelectorAll(".link-mobile-menu").forEach((link) => {
     link.classList.remove("link-mobile-menu-active");
@@ -157,6 +220,10 @@ function styleBurgerMenuNavbar() {
   return getSectionMenuMap();
 }
 
+/**
+ * Return mapping of section IDs to header link IDs.
+ * @returns {{[sectionId:string]:string}}
+ */
 function getSectionHeaderMap() {
   return {
     "about-me-section": "header-about-me",
@@ -165,6 +232,10 @@ function getSectionHeaderMap() {
   };
 }
 
+/**
+ * Return mapping of section IDs to burger menu link IDs.
+ * @returns {{[sectionId:string]:string}}
+ */
 function getSectionMenuMap() {
   return {
     "about-me-section": "menu-about-me",
@@ -174,11 +245,21 @@ function getSectionMenuMap() {
   };
 }
 
+/**
+ * Add the active class to a navigation link depending on the trigger.
+ * @param {HTMLElement} element Element to style.
+ * @param {"header"|"menu"} trigger Origin of the styling change.
+ * @returns {void}
+ */
 function styleNavLink(element, trigger) {
   if (trigger === "header") element.classList.add("header-active");
   else element.classList.add("link-mobile-menu-active");
 }
 
+/**
+ * Determine the currently visible section on the page.
+ * @returns {string|undefined} The id of the current section or undefined.
+ */
 function getCurrentSection() {
   const sections = document.querySelectorAll("section");
   for (const section of sections) {
@@ -192,6 +273,11 @@ function getCurrentSection() {
   }
 }
 
+/**
+ * Check whether a DOMRect intersects the vertical center of the viewport.
+ * @param {DOMRect} rect Bounding rect from `getBoundingClientRect()`.
+ * @returns {boolean} True when rect is visible around viewport center.
+ */
 function isVisible(rect) {
   return (
     rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2
@@ -202,10 +288,18 @@ function isVisible(rect) {
 
 // #region scroll animation
 
+/**
+ * Get the current vertical scroll position.
+ * @returns {number} Scroll Y offset in pixels.
+ */
 function getScrollTop() {
   return window.pageYOffset || document.documentElement.scrollTop;
 }
 
+/**
+ * Track scroll direction and return a getter for the current direction.
+ * @returns {function():"down"|"up"} Function that returns the last known scroll direction.
+ */
 function initScrollDirectionTracker() {
   let lastScrollTop = getScrollTop();
   let scrollDirection = "down";
@@ -222,15 +316,31 @@ function initScrollDirectionTracker() {
   return () => scrollDirection;
 }
 
+/**
+ * Observe elements with `.fade-in-element` and toggle `.visible` based on intersection.
+ * @param {boolean} [languageChange] When true, force elements visible (used on language switch).
+ * @returns {void}
+ */
 function flyInElements(languageChange) {
   const getDirection = initScrollDirectionTracker();
   const observer = createFlyInObserver(getDirection, languageChange);
 
   document.querySelectorAll(".fade-in-element").forEach((el) => {
     observer.observe(el);
+
+    const rect = el.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top < window.innerHeight)
+      el.classList.add("visible");
+    else el.classList.remove("visible");
   });
 }
 
+/**
+ * Create an IntersectionObserver that uses the provided direction getter.
+ * @param {function():"down"|"up"} getDirection Getter returning current scroll direction.
+ * @param {boolean} languageChange Flag to force visibility when switching language.
+ * @returns {IntersectionObserver}
+ */
 function createFlyInObserver(getDirection, languageChange) {
   return new IntersectionObserver(
     (entries) => {
@@ -242,6 +352,13 @@ function createFlyInObserver(getDirection, languageChange) {
   );
 }
 
+/**
+ * Handle a single IntersectionObserver entry and toggle visibility classes.
+ * @param {IntersectionObserverEntry} entry Observer entry for the element.
+ * @param {function():"down"|"up"} getDirection Getter returning current scroll direction.
+ * @param {boolean} languageChange Flag to force visibility when switching language.
+ * @returns {void}
+ */
 function handleIntersection(entry, getDirection, languageChange) {
   if (languageChange) {
     entry.target.classList.add("visible");
@@ -258,6 +375,10 @@ function handleIntersection(entry, getDirection, languageChange) {
 
 // #region pricacy policy
 
+/**
+ * Initialize the privacy policy page: load language and render content.
+ * @returns {void}
+ */
 function initPrivacyPolicy() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
@@ -265,6 +386,10 @@ function initPrivacyPolicy() {
   renderTexts();
 }
 
+/**
+ * Render the privacy policy content depending on the active language.
+ * @returns {void}
+ */
 function renderPrivacyPolicy() {
   const contentWrapper = document.getElementById(
     "content-wrapper-privacy-policy",

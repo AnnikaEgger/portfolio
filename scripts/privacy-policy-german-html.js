@@ -1,3 +1,7 @@
+/**
+ * Return the privacy policy HTML content in German.
+ * @returns {string} HTML markup for the German privacy policy.
+ */
 function privacyPolicyGermanHTML() {
   return ` <h2 class="legal-h2">1. Datenschutz auf einen Blick</h2>
         <h3>Allgemeine Hinweise</h3>
