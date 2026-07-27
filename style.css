@@ -142,7 +142,7 @@ input[type="checkbox"] {
   left: 0;
   width: 100dvw;
   height: 100dvh;
-  background-color: rgba(18, 18, 18, 0.8);
+  background-color: rgba(18, 18, 18, 1);
   display: none;
   align-items: center;
   justify-content: center;
@@ -205,7 +205,6 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 375px) {
-  .index-h1,
   .index-h2 {
     font-size: 36px;
   }

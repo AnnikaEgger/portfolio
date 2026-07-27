@@ -29,14 +29,12 @@
   <body onload="initPrivacyPolicy()" class="body--legal">
     <header class="site-header">
       <div class="header-content">
-        <a href="#" class="logo logo-name--header">
-          <div class="logo-right">
-            <img
-              class="logo-initials"
-              src="./assets/img/logo-initials.png"
-              alt=""
-            />
-          </div>
+        <a href="index.html" class="logo logo--header">
+          <img
+            class="logo-initials"
+            src="./assets/img/logo-initials.png"
+            alt="AE Logo"
+          />
         </a>
 
         <div class="header-controls">
@@ -44,31 +42,31 @@
             <ul>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="about"
                   href="index.html#about-me-section"
+                  id="header-about-me"
                   >About me</a
                 >
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="skills"
                   href="index.html#my-skills-section"
+                  id="header-skills"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="portfolio"
                   href="index.html#portfolio-section"
+                  id="header-portfolio"
                   >Portfolio</a
                 >
               </li>
@@ -97,7 +95,7 @@
           <input
             class="burger-menu-hidden-checkbox"
             type="checkbox"
-            name=""
+            aria-label="Open Burger Menu"
             id="burger-menu-hidden-checkbox"
           />
           <div class="burger-menu-line burger-menu-line-1"></div>
@@ -111,38 +109,45 @@
           <ul>
             <li>
               <a
-                onclick="closeMobileMenu()"
-                class="link-mobile-menu-active"
+                onclick="selectSection()"
+                class="link-mobile-menu"
                 href="index.html#about-me-section"
                 data-section="burger_menu"
                 data-key="about"
+                id="menu-about-me"
                 >About me</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#my-skills-section"
                 data-section="burger_menu"
                 data-key="skills"
+                id="menu-my-skills"
                 >My skills</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#portfolio-section"
                 data-section="burger_menu"
                 data-key="portfolio"
+                id="menu-portfolio"
                 >Portfolio</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#contact-section"
                 data-section="burger_menu"
                 data-key="contact"
+                id="menu-contact"
                 >Contact</a
               >
             </li>
@@ -239,14 +244,12 @@
     </main>
 
     <footer class="site-footer">
-      <a href="#" class="logo-name logo-name--footer">
-        <span class="bracket letter-colored1">&#123;</span>
-        <span class="letter">A</span><span class="letter">n</span
-        ><span class="letter">n</span
-        ><span class="letter letter-colored1">;</span
-        ><span class="letter">k</span
-        ><span class="letter letter-colored2">a</span>
-        <span class="bracket letter-colored1">&#125;</span>
+      <a href="index.html" class="logo logo--footer">
+        <img
+          class="logo-initials"
+          src="./assets/img/logo-initials.png"
+          alt="AE Logo"
+        />
       </a>
 
       <p class="footer-copyright">© Annika Egger 2026</p>

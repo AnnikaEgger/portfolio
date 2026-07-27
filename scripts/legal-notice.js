@@ -2,6 +2,7 @@ function initLegalNotice() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
   renderLegalNotice();
+  renderTexts();
 }
 
 function renderLegalNotice() {

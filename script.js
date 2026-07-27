@@ -262,6 +262,7 @@ function initPrivacyPolicy() {
   getLanguageFromLocalStorage();
   styleLanguageButtons();
   renderPrivacyPolicy();
+  renderTexts();
 }
 
 function renderPrivacyPolicy() {

@@ -28,14 +28,12 @@
   <body onload="initLegalNotice()" class="body--legal">
     <header class="site-header">
       <div class="header-content">
-        <a href="index.html" class="logo logo-name--header">
-          <div class="logo-right">
-            <img
-              class="logo-initials"
-              src="./assets/img/logo-initials.png"
-              alt=""
-            />
-          </div>
+        <a href="index.html" class="logo logo--header">
+          <img
+            class="logo-initials"
+            src="./assets/img/logo-initials.png"
+            alt="AE Logo"
+          />
         </a>
 
         <div class="header-controls">
@@ -43,31 +41,31 @@
             <ul>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="about"
                   href="index.html#about-me-section"
+                  id="header-about-me"
                   >About me</a
                 >
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="skills"
                   href="index.html#my-skills-section"
+                  id="header-skills"
                   >Skills</a
                 >
               </li>
               <li>
                 <a
-                  onclick="changeActiveHeaderLink(event)"
                   class="header-link"
                   data-section="header"
                   data-key="portfolio"
                   href="index.html#portfolio-section"
+                  id="header-portfolio"
                   >Portfolio</a
                 >
               </li>
@@ -96,7 +94,7 @@
           <input
             class="burger-menu-hidden-checkbox"
             type="checkbox"
-            name=""
+            aria-label="Open Burger Menu"
             id="burger-menu-hidden-checkbox"
           />
           <div class="burger-menu-line burger-menu-line-1"></div>
@@ -110,38 +108,45 @@
           <ul>
             <li>
               <a
-                onclick="closeMobileMenu()"
-                class="link-mobile-menu-active"
+                onclick="selectSection()"
+                class="link-mobile-menu"
                 href="index.html#about-me-section"
                 data-section="burger_menu"
                 data-key="about"
+                id="menu-about-me"
                 >About me</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#my-skills-section"
                 data-section="burger_menu"
                 data-key="skills"
+                id="menu-my-skills"
                 >My skills</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#portfolio-section"
                 data-section="burger_menu"
                 data-key="portfolio"
+                id="menu-portfolio"
                 >Portfolio</a
               >
             </li>
             <li>
               <a
-                onclick="closeMobileMenu()"
+                class="link-mobile-menu"
+                onclick="selectSection()"
                 href="index.html#contact-section"
                 data-section="burger_menu"
                 data-key="contact"
+                id="menu-contact"
                 >Contact</a
               >
             </li>
@@ -234,123 +239,16 @@
         </div>
       </div>
 
-      <div class="content-wrapper" id="content-wrapper-legal-notice">
-        <!-- <article class="imprint-article">
-          <h2 class="legal-h2">Imprint</h2>
-          <ul>
-            <li>Annika Egger</li>
-            <li>Alte Schule 3</li>
-            <li>86860 Jengen</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Contact</h3>
-          <p>kontakt@annika-egger.de</p>
-        </article>
-
-        <article>
-          <h3>Acceptance of terms</h3>
-          <p>
-            By accessing and using
-            <span class="color-highlight">Portfolio</span>, you acknowledge and
-            agree to the following terms and conditions, and any policies,
-            guidelines, or amendments thereto that may be presented to you from
-            time to time. I may update or change the terms and conditions from
-            time to time without notice.
-          </p>
-        </article>
-
-        <article>
-          <h3>Scope and ownership of the product</h3>
-          <p>
-            <span class="color-highlight">Portfolio</span> has been developed as
-            part of a student group project in a web development bootcamp at the
-            <span class="color-highlight">Developer Akademie</span> GmbH. It has
-            an educational purpose and is not intended for extensive personal &
-            business usage. As such, I cannot guarantee consistent availability,
-            reliability, accuracy, or any other aspect of quality regarding this
-            Product. <br /><br />
-            The design of
-            <span class="color-highlight">Portfolio</span> is owned by the
-            <span class="color-highlight">Developer Akademie</span> GmbH.
-            Unauthorized use, reproduction, modification, distribution, or
-            replication of the design is strictly prohibited.
-          </p>
-        </article>
-
-        <article>
-          <h3>Proprietary rights</h3>
-          <p>
-            Aside from the design owned by
-            <span class="color-highlight">Developer Akademie</span> GmbH, I
-            retain all proprietary rights in
-            <span class="color-highlight">Portfolio</span>, including any
-            associated copyrighted material, trademarks, and other proprietary
-            information.
-          </p>
-        </article>
-
-        <article>
-          <h3>Use of the product</h3>
-          <p>
-            <span class="color-highlight">Portfolio</span> is intended to be
-            used for lawful purposes only, in accordance with all applicable
-            laws and regulations. Any use of
-            <span class="color-highlight">Portfolio</span> for illegal
-            activities, or to harass, harm, threaten, or intimidate another
-            person, is strictly prohibited. You are solely responsible for your
-            interactions with other users of
-            <span class="color-highlight">Portfolio</span>.
-          </p>
-        </article>
-
-        <article>
-          <h3>Disclaimer of warranties and limitation of liability</h3>
-          <p>
-            <span class="color-highlight">Portfolio</span> is provided "as is"
-            without warranty of any kind, whether express or implied, including
-            but not limited to the implied warranties of merchantability,
-            fitness for a particular purpose, and non-infringement. In no event
-            will I or the
-            <span class="color-highlight">Developer Akademie</span>, be liable
-            for any direct, indirect, incidental, special, consequential or
-            exemplary damages, including but not limited to, damages for loss of
-            profits, goodwill, use, data, or other intangible losses, even if I
-            have been advised of the possibility of such damages, arising out of
-            or in connection with the use or performance of
-            <span class="color-highlight">Portfolio</span>.
-          </p>
-        </article>
-
-        <article>
-          <h3>Indemnity</h3>
-          <p>
-            You agree to indemnify, defend and hold harmless me, the
-            <span class="color-highlight">Developer Akademie</span>, and our
-            affiliates, partners, officers, directors, agents, and employees,
-            from and against any claim, demand, loss, damage, cost, or liability
-            (including reasonable legal fees) arising out of or relating to your
-            use of <span class="color-highlight">Portfolio</span> and/or your
-            breach of this Legal Notice. <br /><br />
-            For any questions or notices, please contact me at
-            <a href="mailto:kontakt@annika-egger.de">kontakt@annika-egger.de</a
-            >. <br /><br />
-            Date: July 13, 2026
-          </p>
-        </article> -->
-      </div>
+      <div class="content-wrapper" id="content-wrapper-legal-notice"></div>
     </main>
 
     <footer class="site-footer">
-      <a href="index.html" class="logo logo-name--header">
-        <div class="logo-right">
-          <img
-            class="logo-initials"
-            src="./assets/img/logo-initials.png"
-            alt=""
-          />
-        </div>
+      <a href="index.html" class="logo logo--footer">
+        <img
+          class="logo-initials"
+          src="./assets/img/logo-initials.png"
+          alt="AE Logo"
+        />
       </a>
 
       <p class="footer-copyright">© Annika Egger 2026</p>
@@ -379,7 +277,7 @@
 
       <a
         class="legal-notice-footer"
-        href="./legal-notice.html"
+        href="#"
         data-section="footer"
         data-key="legal_notice"
         >Legal Notice</a
