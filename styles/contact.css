@@ -180,6 +180,7 @@ input:-webkit-autofill:focus {
 
 .send-msg-btn.disabled {
   background-color: rgba(182, 182, 182, 1);
+  cursor: default;
 }
 
 .send-msg-btn.disabled.waiting-for-response {
