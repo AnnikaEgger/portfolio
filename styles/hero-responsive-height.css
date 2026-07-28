@@ -155,9 +155,6 @@
   .hero-content-wrapper {
     margin-top: 80px;
   }
-
-  .hero-content {
-  }
 }
 
 @media screen and (min-height: 1200px) and (min-width: 1920px) {
@@ -176,7 +173,7 @@
 
 @media screen and (min-height: 1300px) and (min-width: 1920px) {
   .hero-content-wrapper {
-    margin-top: 250px;
+    margin-top: 150px;
     gap: 64px;
   }
 
@@ -196,6 +193,11 @@
     height: 850px;
   }
 
+  .hero-portrait-shadows svg {
+    width: 600px;
+    height: auto;
+  }
+
   .hero-wave-bg {
     height: 170%;
   }
@@ -207,7 +209,7 @@
   }
 
   .hero-content {
-    margin-bottom: 650px;
+    margin-bottom: 550px;
   }
 }
 
@@ -217,16 +219,20 @@
   }
 
   .hero-content-wrapper {
-    margin-top: 650px;
+    margin-top: 400px;
   }
 
   .hero-content {
     margin-bottom: 0px;
-    margin-top: -1000px;
+    margin-top: -800px;
   }
 
   .hero-footer {
     padding-bottom: 250px;
+  }
+
+  .hero-portrait-shadows svg {
+    width: 700px;
   }
 }
 
@@ -235,7 +241,7 @@
 
 @media screen and (min-height: 2200px) and (min-width: 1920px) {
   .hero-content-wrapper {
-    margin-top: 800px;
+    margin-top: 500px;
   }
 
   .hero-footer {
@@ -249,13 +255,13 @@
 
 @media screen and (min-height: 2400px) and (min-width: 1920px) {
   .hero-content-wrapper {
-    margin-top: 900px;
+    margin-top: 600px;
   }
 }
 
 @media screen and (min-height: 2600px) and (min-width: 1920px) {
   .hero-content-wrapper {
-    margin-top: 1100px;
+    margin-top: 750px;
   }
 
   .hero-footer {
