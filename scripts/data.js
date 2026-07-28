@@ -184,7 +184,6 @@ const textJson = {
       agree: "and agree to the processing of my data as outlined.",
       name_input: "Please enter your name.",
       email_input: "Please enter your email.",
-      message_input: "Please enter a message.",
       accept_privacy: "Please accept the privacy policy.",
     },
     footer: {
@@ -250,7 +249,6 @@ const textJson = {
         "gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.",
       name_input: "Bitte gib deinen Namen ein.",
       email_input: "Bitte gib deine E-Mail ein.",
-      message_input: "Bitte gib eine Nachricht ein.",
       accept_privacy: "Bitte akzeptiere die Datenschutzerklärung.",
     },
     footer: {

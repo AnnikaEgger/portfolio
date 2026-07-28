@@ -42,6 +42,11 @@ textarea {
   font: inherit;
 }
 
+.visible {
+  opacity: 1;
+  transition: opacity 150ms ease-in;
+}
+
 .social-btn img {
   width: 30px;
 }

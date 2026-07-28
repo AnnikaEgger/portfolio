@@ -84,9 +84,10 @@
 }
 
 .input-icon {
-  display: none;
+  opacity: 0;
   width: 25px;
   height: 25px;
+  transition: opacity 150ms ease-in;
 }
 
 .input-wrapper--input {

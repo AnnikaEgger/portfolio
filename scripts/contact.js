@@ -92,9 +92,10 @@ function checkboxIsValid() {
 }
 
 /**
- * Apply styling for a given input depending on validity.
- * @param {HTMLElement} input The input element that was validated.
- * @param {boolean} valid Whether the input is valid.
+ * Update the visual state of an input based on its validation result.
+ * @param {HTMLInputElement | HTMLTextAreaElement} input The input element to style.
+ * @param {boolean} valid Whether the current value is valid.
+ * @param {string} eventType The event type that triggered the validation update.
  * @returns {void}
  */
 function styleInput(input, valid, eventType) {
@@ -103,17 +104,47 @@ function styleInput(input, valid, eventType) {
 
   if (valid) {
     styleValidInput(input, inputWrapper, icon);
-  } else if (!valid && eventType !== "input")
-    styleInvalidInput(input, inputWrapper, icon);
-  else if (!valid && eventType === "input")
-    removeInputStyle(input, inputWrapper, icon);
-
-  icon.style.display = "unset";
+  } else if (!valid) {
+    if (eventType === "input") removeValidInputStyle(input, inputWrapper, icon);
+    else {
+      styleInvalidInput(input, inputWrapper, icon);
+      if (inputWrapper.id === "input-wrapper-msg")
+        showCorrectErrorMsgMessageInput();
+    }
+  }
 }
 
-function removeInputStyle(input, inputWrapper, icon) {
-  inputWrapper.classList.remove("input-invalid");
-  icon.style.display = "none";
+/**
+ * Update the error message text for the message field based on its current length.
+ * @returns {void}
+ */
+function showCorrectErrorMsgMessageInput() {
+  const message = document.getElementById("contact-msg").value;
+  errorMsg = document.getElementById("error-msg--message");
+
+  if (message.length === 0) {
+    if (language === "german")
+      errorMsg.textContent = "Bitte gib eine Nachricht ein.";
+    else errorMsg.textContent = "Please enter a message.";
+  } else if (message.length < 10) {
+    if (language === "german")
+      errorMsg.textContent = "Bitte gib mindestens 10 Zeichen ein.";
+    else errorMsg.textContent = "Please enter at least 10 characters.";
+  }
+}
+
+/**
+ * Remove the success styling from an input wrapper and its icon.
+ * @param {HTMLInputElement | HTMLTextAreaElement} input The input element whose valid styling should be cleared.
+ * @param {HTMLElement} inputWrapper The wrapper element associated with the input.
+ * @param {HTMLImageElement} icon The status icon element displayed for validation feedback.
+ * @returns {void}
+ */
+function removeValidInputStyle(input, inputWrapper, icon) {
+  if (inputWrapper.classList.contains("input-valid")) {
+    inputWrapper.classList.remove("input-valid");
+    icon.classList.remove("visible");
+  }
 }
 
 /**
@@ -127,6 +158,7 @@ function styleValidInput(input, inputWrapper, icon) {
   inputWrapper.classList.add("input-valid");
   inputWrapper.classList.remove("input-invalid");
   icon.src = "./assets/icons/valid-input.svg";
+  icon.classList.add("visible");
 }
 
 /**
@@ -140,6 +172,7 @@ function styleInvalidInput(input, inputWrapper, icon) {
   inputWrapper.classList.add("input-invalid");
   inputWrapper.classList.remove("input-valid");
   icon.src = "./assets/icons/invalid-input.svg";
+  icon.classList.add("visible");
 }
 
 /**

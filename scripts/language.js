@@ -66,6 +66,7 @@ function translatePage() {
   translateContactFormPlaceholders();
   renderCurrentFeedback();
   styleIAmText();
+  showCorrectErrorMsgMessageInput();
 }
 
 /**

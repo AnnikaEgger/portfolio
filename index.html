@@ -944,7 +944,7 @@
                     data-key="name_input"
                     class="error-msg"
                   >
-                    Your name is required
+                    Please enter your name.
                   </p>
                 </div>
 
@@ -970,12 +970,15 @@
                     data-key="email_input"
                     class="error-msg"
                   >
-                    Your email is required
+                    Please enter your email.
                   </p>
                 </div>
 
                 <div class="input-and-error-wrapper">
-                  <div class="input-wrapper input-wrapper--textarea">
+                  <div
+                    class="input-wrapper input-wrapper--textarea"
+                    id="input-wrapper-msg"
+                  >
                     <textarea
                       onblur="validateInput(event)"
                       oninput="validateInput(event)"
@@ -990,12 +993,8 @@
                       alt="Invalid Icon"
                     />
                   </div>
-                  <p
-                    data-section="contact"
-                    data-key="message_input"
-                    class="error-msg"
-                  >
-                    Your message is empty
+                  <p class="error-msg" id="error-msg--message">
+                    Please enter a message.
                   </p>
                 </div>
               </div>
