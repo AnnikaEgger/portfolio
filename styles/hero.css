@@ -6,6 +6,7 @@
   width: 100%;
   height: calc(100dvh - var(--header-height));
   box-sizing: content-box;
+  overflow-x: clip;
 }
 
 .hero-content-wrapper {
@@ -108,22 +109,13 @@
   font-size: 58px;
 }
 
-.hero-wave-wrapper {
-  width: 100%;
-  height: 140%;
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 .hero-wave-bg {
   width: 120dvw;
+  height: 140%;
   z-index: -1;
   position: absolute;
   left: 0;
   top: 0;
-  height: 140%;
 }
 
 .hero-wave-bg path {

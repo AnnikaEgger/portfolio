@@ -213,6 +213,13 @@
   left: -250px;
 }
 
+.bg-shadow-wrapper--portfolio-bottom {
+  top: unset;
+  left: unset;
+  right: 0;
+  bottom: 0;
+}
+
 .bg-shadow--portfolio-bottom {
   bottom: -50px;
   right: -550px;

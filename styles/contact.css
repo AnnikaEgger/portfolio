@@ -208,6 +208,11 @@ input:-webkit-autofill:focus {
   transition: var(--transition-hover-default);
 }
 
+.bg-shadow-wrapper--contact {
+  height: 100%;
+  overflow-y: clip;
+}
+
 .bg-shadow--contact {
   top: 350px;
   left: -420px;

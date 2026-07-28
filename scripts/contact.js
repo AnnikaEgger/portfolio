@@ -47,7 +47,9 @@ function formIsValid() {
  * @returns {boolean} True when name length is between 2 and 50.
  */
 function nameIsValid() {
-  const name = document.getElementById("contact-name").value;
+  const name = document.getElementById("contact-name").value.trim();
+  console.log(name);
+
   return name.length >= 2 && name.length <= 50;
 }
 
@@ -56,7 +58,7 @@ function nameIsValid() {
  * @returns {boolean} True when email matches the pattern.
  */
 function emailIsValid() {
-  const email = document.getElementById("contact-email").value;
+  const email = document.getElementById("contact-email").value.trim();
   return emailPattern.test(email);
 }
 
@@ -65,7 +67,7 @@ function emailIsValid() {
  * @returns {boolean} True when message length is between 10 and 1000.
  */
 function messageIsValid() {
-  const message = document.getElementById("contact-msg").value;
+  const message = document.getElementById("contact-msg").value.trim();
   return message.length >= 10 && message.length <= 1000;
 }
 
@@ -119,7 +121,7 @@ function styleInput(input, valid, eventType) {
  * @returns {void}
  */
 function showCorrectErrorMsgMessageInput() {
-  const message = document.getElementById("contact-msg").value;
+  const message = document.getElementById("contact-msg").value.trim();
   errorMsg = document.getElementById("error-msg--message");
 
   if (message.length === 0) {
@@ -244,9 +246,9 @@ async function postFormJson() {
  */
 function getFormJson() {
   return {
-    name: document.getElementById("contact-name").value,
-    email: document.getElementById("contact-email").value,
-    message: document.getElementById("contact-msg").value,
+    name: document.getElementById("contact-name").value.trim(),
+    email: document.getElementById("contact-email").value.trim(),
+    message: document.getElementById("contact-msg").value.trim(),
   };
 }
 

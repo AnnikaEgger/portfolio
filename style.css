@@ -1,5 +1,9 @@
 /* #region general */
 
+html {
+  overflow-anchor: none;
+}
+
 body {
   color: var(--color-text-primary);
   background-color: rgb(10, 10, 10);
@@ -23,12 +27,16 @@ body p {
 main {
   display: flex;
   flex-direction: column;
-  overflow: clip;
+  /* overflow: clip; */
 }
 
 main svg line {
   stroke: var(--color-primary2);
   stroke-width: 4px;
+}
+
+main > section {
+  width: 100%;
 }
 
 section {
@@ -87,8 +95,16 @@ textarea {
 
 .bg-shadow {
   position: absolute;
-  z-index: -1;
   animation: moveGradient 10s infinite alternate ease-in-out;
+}
+
+.bg-shadow-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  overflow-x: clip;
+  left: 0;
+  top: 0;
 }
 
 @keyframes moveGradient {
