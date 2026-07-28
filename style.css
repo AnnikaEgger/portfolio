@@ -27,7 +27,6 @@ body p {
 main {
   display: flex;
   flex-direction: column;
-  /* overflow: clip; */
 }
 
 main svg line {

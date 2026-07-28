@@ -178,12 +178,11 @@ input:-webkit-autofill:focus {
   box-shadow: var(--box-shadow-btn);
 }
 
-.send-msg-btn:disabled {
+.send-msg-btn.disabled {
   background-color: rgba(182, 182, 182, 1);
-  cursor: not-allowed;
 }
 
-.send-msg-btn:disabled.waiting-for-response {
+.send-msg-btn.disabled.waiting-for-response {
   cursor: wait;
 }
 

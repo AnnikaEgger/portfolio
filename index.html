@@ -22,13 +22,14 @@
     <link rel="stylesheet" href="./styles/about-me.css" />
     <link rel="stylesheet" href="./styles/my-skills.css" />
     <link rel="stylesheet" href="./styles/portfolio.css" />
+    <link rel="stylesheet" href="./styles/portfolio-responsive.css" />
     <link rel="stylesheet" href="./styles/contact.css" />
 
     <link rel="stylesheet" href="./style.css" />
 
     <script src="./scripts/data.js"></script>
     <script src="./scripts/language.js"></script>
-    <script src="./scripts/navbars.js"></script>
+    <script src="./scripts/navbars.js" defer></script>
     <script src="./scripts/contact.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
@@ -270,14 +271,9 @@
               </svg>
             </div>
             <img
-              src="./assets/img/hero-portrait.png"
+              src="./assets/img/hero-portrait_edited.png"
               alt="Portrait of Annika Egger"
-              class="hero-portrait hero-portrait--full"
-            />
-            <img
-              src="./assets/img/hero-portrait.png"
-              alt="Portrait of Annika Egger"
-              class="hero-portrait hero-portrait--ellbow"
+              class="hero-portrait"
             />
           </div>
 
@@ -925,12 +921,7 @@
           </div>
 
           <div class="contact-content-second fade-in-element">
-            <form
-              id="contact-form"
-              class="contact-form"
-              onsubmit="submitForm()"
-              method="post"
-            >
+            <form id="contact-form" class="contact-form">
               <div class="contact-form-inputs">
                 <div class="input-and-error-wrapper">
                   <div class="input-wrapper input-wrapper--input">
@@ -1042,10 +1033,9 @@
                 </p>
               </div>
               <button
-                type="submit"
+                onclick="validateForm()"
                 id="send-msg-btn"
-                disabled
-                class="btn btn-main send-msg-btn btn-primary1--filled"
+                class="btn btn-main send-msg-btn btn-primary1--filled disabled"
                 data-section="contact"
                 data-key="submit_form"
               ></button>

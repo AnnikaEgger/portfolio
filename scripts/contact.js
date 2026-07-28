@@ -6,35 +6,67 @@ const emailPattern =
   /^(?!.*\.\.)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 /**
- * Validate a single input when it loses focus and update styles.
- * @param {Event} event Blur event from the input element.
+ * Validate a form field when its input or blur event fires and update the UI state.
+ * @param {Event} event The input or blur event that triggered the validation.
  * @returns {void}
  */
 function validateInput(event) {
   const input = event.target;
+  if (event.type === "blur") input.value = input.value.trim();
+
+  styleInputBasedOnValidity(input, event.type);
+  styleSendButton();
+}
+
+/**
+ * Determine whether the given input should be styled as valid or invalid.
+ * @param {HTMLInputElement | HTMLTextAreaElement} input The input element to evaluate.
+ * @param {string} eventType The event that triggered the validation update.
+ * @returns {void}
+ */
+function styleInputBasedOnValidity(input, eventType) {
   let valid = false;
 
   if (input.id == "contact-name") valid = nameIsValid();
   else if (input.id == "contact-email") valid = emailIsValid();
   else if (input.id == "contact-msg") valid = messageIsValid();
 
-  styleInput(input, valid, event.type);
-  validateForm();
+  styleInput(input, valid, eventType);
 }
 
 /**
- * Enable or disable the send button depending on form validity.
+ * Handle the form submission flow by preventing the default behavior and validating the form.
  * @returns {void}
  */
 function validateForm() {
-  const sendMsgBtn = document.getElementById("send-msg-btn");
-  if (formIsValid()) sendMsgBtn.disabled = false;
-  else sendMsgBtn.disabled = true;
+  event.preventDefault();
+  if (formIsValid()) submitForm();
+  else {
+    const inputs = [
+      document.getElementById("contact-name"),
+      document.getElementById("contact-email"),
+      document.getElementById("contact-msg"),
+    ];
+    inputs.forEach((input) => {
+      styleInputBasedOnValidity(input);
+    });
+    validateCheckbox();
+  }
 }
 
 /**
- * Check whether the contact form is valid.
- * @returns {boolean} True when all fields and the checkbox are valid.
+ * Toggle the submit button state based on the current form validity.
+ * @returns {void}
+ */
+function styleSendButton() {
+  const sendMsgBtn = document.getElementById("send-msg-btn");
+  if (formIsValid()) sendMsgBtn.classList.remove("disabled");
+  else sendMsgBtn.classList.add("disabled");
+}
+
+/**
+ * Check whether the contact form is currently valid.
+ * @returns {boolean} True when all fields and the checkbox pass validation.
  */
 function formIsValid() {
   return (
@@ -43,19 +75,17 @@ function formIsValid() {
 }
 
 /**
- * Validate the name input length.
- * @returns {boolean} True when name length is between 2 and 50.
+ * Check whether the name field contains a valid length.
+ * @returns {boolean} True when the name is between 2 and 50 characters long.
  */
 function nameIsValid() {
   const name = document.getElementById("contact-name").value.trim();
-  console.log(name);
-
   return name.length >= 2 && name.length <= 50;
 }
 
 /**
- * Validate the email input against `emailPattern`.
- * @returns {boolean} True when email matches the pattern.
+ * Check whether the email field matches the expected email format.
+ * @returns {boolean} True when the email address is valid.
  */
 function emailIsValid() {
   const email = document.getElementById("contact-email").value.trim();
@@ -63,8 +93,8 @@ function emailIsValid() {
 }
 
 /**
- * Validate the message input length.
- * @returns {boolean} True when message length is between 10 and 1000.
+ * Check whether the message field contains a valid length.
+ * @returns {boolean} True when the message is between 10 and 1000 characters long.
  */
 function messageIsValid() {
   const message = document.getElementById("contact-msg").value.trim();
@@ -72,7 +102,7 @@ function messageIsValid() {
 }
 
 /**
- * Validate the privacy checkbox and apply invalid styling if needed.
+ * Validate the privacy checkbox and update its visual state.
  * @returns {void}
  */
 function validateCheckbox() {
@@ -81,12 +111,12 @@ function validateCheckbox() {
   if (!checkboxIsValid()) checkboxWrapper.classList.add("input-invalid");
   else checkboxWrapper.classList.remove("input-invalid");
 
-  validateForm();
+  styleSendButton();
 }
 
 /**
- * Return whether the privacy checkbox is checked.
- * @returns {boolean}
+ * Check whether the privacy checkbox is selected.
+ * @returns {boolean} True when the checkbox is checked.
  */
 function checkboxIsValid() {
   const checkbox = document.getElementById("contact-privacy-checkbox");
@@ -94,10 +124,10 @@ function checkboxIsValid() {
 }
 
 /**
- * Update the visual state of an input based on its validation result.
+ * Apply validation styling to an input based on its current state and event type.
  * @param {HTMLInputElement | HTMLTextAreaElement} input The input element to style.
  * @param {boolean} valid Whether the current value is valid.
- * @param {string} eventType The event type that triggered the validation update.
+ * @param {string} eventType The event that triggered the styling update.
  * @returns {void}
  */
 function styleInput(input, valid, eventType) {
@@ -117,7 +147,7 @@ function styleInput(input, valid, eventType) {
 }
 
 /**
- * Update the error message text for the message field based on its current length.
+ * Update the message-field error hint to match the current input length.
  * @returns {void}
  */
 function showCorrectErrorMsgMessageInput() {
@@ -150,8 +180,8 @@ function removeValidInputStyle(input, inputWrapper, icon) {
 }
 
 /**
- * Apply the 'valid' styles to an input wrapper and icon.
- * @param {HTMLElement} input The input element.
+ * Apply the visual styling used for a valid input.
+ * @param {HTMLInputElement | HTMLTextAreaElement} input The input element.
  * @param {HTMLElement} inputWrapper The wrapper element for the input.
  * @param {HTMLImageElement} icon The status icon element.
  * @returns {void}
@@ -164,8 +194,8 @@ function styleValidInput(input, inputWrapper, icon) {
 }
 
 /**
- * Apply the 'invalid' styles to an input wrapper and icon.
- * @param {HTMLElement} input The input element.
+ * Apply the visual styling used for an invalid input.
+ * @param {HTMLInputElement | HTMLTextAreaElement} input The input element.
  * @param {HTMLElement} inputWrapper The wrapper element for the input.
  * @param {HTMLImageElement} icon The status icon element.
  * @returns {void}
@@ -178,13 +208,11 @@ function styleInvalidInput(input, inputWrapper, icon) {
 }
 
 /**
- * Handle the form submit event: prevent default, submit and finalize.
- * Note: relies on the global `event` object from the handler.
+ * Submit the form asynchronously and finalize the UI state afterward.
  * @returns {Promise<void>}
  */
 async function submitForm() {
   const sendMsgBtn = document.getElementById("send-msg-btn");
-  event.preventDefault();
 
   try {
     handleFormSubmit(sendMsgBtn);
@@ -196,7 +224,7 @@ async function submitForm() {
 }
 
 /**
- * Final UI updates after submitting (successful or failed).
+ * Reset the button and toast UI after a submission attempt completes.
  * @param {HTMLElement} sendMsgBtn The send button element.
  * @returns {void}
  */
@@ -210,7 +238,7 @@ function finalizeSubmission(sendMsgBtn) {
 }
 
 /**
- * Send form payload to the server and handle the response.
+ * Send the form payload to the server and handle the response.
  * @param {HTMLElement} sendMsgBtn The send button element.
  * @returns {Promise<void>}
  */
@@ -227,7 +255,7 @@ async function handleFormSubmit(sendMsgBtn) {
 }
 
 /**
- * POST the form JSON to the server endpoint.
+ * POST the current form values as JSON to the server endpoint.
  * @returns {Promise<Response>} Fetch response promise.
  */
 async function postFormJson() {
@@ -241,8 +269,8 @@ async function postFormJson() {
 }
 
 /**
- * Collect form values into a plain object for JSON submission.
- * @returns {{name:string,email:string,message:string}}
+ * Collect the form field values into a plain object for JSON submission.
+ * @returns {{name:string,email:string,message:string}} The form data payload.
  */
 function getFormJson() {
   return {
@@ -253,7 +281,7 @@ function getFormJson() {
 }
 
 /**
- * Handle a failed submit by showing a toast and re-enabling the button.
+ * Handle a failed submission by showing feedback and re-enabling the button.
  * @param {HTMLElement} sendMsgBtn The send button element.
  * @returns {void}
  */
@@ -263,7 +291,7 @@ function onFailedSubmit(sendMsgBtn) {
 }
 
 /**
- * Reset the contact form and clear validation states.
+ * Reset the contact form and clear any validation styling.
  * @returns {void}
  */
 function clearForm() {
@@ -283,7 +311,7 @@ function clearForm() {
 }
 
 /**
- * Show a toast message indicating submit success or failure.
+ * Show a toast message that reflects whether the submission succeeded.
  * @param {boolean} successful Whether the submission was successful.
  * @returns {void}
  */
@@ -294,7 +322,7 @@ function showToastMsg(successful) {
 }
 
 /**
- * Style and set text for a successful submission toast.
+ * Apply the styling and text for a successful submission toast.
  * @param {HTMLElement} toastMsg The toast message element.
  * @returns {void}
  */
@@ -308,7 +336,7 @@ function styleSuccessMsg(toastMsg) {
 }
 
 /**
- * Style and set text for a failed submission toast.
+ * Apply the styling and text for a failed submission toast.
  * @param {HTMLElement} toastMsg The toast message element.
  * @returns {void}
  */
